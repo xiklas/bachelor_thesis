@@ -51,3 +51,7 @@
 
 # Build folder used by some editors/extensions
 _build/
+
+thesis.pdf
+thesis.synctex.gz
+thesis.log
