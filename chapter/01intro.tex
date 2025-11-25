@@ -1,0 +1,63 @@
+%!TEX root = ../thesis.tex
+\chapter{Introduction}
+\label{ch:01intro}
+
+In this chapter, we introduce the research topic of navigation using large language models.
+After briefly discussing the current capabilities of LLMs in navigation tasks, we review the existing body of research in this emergent area.
+We then identify the research gap we aim to adress in this thesis and formulate a corresponding research hypothesis.
+
+\section{The Current State of Navigation using LLMs}
+
+In practice, users rely on large language models for an increasing number of tasks.
+Starting out as the latest advancements in natural language processing, LLMs have quickly found many other applications such as computer code generation in software development or more creative uses such as image and video synthesis.
+Although earlier models possessed were limited in these areas, more recent models such as GPT-4o and Gemini 2.5 Pro have demonstrated impressive performance due to their emerging capabilities such as reasoning.
+As demonstrated in the depiction below, these models can also be confronted with navigational tasks like route planning:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter/PastedGraphic-2.png} % Adjust width as needed
+    \caption{GPT-4o response to a simple route planning task.}
+    \label{fig:pasted_graphic}
+\end{figure}
+
+Although alternative route planning solutions exist, this example illustrates the potential of using LLMs as purely text-based interfaces for navigational tasks, as compared to traditional map-based implementations such as Google Maps or OpenStreetMap.
+For this concept to be viable in practice however, LLMs must provide accurate and reliable responses, as mistakes in navigation can lead to significant problems in many scenarios.
+Investigation on the reliability of LLMs in this regard have already been conducted, revealing a concerning tendency to provide infactual information when confronted with route planning scenarios:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter/PastedGraphic-3.png} % Adjust width as needed
+    \caption{The correct route for the initial task (green) compared to the GPT-4o response (red).}
+    \label{fig:pasted_graphic}
+\end{figure}
+
+Even though the model response shown in Figure 1.1 appears structurally sound and plausible at first glance, upon further inspection the example demonstrates quite well that LLMs can fail to give accurate answers to navigational tasks when compared to the ground truth (Figure 1.2).
+In this case, GPT-4o suggested several wrong and disconnected directions, a striking contrast compared to the actual route.
+Additionaly, traversal of a street was suggested that doesn't exist in the investigated city at the time of writing (Willy-Brandt-Allee).
+
+Observations like these have left us wondering if we could systematically confirm the shortcomings of contemporary LLMs in spatial reasoning, and whether the inclusion of qualitative geographic context in the form of natural language dipole relations can significantly improve their performance in this regard. 
+We thus conduct a series of experiments to evaluate the navigation capabilities of select LLMs across multiple geographic areas, both with and without the inclusion of qualitative geographic context.
+In order to gain a clear picture of the current state of research in this area, we first review the relevant literature.
+
+\section{Literature Review}
+
+This chapter will serve as a brief overview of the relevant existing literature on the topic of navigation using large language models.
+We will first discuss the general capabilities of LLMs, before narrowing down on their performance in spatial reasoning. Afterwards, we will review research on qualitative representations of topological data as well as context enrichment techniques for LLMs and observe if these techniques have been applied to study LLM performance in navigation tasks.
+
+\subsection{Reasoning Capabilities of Large Language Models}
+
+The origins of LLMs lie in the field of natural language processing (nlp), where they were initially developed to perform tasks such as text generation and translation.
+Although the specific architectures of these models have evolved since their inception, the underlying principles have remained rather consistent: LLM's are trained on vast amounts of text data (primarily scraped from the internet) to learn patterns and relationships within the training data. Subsequently, if training was successful, the attained models, consisting of millions or even billions of parameters are then able to generate coherent text by predicting the next words (or more accurately, tokens) in a sequence.
+Some of the most well known LLMs today include OpenAI's GPT series (which first brought the technology to the market) or Google's Gemini models. It is no secret however, that since the 2020s, a large number of competitors impossible to list here have entered the market with their proprietary models.
+
+As mentioned, the primary potential for LLMs was initially identified in the field of natural language processing.
+With the steady increase in training data and model size however, new capabilities began to emerge.
+
+
+\section{Research Gap}
+
+
+
+\section{Research Hypothesis}
+
+
