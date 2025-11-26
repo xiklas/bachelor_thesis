@@ -35,9 +35,9 @@ Even though the model response shown in Figure 1.1 appears structurally sound an
 In this case, GPT-4o suggested several wrong and disconnected directions, a striking contrast compared to the actual route.
 Additionaly, traversal of a street was suggested that doesn't exist in the investigated city at the time of writing (Willy-Brandt-Allee).
 
-Observations like these have left us wondering if we could systematically confirm the shortcomings of contemporary LLMs in spatial reasoning, and whether the inclusion of qualitative geographic context in the form of natural language dipole relations can significantly improve their performance in this regard. 
+Observations like these have left room for research systematically studying the shortcomings of contemporary LLMs in spatial reasoning, and if the inclusion of qualitative geographic context in the form of natural language dipole relations can significantly improve their performance in this regard. 
 We thus conduct a series of experiments to evaluate the navigation capabilities of select LLMs across multiple geographic areas, both with and without the inclusion of qualitative geographic context.
-In order to gain a clear picture of the current state of research in this area, we first review the relevant literature.
+In order to gain a clear picture of the current state of research in this area, we must first review the relevant literature.
 
 \section{Literature Review}
 
@@ -46,13 +46,33 @@ We will first discuss the general capabilities of LLMs, before narrowing down on
 
 \subsection{Reasoning Capabilities of Large Language Models}
 
-The origins of LLMs lie in the field of natural language processing (nlp), where they were initially developed to perform tasks such as text generation and translation.
-Although the specific architectures of these models have evolved since their inception, the underlying principles have remained rather consistent: LLM's are trained on vast amounts of text data (primarily scraped from the internet) to learn patterns and relationships within the training data. Subsequently, if training was successful, the attained models, consisting of millions or even billions of parameters are then able to generate coherent text by predicting the next words (or more accurately, tokens) in a sequence.
-Some of the most well known LLMs today include OpenAI's GPT series (which first brought the technology to the market) or Google's Gemini models. It is no secret however, that since the 2020s, a large number of competitors impossible to list here have entered the market with their proprietary models.
+The origins of LLMs lie in the field of natural language processing (NLP), where they were initially developed to perform tasks such as text generation and translation.
+Although the specific architectures of these models have evolved since their inception, the underlying principles have remained rather consistent: LLM's are trained on vast amounts of text data (usually scraped from the internet) to learn patterns and relationships within the training data. Subsequently, if training was successful, the attained models, consisting of millions or even billions of parameters, are then able to generate seemingly coherent text by predicting the next words (or more accurately, tokens) in a sequence.
+Some of the most well known LLMs today include OpenAI's GPT series (which first brought the technology to the market) or Google's Gemini models. It is no secret however, that since the 2020s, a large number of competitors have entered the market with their own proprietary models.
 
 As mentioned, the primary potential for LLMs was initially identified in the field of natural language processing.
 With the steady increase in training data and model size however, new capabilities began to emerge.
+As early as 2021, researchers observed that LLMs were able to pass standardized tests such as the SAT (a test used for college admissions in the United States of America) or GRE (a similar test used for admissions to graduate schools), despite not being explicitly trained for these tasks.
+Although previous artifical intelligence systems had already been able to perform well on specific tasks, such as playing chess or even eventually beating human players at the game of Go,, LLMs were thus the first models to demonstrate a more generalized ability to solve problems across a wide range of domains.
 
+Since then, the development of LLMs more capable than the original models has continued and no end is in sight. The increase in these models' abilities can be attributed to several factors such as larger training datasets, higher context windows and even more advanced architectures.
+It didn't take much longer until big tech companies began to advertise their models with claims that their models were capable of reasoning, and thus being more capable of solving problems in domains such as math, programming and logic.
+The term LRM (large reasoning model) was even introduced to describe models with such capabilities.
+While certainly a valuable selling point, the actual reasoning capabilities of LLMs have been a topic of debate among scholars ever since.
+This study will not attempt to settle this debate in one way or another, but is instead concerned with the practical abilities LLMs showcase when confronted with rather complex problems.
+
+To study their abilities when faced with reasoning tasks, researchers have come up with various benchmarks.
+One of the most well known benachmarks is the FrontierMATH benchmarks
+
+...
+
+To summarize, while their abilities in reasoning tasks are by no means perfect, recent LLMs have proven to be more capable than ever before, and the trend is likely to continue in the foreseeable future.
+This opens the door to confront LLMs with spatial reasoning tasks such as navigation, which will be the topic of the upcoming section.
+
+\subsection{LLMs in Spatial Reasoning and Navigation}
+
+As we have seen, LLMs abilities to perform complex tasks requiring the use of a process similar to multi step reasoning has increased without any signs of slowdown over the past five years.
+While the field of geographic information science (GIScience) has identified several potential applications for LLMs in the domain, few studies have been conducted to evaluate their performance in navigation tasks.
 
 \section{Research Gap}
 
