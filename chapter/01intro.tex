@@ -72,12 +72,59 @@ This opens the door to confront LLMs with spatial reasoning tasks such as naviga
 \subsection{LLMs in Spatial Reasoning and Navigation}
 
 As we have seen, LLMs abilities to perform complex tasks requiring the use of a process similar to multi step reasoning has increased without any signs of slowdown over the past five years.
-While the field of geographic information science (GIScience) has identified several potential applications for LLMs in the domain, few studies have been conducted to evaluate their performance in navigation tasks.
+Although we cannot infer from this fact alone that LLMs are capable of solving issues in spatial reasoning as well, these new abilities may hint at their use in the field of geographic information science (GIScience).
+While the discipline has identified several promising applications for LLMs in the domain, not all the research has concerned itself with their abilities regarding navigation tasks.
+
+Among several other applications, one paper published in 2025 by X et al. highlights the potential of LLMs to serve as natural language interfaces for GI systems (Geo-Information Systems):
+In summary, LLMs could be used to allow users to interact with spatial data in new ways by using human language, thereby democratizing access to sophisticated GIS analysis.
+
+If we want to apply this concept to navigation tasks however, we need to accept that LLMs have been shown to perform rather poorly in this area:
+In a study conducted by Y et al. in 2025, several LLMs were tested on navigation tasks and their performance could be shown to be lacking.
+
+While it was proposed that LLMs could serve as natural language interfaces, and their navigational capabilities were shown to be lacking, little work has been done to find ways to alleviate their shortcomings in this regard.
+Other work focuses on the use of LLMs to create fully autonomous navigation agents using computer vision and robotics, which - although certainly impressive - is outside the scope of this thesis.
+Despite the increase in reasoning capabilities of LLMs in other domains, which were presented in Chapter 1.2.1, using LLMs for navigation tasks seems to be a dead end as of today.
+In the next section, we will present a proven technique to enhance LLM performance in various domains.
+
+\subsection{Context Enrichment Techniques for LLMs}
+
+After several studies presented convincing evidence concerning hallucinations and other shortcomings of LLMs, researchers began to look for possible techniques to reduce the occurence of such issues. 
+With context enrichment techniques, one promising approach was quickly identified:
+To account for blind spots in the datasets used to train the LLMs, researchers began to allow LLMs to access additional knowledge when presented with a user query.
+
+
+
+\subsection{Dipole Representations for Topological Data}
+
+Test 123
+
+Up until today, no research has been conducted to study whether qualitative dipole relations could be used to enhance LLM navigation performance.
+
 
 \section{Research Gap}
 
-
+We identify a gap in the current literature regarding the use of qualitative geographic context to enhance LLM navigation performance.
+Without further research, any verdict on the viability of LLMs as natural language interfaces for navigation tasks will remain inconclusive. 
+Previous research has adressed a) the general capabilities of LLMs in reasoning tasks, b) their potential use in GIScience applications as well as c) their shortcomings in navigation tasks.
+This research is not sufficient to fully dismiss the idea of using LLMs for navigation, as few attempts have been made to improve their navigation performance.
+Context enrichment has been shown to be a promising technique to reduce hallucinations in LLM responses, which often occur when they are confronted with spatial reasoning problems.
+Further, the dipole calculus has been shown to be a valid qualitative representation of topological data.
+Therefore, in ths study, we aim to quantify the impact of context enrichment using dipole relations on LLM navigation performance to provide first evidence on whether this technique could prove viable.
+Additionaly, our testing framework may be used as a benchmark for future research utilizing different approaches in this area.
+This way, we can thorougly study to which extent LLM navigation can be improved and reach a conclusion backed by empirical evidence.
 
 \section{Research Hypothesis}
 
-
+Drawing from the current state of research, we propose that context enrichment using qualitative geographic relations may have a positive effect on LLM navigation performance.
+Context enrichment has been shown to make LLM responses less prone to hallucinations in other domains, while dipole relations provide a proven framework for qualitatively describing topological data.
+Combined, these techniques should aid the LLM and allow it to provide more accurate answer to navigational tasks.
+We thus formulate the following research hypothesis H1: 
+\begin{quote} 
+    \textit{The inclusion of qualitative geographic context in the form of natural language dipole relations significantly improves the navigation performance of large language models.}
+\end{quote}
+The alternative hypothesis can thus be formmulated as follows H0:
+\begin{quote} 
+    \textit{The inclusion of qualitative geographic context in the form of natural language dipole relations does not significantly improve the navigation performance of large language models.}
+\end{quote}
+In the following chapters, we will describe the methods used to test our hypothesis and present the results of our experiments.
+The thesis will then conclude with a discussion of the findings and their meaning for future research in this area.
