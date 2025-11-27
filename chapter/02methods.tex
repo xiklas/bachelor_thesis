@@ -2,13 +2,47 @@
 \chapter{Methods}
 \label{ch:02methods}
 
-To test our research hypothesis, we designed a series of experiments involving large language models confronted with navigation tasks.
+Our research hypothesis states that the navigation capabilities of large language models may be significantly improved by the inclusion of qualitative geographic context.
+To test our hypothesis, we designed an experimental setup involving large language models, qualitative geographic context and navigation tasks.
 Our approach can be broken down into the data used, the configuration of the LLMs - including the context enrichtment setup -, and ultimately the procedures used to conduct the experiments.
 To make statements about the significance of the results, we also define the necessary metrics and statistical methods used for the subsequent evaluation.
 
 \section{Data Acquisition and Preparation}
 
+The first step in our experimental setup is the acquisition of dipole relations describing topological relationships in street networks which can then be used as qualitative geographic context for our LLMs.
+While high quality geographic datasets on street networks are available at no additional cost from various sources such as OpenStreetMap, these datasets typically do not include qualitative geographic descriptions.
+The most common way of encountering street network data is in the form of graphml files whiich describe the street network as a graph of nodes and edges:
+
+(Graphic)
+
+As basis for our experiments, we downloaded three of these graphs from the OpenStreetMap database using OSMnx, a powerful Python library capable of handling and processing OpenStreetMap data.
+In order to ensure a reasonable degree of geographic variation, we selected three different cities as sites for our datasets: Hamburg, Münster and Vienna.
+This way, we end up with one dataset per city, each containing a varying number of nodes and edges.
+The largest dataset, Vienna, contains approximately x nodes and y edges, while the smaller dataset of Hamburg and Münster contain approximately a and b as well as c and d nodes and edges respectively.
+To extract qualitative descriptions from these datasets, we implemented an algorithm capable of generating dipole relations in natural language which describe the topology of any graph given to the algorithm.
+In essence, the algorithm works by iterating over all nodes, and creating dipole relations for each intersection.
+While the full algorithm is provided in the appendix, a conceptual description of the algorithm in pseudocode is given here:
+
+(Pseudocode)
+
+Following this method, we were able to generate a set of dipole relations for each of our initial street network datasets.
+These relations were stored in the form of simple .txt files, with one relation per line.
+The largest resulting file was the one generated for Vienna, containing x dipole relations, while the files for Hamburg and Münster contained x and y dipole relations respectively.
+
+(Table with nodes and edges and resulting dipole relations per city)
+
+After discussing the data acquisition process, we now focus on a detailed description of the configuration of the LLMs used in this study.
+
 \section{LLM Configuration and RAG Setup}
+
+While the most common way for users to interact with large language models is to use their proprietary web interfaces, we identified this approach to be impractical for our needs;
+namely to test multiple configurations of LLMs in a systematic manner.
+While most LLMs providers also offer APIs to interact with their models, this approach would have introduced additional programming overhead for this project.
+
+One additional solution to access a wide range of currrent or legacy LLMs through a unified interface is to use a platform like OpenRouter, which is the platform we have chosen to use for this study.
+Through it's easy to use web-interface it is possible to query multiple LLMs concurrently without any additional programming effort.
+It is important to note however, that even though it is possible to query multiple LLMs at the same time, this does not mean that the seperate models share a common context window or share any other information between each other.
+
 
 \section{Experimental Design and Procedure}
 
