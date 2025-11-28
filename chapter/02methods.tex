@@ -33,19 +33,44 @@ The largest resulting file was the one generated for Vienna, containing x dipole
 
 After discussing the data acquisition process, we now focus on a detailed description of the configuration of the LLMs used in this study.
 
-\section{LLM Configuration and RAG Setup}
+\section{LLM Configuration}
 
 While the most common way for users to interact with large language models is to use their proprietary web interfaces, we identified this approach to be impractical for our needs;
 namely to test multiple configurations of LLMs in a systematic manner.
-While most LLMs providers also offer APIs to interact with their models, this approach would have introduced additional programming overhead for this project.
+While most LLM providers also offer APIs to interact with their models, this approach would have introduced additional programming overhead for this project.
 
 One additional solution to access a wide range of currrent or legacy LLMs through a unified interface is to use a platform like OpenRouter, which is the platform we have chosen to use for this study.
 Through it's easy to use web-interface it is possible to query multiple LLMs concurrently without any additional programming effort.
-It is important to note however, that even though it is possible to query multiple LLMs at the same time, this does not mean that the seperate models share a common context window or share any other information between each other.
+It is important to note however, that even though OpenRouter makes it possible to query multiple LLMs at the same time, this does not mean that the queried models share a common context window or share any other information between each other.
+
+New models arrive on the market frequently, making it difficult to test "the latest" or "state of the art" models.
+After all, a model with significantly greater capabilties in various areas could be just around the corner at any given time.
+Nevertheless, we have selected three models which we consider to be widely used and capabale of handling navigation tasks due to their advertised abilites of performing multi-step reasoning tasks.
+Our selection of models for this study therefore consists of OpenAI's GPT-4o, Google's Gemini 2.5 Pro as well as Anthropic's Claude Sonnet 4.5.
+
+The dipole relations generated in by the process described in the previous section were provided to the models in a simple .txt file, which they were then able to access during the navigation tasks.
+To ensure the model responses were free of any web-search result contamination, we switched off any web-search tools available and used a simple system prompt telling the models to use their own inherent knowledge to solve the given tasks only.
+In the trials conducted with additional qualitative geographic context, the system prompt was extended to instruct the models to use the provided dipole relations when figuring out a route.
+Other than that, no further changes were made to the model's default configurations, making the setup easy to replicate and true to real-world usage scenarios.
 
 
 \section{Experimental Design and Procedure}
 
+Our experimental design follows a traditional A/B-testing approach, where we compare the performance of a Control Group against the performance of a Test Group.
+In our case, the Control Group consists of LLMs performaing navigation tasks on their own, without any additional context.
+Respectively, the Test Group consists of LLMs performing the same navigation tasks, but with access to our dipole relations.
+While the Test Group performs the exact same tasks as the Control Group, it was ensured that no memories of previous trials were available to the models in the Test Group sessions by starting each individual trial of both groups in a fresh session, disconnected from any previously conducted trials.
+
+To generate problem statements without any bias towards certain areas or streets for each dataset, we simply extracted the set of available street names from the original graphml data.
+These lists were then each sampled randomly 20 times, with the resulting street names serving as the start-points for the navigation tasks for the given dataset.
+This process was then repeated and another random 20 items were selected from each list to serve as the end-points for the tasks.
+In total, this sums up to 60 unique trials over all three datasets. Since each trial will be executed twice using all three models, in combination a total of 360 individual trials will be conducted over the course of our study.
+
+After trial execution, each model's response was saved in a database. In case of an exceedingly verbose model response, the response was truncated to contain only the relevant navigational instructions which we want to investigate in this study.
+
 \section{Evaluation Metrics and Statistical Analysis}
 
-
+To enable evaluation and statistical analysis of the attained responses, each response was reviewed for correctness manually.
+A response was labelled as correct if and only if the instructions allowed for continuous traversal from start to end point of the corresponding trial.
+Any other routes which do not meet this criterium were labelled as incorrect.
+Distance measures or number-of-turn measures are out of the scope of our study.
