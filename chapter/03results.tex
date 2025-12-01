@@ -2,7 +2,81 @@
 \chapter{Results}
 \label{ch:03results}
 
+This chapter serves to present the results of our experiments.
+In total, 360 individual trials were conducted across various LLM configurations to find out whether the inclusion of qualitative geographic context helps improve the navigation performance of LLMs.
+
 \section{Overview of Dataset and Trial Execution}
+
+All trials could be executed successfully by the methods described in chapter 2, meaning that we got a valid LLM response for each navigation task.
+This does not imply that all responses were correct in terms of navigation success, but rather that we were able to collect all the necessary data for a subsequent analysis.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c c}
+\hline
+\textbf{Group} & \textbf{\# Experiments} & \textbf{\# Successful} & \textbf{\# Failed} & \textbf{Success Rate (\%)} \\
+\hline
+Control Group & 180 & 36  & 144 & 20\% \\
+Test Group    & 180 & 144 & 36  & 80\% \\
+\hline
+\textbf{Total} & \textbf{360} & \textbf{180} & \textbf{180} & \textbf{50\%} \\
+\hline
+\end{tabular}
+\caption{Overview of experiments in control and test groups with success and failure counts.}
+\end{table}
+
+Out of the total 360 experiments, 180 were conducted in the control group without additional qualitative context and 180 in the test group with added context.
+In the control group, 36 LLM responses were labeled as successful in their attempt to give correct navigation instructions, while 144 were labeled as failures.
+This results in a success rate of just 20\% for the control group.
+
+In contrast, the test group (with additional qualitative geographic context) gave 144 responses that were labeled as successful.
+Although this is an increase compared to the control group, there were still 36 LLM responses that were labeled as failures.
+The resulting success rate for the test group is 80\%, an increase of 60\% compared to the control group.
+Although further analysis is necessary, this may give a first indication towards the effects of additional qualitative geographic context on LLM navigation performance.
+
+In each city, we tasked three LLMs with answering the same 20 navigation tasks, resulting in 60 experiments per group and city (Table 3.2).
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c}
+\hline
+\textbf{City} & \textbf{\# LLMs} & \textbf{\# Tasks per LLM} & \textbf{\# Experiments per Group} \\
+\hline
+Münster & 3 & 20 & 60 \\
+Hamburg & 3 & 20 & 60 \\
+Vienna  & 3 & 20 & 60 \\
+\hline
+\textbf{Total} & \textbf{3} & \textbf{20} & \textbf{180} \\
+\hline
+\end{tabular}
+\caption{Structure of experiments per city: three LLMs answering the same 20 navigation tasks, resulting in 60 experiments per group and city.}
+\end{table}
+
+In order to understand the performance differences across the tree test cities, we can take a look at the difference in task success rates per city (Table 3.3).
+While all three cities show an increase in task success rate, the results vary slightly.
+In Vienna and Münster, the success rate increased by 62\%, while in Hamburg it increased by 58\%.
+In the control group, Münster had the lowest success rate at 19\%, while Vienna followed with an increase to 20\% and Hamburg had another increase by 1\% to a success rate of 21\%.
+The highest overall score was achieved in Vienna under test conditions.
+Here, 82\% of all navigation tasks were answered correctly by the LLMs.
+The task success rates under test conditions for Hamburg and Münster were just slightly lower, with 81\% and 79\% respectively.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c}
+\hline
+\textbf{City} & \textbf{Control Success Rate (\%)} & \textbf{Test Success Rate (\%)} & \textbf{± (Difference)} \\
+\hline
+Münster & 19\% & 81\% & +62\% \\
+Hamburg & 21\% & 79\% & +58\% \\
+Vienna  & 20\% & 82\% & +62\% \\
+\hline
+\textbf{Average} & \textbf{20\%} & \textbf{80.7\%} & \textbf{+60.7\%} \\
+\hline
+\end{tabular}
+\caption{Success rates of control and test groups across the three test cities including the difference between groups.}
+\end{table}
+
 
 \section{Task Success Results}
 

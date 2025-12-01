@@ -15,9 +15,9 @@
 \contentsline {section}{\numberline {2.4}Evaluation Metrics and Statistical Analysis}{9}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Results}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Overview of Dataset and Trial Execution}{11}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Task Success Results}{11}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Statistical Significance Testing}{11}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Summary of Findings}{11}{section.3.4}%
+\contentsline {section}{\numberline {3.2}Task Success Results}{12}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Statistical Significance Testing}{12}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Summary of Findings}{12}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Discussion}{13}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Interpretation of Results}{13}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Relation To Previous Work}{13}{section.4.2}%
@@ -26,6 +26,6 @@
 \contentsline {chapter}{\numberline {6}Conclusion and Outlook}{17}{chapter.6}%
 \def \@chapapp {\appendixname }
 \contentsline {chapter}{\numberline {A}Some Appendix Chapter}{19}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{21}{chapter*.5}%
-\contentsline {chapter}{\nonumberline List of Tables}{23}{chapter*.6}%
+\contentsline {chapter}{\nonumberline List of Figures}{21}{chapter*.8}%
+\contentsline {chapter}{\nonumberline List of Tables}{23}{chapter*.9}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

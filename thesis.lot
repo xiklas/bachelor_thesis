@@ -2,6 +2,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Overview of experiments in control and test groups with success and failure counts.}}{11}{table.caption.5}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Structure of experiments per city: three LLMs answering the same 20 navigation tasks, resulting in 60 experiments per group and city.}}{12}{table.caption.6}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Success rates of control and test groups across the three test cities including the difference between groups.}}{12}{table.caption.7}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
