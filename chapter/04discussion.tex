@@ -19,7 +19,29 @@ To ensure we didn't get lucky with a specific city or model combination, we anal
 Across all of the tested combinations, we observed similar levels of improvement.
 This leads us to believe that there may be a generalizable effect of qualitative geographic context on LLM navigation performance, as long as the models possess sufficient reasoning capabilities, which may be needed to process the additional context effectively.
 Although we tested nine different combinations in total, and saw improvements across all of them, it is important to state that this is just a small fraction of the possible combinations of cities and LLMs that exist.
-It is always possible that other cities or models could lead to drastically different results, even though our findings look promising.
+It is always possible that other cities or models could lead to drastically different results, even though our initial findings look promising.
+
+The reasons for the rather lackluster LLM performance in the control group still remain unknown to us.
+Since the reasoning capabilities of LLMs have shown to be impressive in other areas, we suspect it is unlikely that the inherent abilities of the models are the limiting factor for the poor navigation performance.
+Maybe be the absence of qualitative geographic training data in the training datasets used to train the data could be a cause.
+LLMs are trained on large amounts of text data from the internet, which may simply not contain sufficient amounts of descriptions of spatial relationships in the format LLMs can understand most effectively - text.
+Afterall, traditional navigation solutions usually do not rely on qualitative spatial data published on the internet, but rather on large databases of geospatial datasets.
+Our approach would thus simply provide the LLMs with the information they need to make up for this blindspot in the training data.
+Although this may be a sensible explanation, our research cannot confirm this assumption, and further studies would be necessary to answer this tangential question.
+
+We have shown that the poor navigation performance of LLMs is not inevitable. 
+Instead, by means of simply providing qualitative geographic context, the results of navigation performance could be improved significantly.
+This serves as yet another example of LLMs and their many different abilities, but does it mean that traditional navigation solutions will become obsolete and replaced by LLMs in the future?
+While it has become easier to imagine LLMs being used for navigation tasks, as we have shown that their performance could be improved measurably, in our view it is irresponsible to make such bold claims.
+This study does not intent to suggest that traditional navigation solutions are inferior and should be labeled obsolete anytime soon.
+In contrast, the many mistakes made by the LLMs in the control group as well as the mistakes still present in the test group highlight the current limitations of LLM based navigation and the need for further research.
+Navigation is often critical, and any mistakes can have serious consequences in terms of time, safety or efficency.
+Although certainly impressive, a success rate of 80\% is therefore not sufficient for many use cases, when tradiitional navigation solutions operate at near perfection.
+If the gap could be closed further in the future, LLMs could someday seriously be considered as alternatives to current navigation solutions.
+
+Further research on the validation of LLM performance may also aid in the development of LLM based navigation.
+Validating hundreds of navigation tasks manually as was done in this study is time-consuming and impractical for larger datasets.
+Automated validation methods could help 
 
 \section{Relation To Previous Work}
 
