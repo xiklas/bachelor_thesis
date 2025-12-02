@@ -59,7 +59,7 @@ In Vienna and Münster, the success rate increased by 62\%, while in Hamburg it 
 In the control group, Münster had the lowest success rate at 19\%, while Vienna followed with an increase to 20\% and Hamburg had another increase by 1\% to a success rate of 21\%.
 The highest overall score was achieved in Vienna under test conditions.
 Here, 82\% of all navigation tasks were answered correctly by the LLMs.
-The task success rates under test conditions for Hamburg and Münster were just slightly lower, with 81\% and 79\% respectively.
+The task success rates under test conditions for Hamburg and Münster were just slightly lower, with 81\% and 79\% respectively:
 
 \begin{table}[h!]
 \centering
@@ -77,6 +77,51 @@ Vienna  & 20\% & 82\% & +62\% \\
 \caption{Success rates of control and test groups across the three test cities including the difference between groups.}
 \end{table}
 
+When comparing model performance between control and test groups, we can see that all three LLMs performed better when provided with our dipole relations.
+Without additional context, GPT-4o achieved just an 18\% success rate, while Gemini 2.5 Pro and Claude Sonnet 4.5 performed similarly with 21\% and 20\% respectively.
+In the test group however, performances increased across all models.
+GPT-4o was now able to achieve a task success rate of 82\%, while Gemini 2.5 Pro and Claude Sonnet 4.5 increased to 78\% and 81\% respectively.
+On average this meant that the success rate increased by 60.7\% across the three LLMs tested in this study.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c}
+\hline
+\textbf{Model} & \textbf{Control Success Rate (\%)} & \textbf{Test Success Rate (\%)} & \textbf{± (Difference)} \\
+\hline
+GPT-4o            & 18\% & 82\% & +64\% \\
+Gemini 2.5 Pro    & 21\% & 78\% & +57\% \\
+Claude Sonnet 4.5 & 20\% & 81\% & +61\% \\
+\hline
+\textbf{Average}  & \textbf{19.7\%} & \textbf{80.3\%} & \textbf{+60.7\%} \\
+\hline
+\end{tabular}
+\caption{Control and test group success rates across the three evaluated LLMs.}
+\end{table}
+
+
+Breaking down the task success rates by both city and model, we can see that all models performed better in terms of task success rate, independent of the tested city.
+Task success rates in the control group ranged started at 17\% and never exceeded 22\%, a score which was achived by Gemini 2.5 Pro in Hamburg.
+In the test group however, all models achieved task success rates of at least 77\%.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c c c c}
+\hline
+\textbf{Model} 
+& \textbf{Münster (C)} & \textbf{Hamburg (C)} & \textbf{Vienna (C)}
+& \textbf{Münster (T)} & \textbf{Hamburg (T)} & \textbf{Vienna (T)} \\
+\hline
+GPT-4o            & 18\% & 19\% & 17\% & 82\% & 81\% & 83\% \\
+Gemini 2.5 Pro    & 20\% & 22\% & 21\% & 78\% & 77\% & 80\% \\
+Claude Sonnet 4.5 & 19\% & 20\% & 21\% & 81\% & 80\% & 82\% \\
+\hline
+\end{tabular}
+\caption{Model × City breakdown of control (C) and test (T) group success rates.}
+\end{table}
+
+
+Test 123
 
 \section{Task Success Results}
 
