@@ -44,6 +44,53 @@ In order to gain a clear picture of the current state of research in this area, 
 This chapter will serve as a brief overview of the relevant existing literature on the topic of navigation using large language models.
 We will first discuss the general capabilities of LLMs, before narrowing down on their performance in spatial reasoning. Afterwards, we will review research on qualitative representations of topological data as well as context enrichment techniques for LLMs and observe if these techniques have been applied to study LLM performance in navigation tasks.
 
+\subsection{Topological Geographic Data}
+
+Our study heavily relies on the concept of topological geographic data, which has been widely used and investigated already.
+In this section we will introduce the concept and explain its relevance to our research.
+To understand topological data, we may look at the following example of a subway map:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter/subway_map.png} % Adjust width as needed
+    \caption{Arbitrary section of a london tube map.}
+    \label{fig:pasted_graphic}
+\end{figure}
+
+In Figure 1.3, we present an arbitrary cutout of the London tube map, containing sections of various lines such as the central line (red), the circle line (yellow) or the district line (green).
+Besides the set of lines, the map also contains a set of stations such as "Westminster" or "Embankment" as well as the famous "Oxford Circus" station.
+The map can thus be thought of as a set of nodes (stations) and edges connecting the nodes (lines).
+Apart from this, the map does not contain any further information such as concrete distances between stations or their exact geographic locations in terms of latitude and longitude.
+
+The key takeaway here is that the map serves the simple purpose of allowing users of the tube network to navigate from one station to another, by highlighting their connections and abstracting away anything else.
+This abstraction allows for a very clean and efficient representation of otherwise complex networks.
+It has been shown that such topological representations significantly aid human navigation in various scenarios.
+Because of this, in many cases around the world such as public transport networks, topological representations like the tube map are used in practice.
+
+Topological representations of geographic data are not limited to public transport networks however.
+In fact, many other use cases for topological data exist.
+For our research, we are particularly interested in road networks, which can also be represented in a topological manner.
+To achieve a topological representation of a road network, we simply switch out stations for intersections and lines for roads connecting these intersections.
+Again, we abstract away any further information such as distances or exact geographic coordinates.
+What we are left with is a simplified representation of the initial network.
+We suggest that using this simplified representation may aid LLMs in solving navigation tasks.
+
+\subsection{Dipole Representations of Topological Data}
+
+As we have seen in the previous section, we can represent geographic data in the form of topological networks, describing connections between nodes.
+In this section, we will present the technique of qualitatively describing such topological data using dipole relations.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter/dipole_relations.png} % Adjust width as needed
+    \caption{All qualitatively different dipole relations necessary to describe a street network.}
+    \label{fig:pasted_graphic}
+\end{figure}
+
+By using dipole relations, an entire graph structure can thus be represented in an elegant way using natural language by simply aggregating qualitative statements like "Street A starts at Intersection of B,C and G" or "Street F branches off to the left from Street A".
+Dipole relations have been successfully implemented in the field of robotics, where they were used to allow robotic agents to navigate through unknown environments.
+
+
 \subsection{Navigation: A Spatial Reasoning Task}
 
 What are the abilities usually attributed to successful navigation in any agent?
@@ -97,16 +144,6 @@ In the next section, we will present a proven technique to enhance LLM performan
 After several studies presented convincing evidence concerning hallucinations and other shortcomings of LLMs, researchers began to look for possible techniques to reduce the occurence of such issues. 
 With context enrichment techniques, one promising approach was quickly identified:
 To account for blind spots in the datasets used to train the LLMs, researchers began to allow LLMs to access additional knowledge when presented with a user query.
-
-
-
-\subsection{Qualitative Representations of Topological Data}
-
-To understand qualitative geographic data, the example of a subway map may prove helpful.
-
-
-Up until today, no research has been conducted to study whether qualitative dipole relations could be used to enhance LLM navigation performance.
-
 
 \section{Research Gap}
 
