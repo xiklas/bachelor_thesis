@@ -35,7 +35,8 @@ This serves as yet another example of LLMs and their many different abilities, b
 While it has become easier to imagine LLMs being used for navigation tasks, as we have shown that their performance could be improved measurably, in our view it is irresponsible to make such bold claims.
 
 This study does not intent to suggest that traditional navigation solutions are inferior and should be labeled obsolete anytime soon.
-In contrast, the many mistakes made by the LLMs in the control group as well as the mistakes still present in the test group highlight the current limitations of LLM based navigation and the need for additional research.
+In fact, suggesting such a thing would feel irresponsible:
+The many mistakes made by the LLMs in the control group as well as the mistakes still present in the test group highlight the current limitations of LLM based navigation and the need for additional research.
 
 Navigation is often critical, and any mistakes can have serious consequences in terms of time, safety or efficency.
 Although certainly impressive, a success rate of 80\% is therefore not sufficient for many use cases, when tradiitional navigation solutions operate at near perfection.
@@ -47,7 +48,7 @@ Perhaps the inclusion of accessibility information could aid people with disabil
 Maybe information on current events could help users make informed decisions on their route depending on the situation.
 
 
-LLMs evolve quickly.
+The development of new models is rapid and there is no end in sight.
 Areas of poor performance today may be addressed by a new model tommorow.
 This may render parts of our research obsolete in the future.
 However, our overall approach and the framework of integrating qualitative context has been proven to work at least in this area and could see success in various other domains, although there is no way to tell that the approach generalizes well just by looking at the results of this study.
@@ -64,6 +65,34 @@ Our easily reproducible testing framework described in chapter 2 may be used as 
 If we look beyond the scope of navigation tasks, our findings may also have relevance for other areas in which LLMs could be combined with graph data.
 Knowledge graphs are used in many domains and have a similar makeup to geographic networks.
 One interesting avenue for additional research could thus be to study whether knowledge graphs could be represented using qualitative relations as well, and whether this could allow LLMs to reason about knowledge graphs in a similar way as we have shown for geographic networks.
+
+Our results can also be interpreted in another way: If it takes additional, non-trivial work to achieve good navigation performance with LLMs, maybe they are currently not the best tool for the job after all.
+With our context enrichment setup, we were able to achieve good results in a testing environment.
+This setup is however not practical to implement in all real-world scenarios yet.
+It is difficult to imagine users, especially those without a technical background, recreating our setup on mobile devices such as smartphones or smartwatches for example, which are so commonly used for navigation in this era of mobile computing.
+
+Following this interpretation, LLMs should inform users that they are incapable of delivering accurate answers to navigation tasks.
+In our control group experiments, we have seen that this is not the case, however.
+Many incorrect street names, impossible connections and other mistakes were made by all models, even though they are among the most advanced models available to the public at the time of writing.
+And since these models are so widely used today, it is not unlikely that many users have already tried to navigate using them.
+
+It would be interesting to know whether users would be aware of the potentially poor results.
+In the best case, users would quickly realize the mistakes before following them and move to other existing navigation solutions to get accurate navigation results.
+Even then however, this could lead to undermined trust in LLMs in general, which is certainly not to be desired by their providers.
+In the worst case, users could blindly follow the incorrect instructions, get lost, and consequently lose time - or worse.
+
+We hope that this discussion of our results made clear that while our approach looks promising, we do not want to jump to extreme conclusions.
+There are use cases for LLMs in combination with geospatial data.
+Our approach has shown that the use case of navigation could certainly be made more reliable.
+But yet there is still a gap between the performance of our setup and traditional navigation solutions.
+
+The steady improvement in LLM systems can spark belief into a future where LLMs can solve navigation tasks as well as any other existing solution, but we feel that it is important to stay grounded and not overhype the latest technologies and become blind to their obvious shortcomings.
+
+Some recent products tried to make LLM-based AI a key selling point, only to underdeliver and be met with harsh user criticism.
+Although these failures were not mainly in the area of navigation, and the reasons for the product failures are certainly manifold, they still serve as examples of the dangers of overhyping LLM based solutions for just any use case.
+
+This study should thus be interpreted as a first step, a proof of concept that LLM navigation can be improved.
+It doesn't intent to show that LLMs are ready to be a viable alternative to traditional navigation solutions yet, but that doesn't mean that the idea can be fully dismissed either.
 
 \section{Relation To Previous Work}
 
