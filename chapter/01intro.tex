@@ -42,15 +42,35 @@ In order to gain a clear picture of the current state of research in this area, 
 
 \section{Research Gap}
 
-We identify a gap in the current literature regarding the use of qualitative geographic context to enhance LLM navigation performance.
-Without further research, any verdict on the viability of LLMs as natural language interfaces for navigation tasks will remain inconclusive. 
-Previous research has adressed a) the general capabilities of LLMs in reasoning tasks, b) their potential use in GIScience applications as well as c) their shortcomings in navigation tasks.
-This research is not sufficient to fully dismiss the idea of using LLMs for navigation, as few attempts have been made to improve their navigation performance.
-Context enrichment has been shown to be a promising technique to reduce hallucinations in LLM responses, which often occur when they are confronted with spatial reasoning problems.
-Further, the dipole calculus has been shown to be a valid qualitative representation of topological data.
-Therefore, in ths study, we aim to quantify the impact of context enrichment using dipole relations on LLM navigation performance to provide first evidence on whether this technique could prove viable.
-Additionaly, our testing framework may be used as a benchmark for future research utilizing different approaches in this area.
-This way, we can thorougly study to which extent LLM navigation can be improved and reach a conclusion backed by empirical evidence.
+At the moment, no literature explores the impact of qualitative geographic context on navigation performance in LLMs.
+Without any research, a clear verdict on the viability of LLMs as natural language interfaces for navigation tasks will remain inconclusive. 
+While previous research has adressed the general capabilities of LLMs in reasoning tasks, it can not automatically be assumed that these capabilities translate to strong navigation performance in real world scenarios.
+Many potential uses for LLMs in GIScience applications have been theorized, among those the possibility to act as natural language interfaces for spatial queries such as navigation.
+The existing research regarding LLM navigation performance however paints a clear picture: Currently, LLMs are not able to perform navigation tasks reliably, and thus this potential use case remains unfulfilled.
+
+This research alone is however not sufficient to fully dismiss the idea of using LLMs for navigation.
+Few attempts have been made to improve their performance in this regard.
+If research could identify techniques that significantly improve LLM navigation performance, the idea of their usage in this area could become practical in the future.
+Even thoough one study alone will not be sufficient to fully explore this area and answer all open questions, it could provide first evidence on the viability of such techniques and serve as a benchmark for future research.
+
+One technique that has shown promise in reducing shortcomings such as hallucinations in other areas where LLMs are applied is context enrichment.
+By providing additional contex to the model, blindspots in LLM training data such as recent events, niche topics or internal company data can be adressed by this method.
+It seems likely, although unproven, that a similar blindspot could be manifest in the area of topological data required for urban navigation tasks.
+
+Any attempts to adress the issue of poor LLM navigation performance using context enrichment must however answer the initial question of how to best provide geographic context in a way that is suitable for LLMs.
+Since LLMs mostly consume text data during training, we hypothesize that the geographic context should be present in the form of text as well.
+Fortunately, spatial data is available in vast quantities on the internet for free.
+Unfortunately, this data is usually not in a text based natural-language format.
+
+A solution to adress this tangential issue could be to utilize a framework for qualitatively describing topological data such as the dipole calculus.
+The dipole calculus is a established framework that has been used in applications such as robotics.
+In the framework, purely qualitative relations are defined to describe topological relations in an elegant manner.
+These relations could be translated into natural language statements, suitable for LLM context enrichment.
+
+In this study we therefore aim to show first empirical evidence on whether this technique of improving LLM navigation using qualitative geographic context could prove viable.
+As mentioned, this research will adress a gap in the existing literature, but will not be sufficient to fully explore the area.
+The testing framework we establish can also be utilized by future researchers studying additional ways of improving LLM navigation performance.
+In the end, this study will serve as a first step on the long-term path towards LLM usage in navigation tasks.
 
 \section{Research Hypothesis}
 
