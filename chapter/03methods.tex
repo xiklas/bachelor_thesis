@@ -2,18 +2,29 @@
 \chapter{Methods}
 \label{ch:02methods}
 
+% Chapter Introduction:
+% Outlines the scope and structure of the Methods chapter.
+
 Our research hypothesis states that the navigation capabilities of large language models may be significantly improved by the inclusion of qualitative geographic context.
 To test our hypothesis, we designed an experimental setup involving large language models, qualitative geographic context and navigation tasks.
 Our approach can be broken down into the data used, the configuration of the LLMs - including the context enrichtment setup -, and ultimately the procedures used to conduct the experiments.
 To make statements about the significance of the results, we also define the necessary metrics and statistical methods used for the subsequent evaluation.
 
+
+% Data Acquisition and Preparation:
+% Describes how the data used in the experiments was collected and prepared.
+
 \section{Data Acquisition and Preparation}
 
-The first step in our experimental setup is the acquisition of dipole relations describing topological relationships in street networks which can then be used as qualitative geographic context for our LLMs.
+% Why the data is not readily available on the internet.
+
+The first step in our experimental setup is the generation of dipole relations describing topological relationships in street networks which can then be used as qualitative geographic context for our LLMs.
 While high quality geographic datasets on street networks are available at no additional cost from various sources such as OpenStreetMap, these datasets typically do not include qualitative geographic descriptions.
 The most common way of encountering street network data is in the form of graphml files whiich describe the street network as a graph of nodes and edges:
 
 (Graphic)
+
+% Which data was downloaded and how was it processed to generate the dipole relations.
 
 As basis for our experiments, we downloaded three of these graphs from the OpenStreetMap database using OSMnx, a powerful Python library capable of handling and processing OpenStreetMap data.
 In order to ensure a reasonable degree of geographic variation, we selected three different cities as sites for our datasets: Hamburg, Münster and Vienna.
@@ -25,6 +36,8 @@ While the full algorithm is provided in the appendix, a conceptual description o
 
 (Pseudocode)
 
+% How was the data stored and how can the data be described.
+
 Following this method, we were able to generate a set of dipole relations for each of our initial street network datasets.
 These relations were stored in the form of simple .txt files, with one relation per line.
 The largest resulting file was the one generated for Vienna, containing x dipole relations, while the files for Hamburg and Münster contained x and y dipole relations respectively.
@@ -33,49 +46,74 @@ The largest resulting file was the one generated for Vienna, containing x dipole
 
 After discussing the data acquisition process, we now focus on a detailed description of the configuration of the LLMs used in this study.
 
+% Which LLMs were selected and how were they configured.
+
 \section{LLM Configuration}
+
+% Why using the proprietary web interfaces is impractical for this study.
 
 While the most common way for users to interact with large language models is to use their proprietary web interfaces, we identified this approach to be impractical for our needs;
 namely to test multiple configurations of LLMs in a systematic manner.
 While most LLM providers also offer APIs to interact with their models, this approach would have introduced additional programming overhead for this project.
 
+% Why openrouter was selected and how the platform works.
+
 One additional solution to access a wide range of currrent or legacy LLMs through a unified interface is to use a platform like OpenRouter, which is the platform we have chosen to use for this study.
 Through it's easy to use web-interface it is possible to query multiple LLMs concurrently without any additional programming effort.
 It is important to note however, that even though OpenRouter makes it possible to query multiple LLMs at the same time, this does not mean that the queried models share a common context window or share any other information between each other.
+
+% Which models were selected and why.
 
 New models arrive on the market frequently, making it difficult to test "the latest" or "state of the art" models.
 After all, a model with significantly greater capabilties in various areas could be just around the corner at any given time.
 Nevertheless, we have selected three models which we consider to be widely used and capabale of handling navigation tasks due to their advertised abilites of performing multi-step reasoning tasks.
 Our selection of models for this study therefore consists of OpenAI's GPT-4o, Google's Gemini 2.5 Pro as well as Anthropic's Claude Sonnet 4.5.
 
+% How was the qualitative context provided to the models?
+
 The dipole relations generated in by the process described in the previous section were provided to the models in a simple .txt file, which they were then able to access during the navigation tasks.
 To ensure the model responses were free of any web-search result contamination, we switched off any web-search tools available and used a simple system prompt telling the models to use their own inherent knowledge to solve the given tasks only.
 In the trials conducted with additional qualitative geographic context, the system prompt was extended to instruct the models to use the provided dipole relations when figuring out a route.
 Other than that, no further changes were made to the model's default configurations, making the setup easy to replicate and true to real-world usage scenarios.
 
+% How was the experimental procedure designed?
 
 \section{Experimental Design and Procedure}
+
+% Traditional A/B testing approach with Test and Control Group.
 
 Our experimental design follows a traditional A/B-testing approach, where we compare the performance of a Control Group against the performance of a Test Group.
 In our case, the Control Group consists of LLMs performaing navigation tasks on their own, without any additional context.
 Respectively, the Test Group consists of LLMs performing the same navigation tasks, but with access to our dipole relations.
 While the Test Group performs the exact same tasks as the Control Group, it was ensured that no memories of previous trials were available to the models in the Test Group sessions by starting each individual trial of both groups in a fresh session, disconnected from any previously conducted trials.
 
+% How were the navigation tasks designed and executed?
+
 To generate problem statements without any bias towards certain areas or streets for each dataset, we simply extracted the set of available street names from the original graphml data.
 These lists were then each sampled randomly 20 times, with the resulting street names serving as the start-points for the navigation tasks for the given dataset.
 This process was then repeated and another random 20 items were selected from each list to serve as the end-points for the tasks.
 In total, this sums up to 60 unique trials over all three datasets. Since each trial will be executed twice using all three models, in combination a total of 360 individual trials will be conducted over the course of our study.
 
+% How were the trial responses stored?
+
 After trial execution, each model's response was saved in a database. In case of an exceedingly verbose model response, the response was truncated to contain only the relevant navigational instructions which we intent to investigate in this study.
 
+% How was the obtained data evaluated and which statistical tools were used?
+
 \section{Evaluation Metrics and Statistical Analysis}
+
+% Responses were reviewed manually against Google Maps.
 
 All responses were then reviewed manually by comparing the produced instructions against Google Maps, one of the most widely used geographic information systems on the internet.
 When looking at any response, the objective was to determine whether the produced steps could be executed in sequence to solve the navigation task.
 If this was the case, the response was labelled as correct, otherwise it was labelled as incorrect.
 
+% What does correct/incorrect mean in this study?
+
 This means that just one incorrect instruction in any LLM response, control or test group, would consequently render the entire response incorrect.
 Our validation does not take into account any further measures like distance measures or number of turns.
 While these additional measures could provide interesting insights, they are ourside the scope of this study.
+
+% How was the task success rate calculated?
 
 After all responses were labelled, we were able to calculate task success rates for the control and test groups.
