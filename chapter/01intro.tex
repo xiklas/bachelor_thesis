@@ -17,7 +17,8 @@ We then identify the research gap we aim to adress in this thesis and formulate 
 Today, users rely on large language models for an increasing number of tasks.
 There are practically no limits to prompting an LLM, which has led to some unexpected revelations.
 Starting out as the latest advancements in natural language processing, LLMs have thus quickly found many other applications such as computer code generation in software development or more creative uses such as image and video synthesis.
-Although earlier models possessed were limited in these areas, more recent models such as GPT-4o and Gemini 2.5 Pro have demonstrated impressive performance due to their reasoning capabilities.
+Although earlier models possessed were limited in these areas, more recent models such as GPT-4o and Gemini 2.5 Pro have demonstrated impressive performance due to new capabilities such as reasoning.
+In the following example we prompted GPT-4o with a simple navigation task to see whether the recent advancements in LLM capabilitis could also translate to navigation performance:
 
 % Example Figure of User Navigation Task Reply using ChatGPT 4o
 
@@ -30,9 +31,16 @@ Although earlier models possessed were limited in these areas, more recent model
 
 % Why would users want to use LLMs for navigation?
 
-Although alternative route planning solutions exist, this example illustrates the potential of using LLMs as purely text-based interfaces for navigational tasks, as compared to traditional map-based implementations such as Google Maps or OpenStreetMap.
+The prompt used to generate the response shown in Figure 1.1 was as follows:
+
+\begin{quote}
+    \textit{I just arrived at Münster central station and need to get to the Hafenweg. Please provide me with step-by-step walking directions to get there.}
+\end{quote}
+
+Although alternative route planning solutions exist, the model response illustrates the potential of using LLMs as purely text-based interfaces for navigational tasks, as compared to traditional map-based implementations such as Google Maps or OpenStreetMap.
 For this concept to be viable in practice however, LLMs must provide accurate and reliable responses, as mistakes in navigation can lead to significant problems in many scenarios.
-Investigation on the reliability of LLMs in this regard have already been conducted, revealing a concerning tendency to provide misleading information when confronted with route planning scenarios:
+Dr. Reinhard Moratz, the supervisor of this thesis, has previously experimented with the navigational capabilities of LLMs earlier this year and was able to observe that they often struggle to provide correct answers.
+This tendency seems to persist even in more recent models such as GPT-4o, as can be seen when comparing the model response from Figure 1.1 to the ground truth: 
 
 % Map with Correct Route vs. GPT-4o Response
 
