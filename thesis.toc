@@ -22,8 +22,7 @@
 \contentsline {section}{\numberline {4.3}Summary of Findings}{18}{section.4.3}%
 \contentsline {chapter}{\numberline {5}Discussion}{19}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Interpretation of Results}{19}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Relation To Previous Work}{22}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Limitations}{22}{section.5.3}%
+\contentsline {section}{\numberline {5.2}Limitations}{22}{section.5.2}%
 \contentsline {chapter}{\numberline {6}Conclusion and Outlook}{23}{chapter.6}%
 \def \@chapapp {\appendixname }
 \contentsline {chapter}{\numberline {A}Some Appendix Chapter}{25}{appendix.A}%

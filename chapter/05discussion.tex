@@ -47,7 +47,6 @@ In practice, there are countless other types of geographic information that coul
 Perhaps the inclusion of accessibility information could aid people with disabilities.
 Maybe information on current events could help users make informed decisions on their route depending on the situation.
 
-
 The development of new models is rapid and there is no end in sight.
 Areas of poor performance today may be addressed by a new model tommorow.
 This may render parts of our research obsolete in the future.
@@ -81,6 +80,9 @@ In the best case, users would quickly realize the mistakes before following them
 Even then however, this could lead to undermined trust in LLMs in general, which is certainly not to be desired by their providers.
 In the worst case, users could blindly follow the incorrect instructions, get lost, and consequently lose time - or worse.
 
+Additionaly, the climate impact of LLM usage has been an ongoing topic of disussion.
+Knowing more about LLM capabilities and limitations could help users make concsious decision about when to employ an LLM and when to rely on other tools.
+
 We hope that this discussion of our results made clear that while our approach looks promising, we do not want to jump to extreme conclusions.
 There are use cases for LLMs in combination with geospatial data.
 Our approach has shown that the use case of navigation could certainly be made more reliable.
@@ -94,6 +96,14 @@ Although these failures were not mainly in the area of navigation, and the reaso
 This study should thus be interpreted as a first step, a proof of concept that LLM navigation can be improved.
 It doesn't intent to show that LLMs are ready to be a viable alternative to traditional navigation solutions yet, but that doesn't mean that the idea can be fully dismissed either.
 
-\section{Relation To Previous Work}
-
 \section{Limitations}
+
+While our methods have shown promising results, there are limitations.
+First, our study considered only two distinct areas of interest within just two european cities.
+Although we observed improvements in both cities, it is possible that other cities may perform worse using our approach.
+Data quality can also differ when considering different regions.
+While OpenStreetMap provided good coverage for our selected cities, this may not be the case everywhere and worse data quality could ultimately lead to worse navigation performance using our approach.
+
+Second, we only evaluated three LLMs in this study.
+Today, there are endless different LLMs available, and it is likely that many more will be released in the future.
+While we were also able to observe improvements across all three tested models, this may not be the case for all models available.
