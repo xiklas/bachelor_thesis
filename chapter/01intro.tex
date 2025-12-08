@@ -2,16 +2,24 @@
 \chapter{Introduction}
 \label{ch:01intro}
 
+% Chapter Introduction
+
 In this chapter, we introduce the research topic of navigation using large language models.
 After briefly discussing the current capabilities of LLMs in navigation tasks, we review the existing body of research in this emergent area.
 We then identify the research gap we aim to adress in this thesis and formulate a corresponding research hypothesis.
 
+% The Current State of Navigation using LLMs
+
 \section{The Current State of Navigation using LLMs}
+
+% Introduction to Research Topic
 
 Today, users rely on large language models for an increasing number of tasks.
 There are practically no limits to prompting an LLM, which has led to some unexpected revelations.
 Starting out as the latest advancements in natural language processing, LLMs have thus quickly found many other applications such as computer code generation in software development or more creative uses such as image and video synthesis.
 Although earlier models possessed were limited in these areas, more recent models such as GPT-4o and Gemini 2.5 Pro have demonstrated impressive performance due to their reasoning capabilities.
+
+% Example Figure of User Navigation Task Reply using ChatGPT 4o
 
 \begin{figure}[h!]
     \centering
@@ -20,9 +28,13 @@ Although earlier models possessed were limited in these areas, more recent model
     \label{fig:pasted_graphic}
 \end{figure}
 
+% Why would users want to use LLMs for navigation?
+
 Although alternative route planning solutions exist, this example illustrates the potential of using LLMs as purely text-based interfaces for navigational tasks, as compared to traditional map-based implementations such as Google Maps or OpenStreetMap.
 For this concept to be viable in practice however, LLMs must provide accurate and reliable responses, as mistakes in navigation can lead to significant problems in many scenarios.
 Investigation on the reliability of LLMs in this regard have already been conducted, revealing a concerning tendency to provide infactual information when confronted with route planning scenarios:
+
+% Map with Correct Route vs. GPT-4o Response
 
 \begin{figure}[h!]
     \centering
@@ -31,16 +43,21 @@ Investigation on the reliability of LLMs in this regard have already been conduc
     \label{fig:pasted_graphic}
 \end{figure}
 
+% What is wrong with the LLM response?
+
 Even though the model response shown in Figure 1.1 appears structurally sound and plausible at first glance, upon further inspection the example demonstrates quite well that LLMs can fail to give accurate answers to navigational tasks when compared to the ground truth (Figure 1.2).
 In this case, GPT-4o suggested several wrong and disconnected directions, a striking contrast compared to the actual route.
 Additionaly, traversal of a street was suggested that doesn't exist in the investigated city at the time of writing (Willy-Brandt-Allee).
+
+% What have observations like these led us to think about?
 
 Observations like these have left room for research systematically studying the shortcomings of contemporary LLMs in spatial reasoning, and if the inclusion of qualitative geographic context in the form of natural language dipole relations can significantly improve their performance in this regard. 
 We thus conduct a series of experiments to evaluate the navigation capabilities of select LLMs across multiple geographic areas, both with and without the inclusion of qualitative geographic context.
 In order to gain a clear picture of the current state of research in this area, we must first review the relevant literature.
 
+% Research Overview & Research Gap
 
-\section{Research Gap}
+\section{Research Overview}
 
 At the moment, no literature explores the impact of qualitative geographic context on navigation performance in LLMs.
 Without any research, a clear verdict on the viability of LLMs as natural language interfaces for navigation tasks will remain inconclusive. 
@@ -71,6 +88,8 @@ In this study we therefore aim to show first empirical evidence on whether this 
 As mentioned, this research will adress a gap in the existing literature, but will not be sufficient to fully explore the area.
 The testing framework we establish can also be utilized by future researchers studying additional ways of improving LLM navigation performance.
 In the end, this study will serve as a first step on the long-term path towards LLM usage in navigation tasks.
+
+% Research Hypothesis
 
 \section{Research Hypothesis}
 
