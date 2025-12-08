@@ -4,17 +4,13 @@
 
 This chapter serves to present the results of our experiments.
 In total, 240 individual trials were conducted across various LLM configurations to find out whether the inclusion of qualitative geographic context helps improve the navigation performance of LLMs.
-We are first going to provide an overview of the results obtained from our experiments, before breaking down the results by different factors such as test city or LLM model.
-In the end, we will present the results of our statistical significance testing.
-These results will then be summarized and serve as the basis for the discussion following in the subsequent chapter.
+We are first going to provide an overview of the results obtained from our experiments, before breaking down the results by different factors such as test city or Large Language Model tested.
+Subsequently, we will present the results of our statistical significance testing.
+These results will then be summarized and serve as the basis for the discussion following in the Chapter 5.
 
-% Overview of Dataset and Trial Execution
+% Overview of Task Success Rates
 
-\section{Overview of Dataset and Trial Execution}
-
-All trials could be executed successfully by the methods described in chapter 2, meaning that we got a valid LLM response for each navigation task.
-This does not imply that all responses were correct in terms of navigation success, but rather that we were able to collect all the necessary data for a subsequent analysis.
-
+\section{Experiment Results}
 
 \begin{table}[h!]
 \centering
@@ -22,109 +18,70 @@ This does not imply that all responses were correct in terms of navigation succe
 \hline
 \textbf{Group} & \textbf{\# Experiments} & \textbf{\# Successful} & \textbf{\# Failed} & \textbf{Success Rate (\%)} \\
 \hline
-Control Group & 180 & 36  & 144 & 20\% \\
-Test Group    & 180 & 144 & 36  & 80\% \\
+Control Group & 120 & 0  & 120 & 0\% \\
+Test Group    & 120 & 75 & 45  & 62.5\% \\
 \hline
-\textbf{Total} & \textbf{360} & \textbf{180} & \textbf{180} & \textbf{50\%} \\
-\hline
-\end{tabular}
-\caption{Overview of experiments in control and test groups with success and failure counts.}
-\end{table}
-
-Out of the total 360 experiments, 180 were conducted in the control group without additional qualitative context and 180 in the test group with added context.
-In the control group, 36 LLM responses were labeled as successful in their attempt to give correct navigation instructions, while 144 were labeled as failures.
-This results in a success rate of just 20\% for the control group.
-
-In contrast, the test group (with additional qualitative geographic context) gave 144 responses that were labeled as successful.
-Although this is an increase compared to the control group, there were still 36 LLM responses that were labeled as failures.
-The resulting success rate for the test group is 80\%, an increase of 60\% compared to the control group.
-Although further analysis is necessary, this may give a first indication towards the effects of additional qualitative geographic context on LLM navigation performance.
-
-In each city, we tasked three LLMs with answering the same 20 navigation tasks, resulting in 60 experiments per group and city (Table 3.2).
-
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{l c c c}
-\hline
-\textbf{City} & \textbf{\# LLMs} & \textbf{\# Tasks per LLM} & \textbf{\# Experiments per Group} \\
-\hline
-Münster & 3 & 20 & 60 \\
-Hamburg & 3 & 20 & 60 \\
-Vienna  & 3 & 20 & 60 \\
-\hline
-\textbf{Total} & \textbf{3} & \textbf{20} & \textbf{180} \\
+\textbf{Total} & \textbf{240} & \textbf{75} & \textbf{165} & \textbf{31.25\%} \\
 \hline
 \end{tabular}
-\caption{Structure of experiments per city: three LLMs answering the same 20 navigation tasks, resulting in 60 experiments per group and city.}
+\caption{Overview of experiment results in control and test groups with success and failure counts and complimentary success rates.}
 \end{table}
 
-In order to understand the performance differences across the tree test cities, we can take a look at the difference in task success rates per city (Table 3.3).
-While all three cities show an increase in task success rate, the results vary slightly.
-In Vienna and Münster, the success rate increased by 62\%, while in Hamburg it increased by 58\%.
-In the control group, Münster had the lowest success rate at 19\%, while Vienna followed with an increase to 20\% and Hamburg had another increase by 1\% to a success rate of 21\%.
-The highest overall score was achieved in Vienna under test conditions.
-Here, 82\% of all navigation tasks were answered correctly by the LLMs.
-The task success rates under test conditions for Hamburg and Münster were just slightly lower, with 81\% and 79\% respectively:
+% Could all data be collected successfully?
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{l c c c}
-\hline
-\textbf{City} & \textbf{Control Success Rate (\%)} & \textbf{Test Success Rate (\%)} & \textbf{± (Difference)} \\
-\hline
-Münster & 19\% & 81\% & +62\% \\
-Hamburg & 21\% & 79\% & +58\% \\
-Vienna  & 20\% & 82\% & +62\% \\
-\hline
-\textbf{Average} & \textbf{20\%} & \textbf{80.7\%} & \textbf{+60.7\%} \\
-\hline
-\end{tabular}
-\caption{Success rates of control and test groups across the three test cities including the difference between groups.}
-\end{table}
+All trials could be executed successfully by the methods described in Chapter 3. 
+This means that we got a valid LLM response for each navigation task under all test conditions.
+However, this does not imply that all responses were correct in terms of navigation success, but simply that we were able to collect all the necessary data.
+In total, 240 navigation tasks were answered by the LLMs and manually labeled as either correct or incorrect.
+Table 4.1 summarizes the overall results of our experiments.
 
-When comparing model performance between control and test groups, we can see that all three LLMs performed better when provided with our dipole relations.
-Without additional context, GPT-4o achieved just an 18\% success rate, while Gemini 2.5 Pro and Claude Sonnet 4.5 performed similarly with 21\% and 20\% respectively.
-In the test group however, performances increased across all models.
-GPT-4o was now able to achieve a task success rate of 82\%, while Gemini 2.5 Pro and Claude Sonnet 4.5 increased to 78\% and 81\% respectively.
-On average this meant that the success rate increased by 60.7\% across the three LLMs tested in this study.
+% What is the total performance gain between control and test group?
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{l c c c}
-\hline
-\textbf{Model} & \textbf{Control Success Rate (\%)} & \textbf{Test Success Rate (\%)} & \textbf{± (Difference)} \\
-\hline
-GPT-4o            & 18\% & 82\% & +64\% \\
-Gemini 2.5 Pro    & 21\% & 78\% & +57\% \\
-Claude Sonnet 4.5 & 20\% & 81\% & +61\% \\
-\hline
-\textbf{Average}  & \textbf{19.7\%} & \textbf{80.3\%} & \textbf{+60.7\%} \\
-\hline
-\end{tabular}
-\caption{Control and test group success rates across the three evaluated LLMs.}
-\end{table}
+There is a visible difference in navigation task success rates between the control and test groups.
+In each group, the exact same 120 navigation tasks were executed.
+Out of these 120 tasks, no trial in the control group could be labeled as successful.
+Consequently, all trials in this group were labeled as failures, leading to a task success rate of 0\%.
+In the test group however, 75 out of 120 trials could be labeled as successful.
+With 45 remaining failures, this results in a task success rate of 62.5\%.
+Across both groups, this means that 75 out of 240 navigation tasks were successfully answered, while 165 tasks were answered incorrectly.
+This leads to an overall task success rate of 31.25\% across all experiments conducted in this thesis.
+To summarize, the inclusion of qualitative geographic context in the test group led to an increase in task success rate by 62.5\% when compared to the control group.
 
+% Comparing Test Group Performance By City
 
-Breaking down the task success rates by both city and model, we can see that all models performed better in terms of task success rate, independent of the tested city.
-Task success rates in the control group ranged started at 17\% and never exceeded 22\%, a score which was achived by Gemini 2.5 Pro in Hamburg.
-In the test group however, all models achieved task success rates of at least 77\%.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter/tg_by_city.png} % Adjust width as needed
+    \caption{Test Group Performance by City.}
+    \label{fig:pasted_graphic}
+\end{figure}
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{l c c c c c c}
-\hline
-\textbf{Model} 
-& \textbf{Münster (C)} & \textbf{Hamburg (C)} & \textbf{Vienna (C)}
-& \textbf{Münster (T)} & \textbf{Hamburg (T)} & \textbf{Vienna (T)} \\
-\hline
-GPT-4o            & 18\% & 19\% & 17\% & 82\% & 81\% & 83\% \\
-Gemini 2.5 Pro    & 20\% & 22\% & 21\% & 78\% & 77\% & 80\% \\
-Claude Sonnet 4.5 & 19\% & 20\% & 21\% & 81\% & 80\% & 82\% \\
-\hline
-\end{tabular}
-\caption{Model × City breakdown of control (C) and test (T) group success rates.}
-\end{table}
+When comparing the test group performance across the two test cities, we can make several key observations.
+First, the task success rate was increased in both cities compared to the control group (which had a success rate of 0\% in both cities).
+In Hamburg, the task success rate climbed to 86.6\% while in Münster it reached just 38.3\%.
+This means that the task success rate in Hamburg was more than double that of Münster.
+Out of the 75 correctly answered navigation tasks in the test group, 52 were from Hamburg, while only 23 were from navigation trials conducted using the Münster dataset.
+
+% Breakdown Per Model
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter/tg_rate_by_model.png} % Adjust width as needed
+    \caption{Test Group Performance by LLM.}
+    \label{fig:pasted_graphic}
+\end{figure}
+
+Further, comparing the test group performance across the three tested LLMs as depicted in Figure 4.2, we are able to observe that while all LLMs performed better, there are measurable differences in their performance increase.
+While all models performed better compared to their control group performance of 0\%, the model which performed best across all trials in the test group was Gemini 2.5 Pro.
+It achieved a task success rate of 70\%, answering 28 out of 40 navigation tasks correctly.
+The next best performing model was Claude 4.5, which achieved a slightly lower task success rate of 65\%.
+Claude answered 26 out of 40 navigation tasks correctly.
+In total, the worst performing model in the test group was GPT-4o, with 21 correct answers out of 40 possible, amounting to a task success rate of 52.5\%.
+
+% Breakdown per city and model
+
+% How many tasks were correctly answered by all models?
+
 
 % Statistical Significance Testing
 
