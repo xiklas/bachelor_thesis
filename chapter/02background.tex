@@ -17,17 +17,59 @@ Therefore, we are going to focus on a purely practical overview on LLMs and thei
 
 Large language models are the latest development and a specific subclass of language models in general \citep{minaee_large_2025}.
 In practice, the challenge large language models aim to adress is the prediction of the next token in a given sequence of tokens \citep{minaee_large_2025}.
-For example, given the input tokens (which can be thought of as words or parts of words) "Roses are", a large language model would attempt to predict the next token, which in this case could be "red".
+For example, given the input tokens (tokens can be thought of as words or parts of words) "Roses are", a large language model would attempt to predict the next token, which in this case could be "red".
 Adding the predicted token to the input sequence, the model could then attempt to predict the next token and so on.
 This process is known as autoregressive generation and applicable in other domains such as computer vision as well \citep{xiong_autoregressive_2025}.
-To continue with the previous example, the next tokens after "Roses are red" could be "violet", with the prediction process eventually resulting in the sentence "Roses are red, violets are blue" (for example).
+To continue with the previous example, the next tokens after "Roses are red" could be "violet", with the prediction process eventually resulting in the sentence "Roses are red, violets are blue".
+
+Creating a model that is able to perform this kind of token prediction and deliver acceptable results is by no means a trivial endeavor.
+In fact, one of the biggest challenges with earlier language models such as RNNs (recurrent neural networks) was that they were often unable to maintain cohesion over longer sequences of tokens, making them unsuitable for practical use cases \citep{johnston_revisiting_2025}.
 
 
+Modern large language models mitigate this issue by making use of several key enabling factors, the first one we will discuss is the transformer architecture.
+The transformer architecture allows every token in a sequence to attend every other token during token prediction, enabling coherence over much longer sequences.
+This architecture itself is realised through self-attention layers in the model architecture \citep{vaswani_attention_2017}.
+All experiments conducted in this thesis are therefore partially enabled by this breakthrough architecture, without which the generation of lengthy, coherent text sequences using the LLMs we employ today would probably not be possible. 
 
-GPT-3 developed by OpenAI in 2020 is considered by many to be the first example of a large language model \citep{minaee_large_2025}.
+Another key factor driving large language models is the availability of sufficient training data.
+To achieve high performance, LLMs need to be trained on vast amounts of text data.
+This data is usually scraped from books or the public internet.
+Although exact figures on training dataset sizes are difficult to obtain for current models, even early models were trained on datasets containing billions of tokens \citep{minaee_large_2025}.
+
+In the pre-training process, the model is trained using the training data, often to minimize prediction error.
+This means that the model, consisting of a substantial number of parameters (often billions) is adjusted iteratively.
+In each iteration, the model makes predictions and the prediction error is calculated.
+Using this error, the parameters of the model are adjusted and the process is repeated until some criteria are met.
+In addition to pre-training, the model can also be fine tuned to allow for even better results \citep{minaee_large_2025}.
+
+There are countless additional details that can be studied about large language models and their training process..
+For the purpose of this thesis however, this brief explanation should suffice to understand the LLM as a recent technology capable of generating coherent text:
+If it can generate text on a wide variety of topics after all, why wouldn't it be able to generate text representing navigational instructions as well?
+
+GPT-3 released by OpenAI in 2020 is considered by many to be the first example of a large language model \citep{minaee_large_2025}.
+
+% What are emerging capabilities of LLMs?
+
+\section{Emerging Abilities of LLMs}
+
+Beyond mere language understanding and generation, LLMs exhibit further exiting abilities enabled by their large scale, namely emerging abilities.
+Emerging abilities describe a set of abilities LLMs have displayed, while not being explicitly trained for these abilities.
+The defining characteristic of emerging abilities is that they are not simply a scaled up version of smaller models' abilities.
+Rather, they only appear once a certain model size is reached.
+Examples for these abilities include in-context learning or reasoning abilities.
+In-context learning allows LLMs to learn new tasks based on a few new examples provided in the input, without any additional training.
+Reasoning abilities describe the ability of LLMs to solve problems that require multiple sequential steps to arrive at a solution, for example in the domain of math \citep{wei_emergent_2022}.
+
+These emerging abilities are of particular interest to our study.
+Solving navigational tasks may require not only the mere generation of text describing the route, but also an understanding of the spatial context to begin with.
+With their emerging abilities, LLMs may be able to perform these tasks despite not being explicity trained for them (as of now we were not able to find any LLMs trained for navigation tasks, but finding LLMs with advertised abilities such as reasoning is easy today).
 
 
+% Context Enrichment for LLMs
 
+\section{Context Enrichment for LLMs}
+
+% While a graph rag pipeline is a long term goal for the academic efforts surrounding this study, in our case we will simply emulate the effect by providing additional context in the prompt.
 
 % What is topological geographic data and why is it relevant to this study.
 
