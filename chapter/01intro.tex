@@ -14,11 +14,18 @@ We then identify the research gap we aim to adress in this thesis and formulate 
 
 % Introduction to Research Topic
 
-Today, users rely on large language models for an increasing number of tasks.
-There are practically no limits to prompting an LLM, which has led to some unexpected revelations.
-Starting out as the latest advancements in natural language processing, LLMs have thus quickly found many other applications such as computer code generation in software development or more creative uses such as image and video synthesis.
-Although earlier models possessed were limited in these areas, more recent models such as GPT-4o and Gemini 2.5 Pro have demonstrated impressive performance due to new capabilities such as reasoning.
-In the following example we prompted GPT-4o with a simple navigation task to see whether the recent advancements in LLM capabilitis could also translate to navigation performance:
+Today, users rely on large language models everyday, with leading systems like ChatGPT processing over 2 billion user queries per day as of July 2025 \citep{openai_unlocking_2025}.
+A recent journal article has highlighted the many unique use cases for LLMs, ranging from information retrieval to various other tasks such as drafting text or generating computer code \citep{chatterji_how_2025}.
+With this many requests to ChatGPT alone and many other competing LLMs such as Google's Gemini or Anthropic's Claude also available on the market, it is possible to imagine that some users may have attempted to use LLMs for navigational tasks as well.
+If that is indeed the case, we should study whether LLMs are actually capable of delivering accurate responses to such requests.
+If it can be argued that they are not yet up to the task, we should also invest time into improving their performance in this regard.
+
+In the following example depicted in Figure 1.1 we prompted GPT-4o with a simple navigation task to observe whether the model could successfully provide a useful answer to a simple path finding problem.
+The prompt used to generate the response shown in Figure 1.1 was as follows:
+
+\begin{quote}
+    \textit{I just arrived at Münster central station and need to get to the Hafenweg. Please provide me with step-by-step walking directions to get there.}
+\end{quote}
 
 % Example Figure of User Navigation Task Reply using ChatGPT 4o
 
@@ -31,36 +38,28 @@ In the following example we prompted GPT-4o with a simple navigation task to see
 
 % Why would users want to use LLMs for navigation?
 
-The prompt used to generate the response shown in Figure 1.1 was as follows:
-
-\begin{quote}
-    \textit{I just arrived at Münster central station and need to get to the Hafenweg. Please provide me with step-by-step walking directions to get there.}
-\end{quote}
-
-Although alternative route planning solutions exist, the model response illustrates the potential of using LLMs as purely text-based interfaces for navigational tasks, as compared to traditional map-based implementations such as Google Maps or OpenStreetMap.
-For this concept to be viable in practice however, LLMs must provide accurate and reliable responses, as mistakes in navigation can lead to significant problems in many scenarios.
-Dr. Reinhard Moratz, the supervisor of this thesis, has previously experimented with the navigational capabilities of LLMs earlier this year and was able to observe that they often struggle to provide correct answers.
-This tendency seems to persist even in more recent models such as GPT-4o, as can be seen when comparing the model response from Figure 1.1 to the ground truth: 
+Although alternative route planning solutions such as Google Maps or OpenStreetMap exist, the model response depicted in Figure 1.1 illustrates the potential of using LLMs as purely text-based interfaces for navigational tasks, as compared to the traditional map-based implementations.
+For this concept to be viable in practice however, LLMs would have to be able to provide accurate and reliable responses, as mistakes in navigation can lead to significant problems in many scenarios.
 
 % Map with Correct Route vs. GPT-4o Response
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{chapter/PastedGraphic-3.png} % Adjust width as needed
-    \caption{One possible correct route (green) for the example navigation task compared to misleading segments found in the GPT-4o response (red).}
+    \caption{One possible correct route (green) for the example navigation task compared to various segments found in the GPT-4o response (red).}
     \label{fig:pasted_graphic}
 \end{figure}
 
 % What is wrong with the LLM response?
 
-Even though the model response shown in Figure 1.1 appears structurally sound and plausible at first glance, upon closer inspection there are several critical mistakes present in the response
+Even though the model response shown in Figure 1.1 appears structurally sound and plausible at first glance, upon closer inspection there are several critical mistakes present in the response.
 To understad the mistakes, we are going to break down the response step by step, starting with the first instruction:
 
 \begin{quote}
     \textit{1. Exit Münster Hauptbahnhof through the main entrance onto Willy-Brandt-Allee.}
 \end{quote}
 
-Although exiting Münster Hauptbahnhof is certainly sensible, the actual best way would be to use the secondary exit away from the city center and towards the actual destination.
+Although exiting Münster Hauptbahnhof to reach the destination is certainly a sensible step, the actual best way would be to use the secondary exit away from the city center and towards the actual destination.
 Also, a street called "Willy-Brandt-Allee" does not exist in Münster at the time of writing, rendering the instruction impossible to follow.
 The second instruction is as follows:
 
@@ -68,16 +67,16 @@ The second instruction is as follows:
     \textit{2. Turn right and walk southeast on Willy-Brandt-Allee toward the city center.}
 \end{quote}
 
-Although the destination indeed lies southeast of the train station, this instruction is obviously impossible, since the street mentioned does not exist in the first place.
-Additionally, the direction "toward the city center" is incorrect, since the destination lies away from the city center.
+Although the destination indeed lies southeast of the central train station in Münster, this instruction is impossible, since the street mentioned does not exist in the first place.
+Additionally, the direction "toward the city center" is incorrect, since the destination lies further away relative to the city center.
 The next instruction reads:
 
 \begin{quote}
     \textit{3. After about 500 meters, you'll reach Albersloher Weg. Turn left onto Albersloher Weg.}
 \end{quote}
  
-The "Albersloher Weg" is actually a valid street in Münster, and also somewhat close to the destination "Hafenweg".
-However, turning onto this street based on the previous instruction is impossible, and taking this street based on the start point does not make sense navigationally.
+The "Albersloher Weg" is actually an existing street in Münster, and also somewhat close to the destination "Hafenweg".
+However, turning onto this street based on the previous instruction is impossible, and taking this street based on the starting point of the route does not make sense navigationally.
 Continuing with the next instruction:
 
 \begin{quote}
@@ -85,16 +84,16 @@ Continuing with the next instruction:
 \end{quote}
 
 This instruction is puzzling in many ways. 
-The destination does not lie 1km away from the Central Station, therefore traversal of any road for "about 1km" does not make sense.
-Further, the Aasee park area is present in Münster, but it does not make sense in this example and it also is not located on the "Albersloher Weg".
-With the next instruction, mistakes continue:
+For once, the destination does not lie one kilometer away from the Central Station, therefore traversal of any road for "about 1km" should lead to scepticism about the correctness of the instruction.
+Further, the "Aasee Park area" exists in Münster, but it does not make sense to mention it in this example, since it is too far away from any point along the actual route, and it also is not located near the "Albersloher Weg".
+With the next instruction, the mistakes made by ChatGPT-4o continue:
 
 \begin{quote}
     \textit{5. When you reach the intersection with Hammer Straße, turn right.}
 \end{quote}
 
 Again, "Hammer Straße" is an actual street in Münster, however:
-It does not intersect with the "Albersloher Weg", and taking this street does not make sense for the presented problem.
+It does not intersect with the "Albersloher Weg" - and taking this street does not make sense in the context of the presented problem.
 Finally, the last two instructions read:
 
 \begin{quote}
@@ -103,13 +102,18 @@ Finally, the last two instructions read:
 \end{quote}
 
 Again, these instructions are not viable, as the Hammer Straße and Hafenweg are not connected.
-Whether there are "residential and commercial buildings" along the Hammer Straße is irrelevant, although it may be true.
+Whether there are "residential and commercial buildings" along the Hammer Straße is irrelevant, although it may as well be true.
 In total, GPT-4o suggested several wrong and disconnected directions, a striking contrast compared to the actual route.
 Additionaly, traversal of a street was suggested that doesn't exist in the investigated city at the time of writing (Willy-Brandt-Allee).
 
+Dr. Reinhard Moratz, the supervisor of this thesis, has experimented with the navigational capabilities of LLMs earlier this year and was able to make similar observations like this on their apparent struggle to provide useful answers.
+This tendency seems to persist even in more recent models such as GPT-4o, as can be seen in the example above.
+
+
+
 % What have observations like these led us to think about?
 
-Observations like these have left room for research systematically studying the shortcomings of contemporary LLMs in spatial reasoning, and if the inclusion of qualitative geographic context in the form of natural language dipole relations can significantly improve their performance in this regard. 
+Experiments like these have left room for research systematically studying the shortcomings of contemporary LLMs in spatial reasoning, and if the inclusion of qualitative geographic context in the form of natural language dipole relations can significantly improve their performance in this regard. 
 We thus conduct a series of experiments to evaluate the navigation capabilities of select LLMs across multiple geographic areas, both with and without the inclusion of qualitative geographic context.
 In order to gain a clear picture of the current state of research in this area, we must first review the relevant literature.
 
