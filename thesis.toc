@@ -26,6 +26,6 @@
 \contentsline {chapter}{\numberline {6}Conclusion and Outlook}{27}{chapter.6}%
 \def \@chapapp {\appendixname }
 \contentsline {chapter}{\numberline {A}Some Appendix Chapter}{29}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{31}{chapter*.19}%
-\contentsline {chapter}{\nonumberline List of Tables}{33}{chapter*.20}%
+\contentsline {chapter}{\nonumberline List of Figures}{31}{chapter*.20}%
+\contentsline {chapter}{\nonumberline List of Tables}{33}{chapter*.21}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -223,7 +223,7 @@ Both Gemini 2.5 and Claude 4.5 were only responsible for one failure of this kin
 \label{tab:failures_by_city}
 \end{table}
 
-Lastly, we may analyze the failures in the test group by the dataset they occured on.
+Next, we may analyze the failures in the test group by the dataset they occured on.
 While failures where just one model failed to answer a navigation task occured almost equally in both cities, the results look different for failures by two or even three models.
 In Hamburg, there were 4 occurences where one model failed to answer a navigation task.
 In Münster, this number was just slightly higher at 5.
@@ -235,6 +235,33 @@ Counting together the occurences of failures, we find that six out of a total 24
 As a percentage, this means that 25\% and 75\% of failures occured in Hamburg and Münster respectively.
 Shifting our view at failure cases where at least two models failed, just two out of a total of 15, or 13.33\% of such cases occured in Hamburg, while 13 out of 15, or 86.67\% occured in Münster.
 Counting just the cases where all three models failed, 100\% of the failures can be attributed to navigation tasks in Münster.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Model Pair} & \textbf{Disagreement Frequency (Out of 18 Trials)} & \textbf{Agreement Frequency} \\
+\hline
+GPT vs. Gemini & 15 & 3 \\
+\hline
+GPT vs. Claude & 13 & 5 \\
+\hline
+Gemini vs. Claude & 8 & 10 \\
+\hline
+\end{tabular}
+\caption{\textbf{Pairwise Model Disagreement and Agreement in Non-Unanimous Trials}}
+\label{tab:pairwise_disagreement}
+\end{table}
+
+Finally, we may analyze the pairwise disagreement performance of the three studied models.
+Setting aside the 22 cases where all models either answered correctly or incorrectly, we are left with 18 trials where the results were ambiguous.
+In these trials, we can analyze how often two models disagreed with each other, meaning that one model answered correctly while the other answered incorrectly or the other way around.
+The results of this analysis are summarized in Table 4.7.
+Out of the 18 ambiguous trials, GPT-4o and Gemini 2.5 disagreed in 15 cases, while agreeing on 3 cases.
+The next highest disagreement count was observed in the pairing GPT-4o and Claude 4.5, which disagreed in 13 cases and agreed in 5 cases.
+With just 8 disagreements and 10 agreements, the pairing of Gemini 2.5 and Claude 4.5 showed the lowest amount of disagreements out of all combinations.
+This means that Gemini 2.5 and Claude 4.5 agreed more often than they disagreed.
+On the other hand, any combination involving ChatGPT-4o resulted in more disagreements than agreements.
 
 % Statistical Significance Testing
 
