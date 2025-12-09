@@ -1,4 +1,4 @@
-\chapter{Technical Background}
+\chapter{Background}
 \label{ch:02background}
 
 % Chapter Introduction
@@ -6,6 +6,28 @@
 
 This chapter provides the technical and theoretical background on the topic of navigation using large language models as well as on related topics which are essential for this thesis.
 We will first discuss the general capabilities of LLMs, before narrowing down on their performance in spatial reasoning. Afterwards, we will review research on qualitative representations of topological data as well as context enrichment techniques for LLMs and observe if these techniques have been applied to study LLM performance in navigation tasks.
+
+
+% What is an LLM?
+\section{Large Language Models}
+
+The large language model, commonly abbreviated as "LLM", is the central technlology this study revolves around.
+While the history of LLMs is a fascinating topic in its own and can be traced back to first attempts at language modeling in the 1950s \citep{minaee_large_2025}, it is to extensive to be covered in this thesis, and also not what our research is about.
+Therefore, we are going to focus on a purely practical overview on LLMs and their relevant characteristics to this study.
+
+Large language models are the latest development and a specific subclass of language models in general \citep{minaee_large_2025}.
+In practice, the challenge large language models aim to adress is the prediction of the next token in a given sequence of tokens \citep{minaee_large_2025}.
+For example, given the input tokens (which can be thought of as words or parts of words) "Roses are", a large language model would attempt to predict the next token, which in this case could be "red".
+Adding the predicted token to the input sequence, the model could then attempt to predict the next token and so on.
+This process is known as autoregressive generation and applicable in other domains such as computer vision as well \citep{xiong_autoregressive_2025}.
+To continue with the previous example, the next tokens after "Roses are red" could be "violet", with the prediction process eventually resulting in the sentence "Roses are red, violets are blue" (for example).
+
+
+
+GPT-3 developed by OpenAI in 2020 is considered by many to be the first example of a large language model \citep{minaee_large_2025}.
+
+
+
 
 % What is topological geographic data and why is it relevant to this study.
 
