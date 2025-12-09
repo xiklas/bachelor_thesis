@@ -97,8 +97,144 @@ The lowest overall task success rate in the test group was thus observed with GP
 
 % How many tasks were correctly answered by all models?
 
-% Are there any tasks where only one model succeeded?
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Number of Correct LLM Responses} & \textbf{Frequency} \\
+\hline
+0 & 6 \\
+\hline
+1 & 9 \\
+\hline
+2 & 9 \\
+\hline
+3 & 16 \\
+\hline
+\end{tabular}
+\caption{\textbf{Frequency Distribution of Correct LLM Responses}}
+\label{tab:llm_frequency}
+\end{table}
 
+We may also take a look at the frequency distribution of correctly answered navigation tasks in the test group.
+The above Table 4.2 summarizes how many navigation tasks were answered correctly by how many models in this group.
+Only six navigation tasks were answered incorrectly by all three models.
+Counting the occurences of navigation tasks where just one model gave a correct answer, we find that there are nine such tasks.
+The occurence of two correct answers per navigation task is also nine.
+This means that the likelihood of all models failing when at least one model failed was exactly 25\% (The number of cases where all models failed (6) divided by the number of cases where at least one model failed (24)).
+The highest frequency could be observed for navigation tasks where all three models answered correctly, with a total of 16.
+Conversely, this means that the likelihood of all models answering correctly when at least one model answered correctly was approximately 47.06\% (The number of cases where all models answered correctly (16) divided by the number of cases where at least one model answered correctly (34)).
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{At Least $x$ Correct LLMs} & \textbf{Cumulative \%} & \textbf{Drop Relative to Previous Group} \\
+\hline
+0 & 100.0\% & N/A \\
+\hline
+1 & 85.0\% & 15.0\% \\
+\hline
+2 & 62.5\% & 22.5\% \\
+\hline
+3 & 40.0\% & 22.5\% \\
+\hline
+\end{tabular}
+\caption{\textbf{Cumulative Percentage Distribution of Correct LLM Responses with Group Drop}}
+\label{tab:llm_cumulative_drop}
+\end{table}
+
+Looking at these results in another way, we can analyze the cumulative percentage distribution of correctly answered navigation tasks.
+To no surprise, the percentage of navigation tasks where at least zero models answered correctly is 100\%.
+85\% of navigation tasks were answered correctly by at least one model.
+The percentage then drops to 62.5\% for navigation tasks where at least two models answered correctly.
+Lastly, just 40\% of navigation tasks were answered correctly by all three models.
+This means that from zero correct responses to one correct response, there is a drop of 15\%.
+From one to two and two to three correct responses, there is a drop of 22.5\% each.
+In total, this results in an overall drop of 60\% from zero to three correct responses.
+
+% Which model performed best when only one model succeeded?
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Model} & \textbf{Frequency} \\
+\hline
+GPT & 3 \\
+\hline
+Gemini & 4 \\
+\hline
+Claude & 2 \\
+\hline
+\end{tabular}
+\caption{\textbf{Distribution of Correct Models in Single-Success Trials}}
+\label{tab:single_correct_llm}
+\end{table}
+
+Additionally, we analyzed which model performed best when just one model succeeded in answering a navigation task correctly.
+Although there are just nine such cases overall and the results deviate by just two between the best and worst performing model, the winner in this category is also Gemini 2.5.
+It answered four navigation tasks correctly where both other models failed.
+GPT-4o then followed with three such cases.
+Claude 4.5 performed worst in this category, answering just two navigation tasks correctly when no other model could. 
+
+% When just one model failed, which model was most likely to fail?
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Model Failed} & \textbf{Frequency} \\
+\hline
+GPT & 7 \\
+\hline
+Gemini & 1 \\
+\hline
+Claude & 1 \\
+\hline
+\end{tabular}
+\caption{\textbf{Distribution of Single Failed Model in Two-Success Trials}}
+\label{tab:single_failed_llm}
+\end{table}
+
+We may also look at the inverse case: When just one model failed, which model was most likely to be the one failing?
+The results of this analysis paint a clearer picture:
+out of the nine occurences where just one model failed, GPT-4o was responsible for seven of these failures.
+Both Gemini 2.5 and Claude 4.5 were only responsible for one failure of this kind each.
+
+% Failures by City
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Number of Failed Models} & \textbf{Hamburg} & \textbf{Münster} \\
+\hline
+1 & 4 & 5 \\
+\hline
+2 & 2 & 7 \\
+\hline
+3 & 0 & 6 \\
+\hline
+\textbf{Total} & \textbf{6} & \textbf{18} \\
+\hline
+\end{tabular}
+\caption{\textbf{Distribution of Failures by City and Number of Failed Models}}
+\label{tab:failures_by_city}
+\end{table}
+
+Lastly, we may analyze the failures in the test group by the dataset they occured on.
+While failures where just one model failed to answer a navigation task occured almost equally in both cities, the results look different for failures by two or even three models.
+In Hamburg, there were 4 occurences where one model failed to answer a navigation task.
+In Münster, this number was just slightly higher at 5.
+In the next category however, where two models failed to answer a navigation task, there were two such occurences in Hamburg and seven in Münster.
+The last category presents the most striking difference:
+No navigation trial in Hamburg resulted in all three models failing to provide a correct answer.
+In Münster however, there were six such occurences.
+Counting together the occurences of failures, we find that six out of a total 24 failure cases occured in Hamburg, while 18 occured in Münster.
+As a percentage, this means that 25\% and 75\% of failures occured in Hamburg and Münster respectively.
+Shifting our view at failure cases where at least two models failed, just two out of a total of 15, or 13.33\% of such cases occured in Hamburg, while 13 out of 15, or 86.67\% occured in Münster.
+Counting just the cases where all three models failed, 100\% of the failures can be attributed to navigation tasks in Münster.
 
 % Statistical Significance Testing
 

@@ -18,14 +18,14 @@
 \contentsline {section}{\numberline {3.4}Evaluation Metrics and Statistical Analysis}{13}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Results}{15}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Experiment Results}{15}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Statistical Significance Testing}{18}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Summary of Findings}{19}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Interpretation of Results}{21}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Limitations}{24}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{25}{chapter.6}%
+\contentsline {section}{\numberline {4.2}Statistical Significance Testing}{20}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Summary of Findings}{21}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Interpretation of Results}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Limitations}{26}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{27}{chapter.6}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Some Appendix Chapter}{27}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{29}{chapter*.14}%
-\contentsline {chapter}{\nonumberline List of Tables}{31}{chapter*.15}%
+\contentsline {chapter}{\numberline {A}Some Appendix Chapter}{29}{appendix.A}%
+\contentsline {chapter}{\nonumberline List of Figures}{31}{chapter*.19}%
+\contentsline {chapter}{\nonumberline List of Tables}{33}{chapter*.20}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
