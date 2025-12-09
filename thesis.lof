@@ -1,15 +1,16 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces GPT-4o response to a simple route planning task.}}{1}{figure.caption.4}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces The correct route for the initial task (green) compared to the GPT-4o response (red).}}{2}{figure.caption.5}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces One possible correct route (green) for the example navigation task compared to misleading segments found in the GPT-4o response (red).}}{2}{figure.caption.5}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Arbitrary section of a london tube map.}}{5}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces All qualitatively different dipole relations necessary to describe a street network.}}{7}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Arbitrary section of a london tube map.}}{7}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces All qualitatively different dipole relations necessary to describe a street network.}}{9}{figure.caption.7}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Image credit: James Odienki.}}{13}{figure.caption.8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Test Group Performance by City.}}{16}{figure.caption.9}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Test Group Performance by LLM.}}{17}{figure.caption.10}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Test Group Performance by LLM per city.}}{17}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Test Group Performance by City.}}{18}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Test Group Performance by LLM.}}{19}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Test Group Performance by LLM per city.}}{19}{figure.caption.12}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }

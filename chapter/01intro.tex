@@ -47,14 +47,64 @@ This tendency seems to persist even in more recent models such as GPT-4o, as can
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{chapter/PastedGraphic-3.png} % Adjust width as needed
-    \caption{The correct route for the initial task (green) compared to the GPT-4o response (red).}
+    \caption{One possible correct route (green) for the example navigation task compared to misleading segments found in the GPT-4o response (red).}
     \label{fig:pasted_graphic}
 \end{figure}
 
 % What is wrong with the LLM response?
 
-Even though the model response shown in Figure 1.1 appears structurally sound and plausible at first glance, upon further inspection the example demonstrates quite well that LLMs can fail to give accurate answers to navigational tasks when compared to the ground truth (Figure 1.2).
-In this case, GPT-4o suggested several wrong and disconnected directions, a striking contrast compared to the actual route.
+Even though the model response shown in Figure 1.1 appears structurally sound and plausible at first glance, upon closer inspection there are several critical mistakes present in the response
+To understad the mistakes, we are going to break down the response step by step, starting with the first instruction:
+
+\begin{quote}
+    \textit{1. Exit Münster Hauptbahnhof through the main entrance onto Willy-Brandt-Allee.}
+\end{quote}
+
+Although exiting Münster Hauptbahnhof is certainly sensible, the actual best way would be to use the secondary exit away from the city center and towards the actual destination.
+Also, a street called "Willy-Brandt-Allee" does not exist in Münster at the time of writing, rendering the instruction impossible to follow.
+The second instruction is as follows:
+
+\begin{quote}
+    \textit{2. Turn right and walk southeast on Willy-Brandt-Allee toward the city center.}
+\end{quote}
+
+Although the destination indeed lies southeast of the train station, this instruction is obviously impossible, since the street mentioned does not exist in the first place.
+Additionally, the direction "toward the city center" is incorrect, since the destination lies away from the city center.
+The next instruction reads:
+
+\begin{quote}
+    \textit{3. After about 500 meters, you'll reach Albersloher Weg. Turn left onto Albersloher Weg.}
+\end{quote}
+ 
+The "Albersloher Weg" is actually a valid street in Münster, and also somewhat close to the destination "Hafenweg".
+However, turning onto this street based on the previous instruction is impossible, and taking this street based on the start point does not make sense navigationally.
+Continuing with the next instruction:
+
+\begin{quote}
+    \textit{4.Continue along Albersloher Weg for about 1km, passing the Aasee park area on your right.}
+\end{quote}
+
+This instruction is puzzling in many ways. 
+The destination does not lie 1km away from the Central Station, therefore traversal of any road for "about 1km" does not make sense.
+Further, the Aasee park area is present in Münster, but it does not make sense in this example and it also is not located on the "Albersloher Weg".
+With the next instruction, mistakes continue:
+
+\begin{quote}
+    \textit{5. When you reach the intersection with Hammer Straße, turn right.}
+\end{quote}
+
+Again, "Hammer Straße" is an actual street in Münster, however:
+It does not intersect with the "Albersloher Weg", and taking this street does not make sense for the presented problem.
+Finally, the last two instructions read:
+
+\begin{quote}
+    \textit{6. Walk along Hammer Straße for around 700 meters. You'll pass a few residential and commercial buildings.\\}
+    \textit{7. Look for Hafenweg on your left. Turn left onto Hafenweg.}
+\end{quote}
+
+Again, these instructions are not viable, as the Hammer Straße and Hafenweg are not connected.
+Whether there are "residential and commercial buildings" along the Hammer Straße is irrelevant, although it may be true.
+In total, GPT-4o suggested several wrong and disconnected directions, a striking contrast compared to the actual route.
 Additionaly, traversal of a street was suggested that doesn't exist in the investigated city at the time of writing (Willy-Brandt-Allee).
 
 % What have observations like these led us to think about?
