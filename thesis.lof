@@ -3,14 +3,14 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces GPT-4o response to a simple route planning task.}}{2}{figure.caption.4}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces One possible correct route (green) for the example navigation task compared to various segments found in the GPT-4o response (red).}}{2}{figure.caption.5}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Arbitrary section of a london tube map.}}{10}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Arbitrary section of a london tube map.}}{11}{figure.caption.6}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces All qualitatively different dipole relations necessary to describe a street network.}}{12}{figure.caption.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Image credit: James Odienki.}}{15}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Image credit: James Odienki.}}{17}{figure.caption.8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Test Group Performance by City.}}{20}{figure.caption.10}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Test Group Performance by LLM.}}{21}{figure.caption.11}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Test Group Performance by LLM per city.}}{21}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Test Group Performance by City.}}{22}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Test Group Performance by LLM.}}{23}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Test Group Performance by LLM per city.}}{23}{figure.caption.12}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }

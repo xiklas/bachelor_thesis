@@ -3,15 +3,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Overview of experiment results in control and test groups with success and failure counts and complimentary success rates.}}{19}{table.caption.9}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces \textbf {Frequency Distribution of Correct LLM Responses}}}{22}{table.caption.13}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces \textbf {Cumulative Percentage Distribution of Correct LLM Responses with Group Drop}}}{22}{table.caption.14}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces \textbf {Distribution of Correct Models in Single-Success Trials}}}{23}{table.caption.15}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces \textbf {Distribution of Single Failed Model in Two-Success Trials}}}{23}{table.caption.16}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces \textbf {Distribution of Failures by City and Number of Failed Models}}}{23}{table.caption.17}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces \textbf {Pairwise Model Disagreement and Agreement in Non-Unanimous Trials}}}{24}{table.caption.18}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Final contingency table of experiment outcomes.}}{24}{table.caption.19}%
-\contentsline {table}{\numberline {4.9}{\ignorespaces Results for the Chi-Squared ($\chi ^2$) test for independence.}}{25}{table.caption.20}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Overview of experiment results in control and test groups with success and failure counts and complimentary success rates.}}{21}{table.caption.9}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces \textbf {Frequency Distribution of Correct LLM Responses}}}{24}{table.caption.13}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces \textbf {Cumulative Percentage Distribution of Correct LLM Responses with Group Drop}}}{24}{table.caption.14}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces \textbf {Distribution of Correct Models in Single-Success Trials}}}{25}{table.caption.15}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces \textbf {Distribution of Single Failed Model in Two-Success Trials}}}{25}{table.caption.16}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces \textbf {Distribution of Failures by City and Number of Failed Models}}}{25}{table.caption.17}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces \textbf {Pairwise Model Disagreement and Agreement in Non-Unanimous Trials}}}{26}{table.caption.18}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Final contingency table of experiment outcomes.}}{26}{table.caption.19}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Results for the Chi-Squared ($\chi ^2$) test for independence.}}{27}{table.caption.20}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }

@@ -95,7 +95,17 @@ In knowledge-intensive tasks such as question asnwering, RAG has been shown to s
 This may serve as a first indication that the technique could be useful for our study:
 If we consider navigation tasks to be knowledge-intensive as well, RAG could potentially help LLMs generate accurate navigation instructions.
 
+RAG has been implemented in various ways.
+One specific RAG implementation relevant to our topic is graph RAG.
+In this approach, the external knowledge base is not simply a collection of text chunks, but rather a graph structure.
+This graph structure typically represents relationships between entities by modeling them as nodes and edges.
+Similar to traditional RAG, the user prompt is used to query the graph structure for relevant nodes and edges.
+These relevant nodes and edges are then converted to text snippets and appended to the LLM's context window.
+In some cases, the graph structure may first have to be constructed from text, while in other cases a graph may be present in the first place \citep{edge_local_2025}.
 
+Examples of graph structures include knowledge graphs or social networks, as well as road networks.
+For our work this opens the possibility for a graph RAG system designed for improved LLM navigation as a long term goal.
+In this thesis however, we will not implement such a system, but provide the additional geographic context directly within the prompt, emulating the effect of a RAG system.
 
 % While a graph rag pipeline is a long term goal for the academic efforts surrounding this study, in our case we will simply emulate the effect by providing additional context in the prompt.
 

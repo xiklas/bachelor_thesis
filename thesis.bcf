@@ -2392,6 +2392,7 @@
     <bcf:citekey order="16" intorder="1">minaee_large_2025</bcf:citekey>
     <bcf:citekey order="17" intorder="1">lewis_retrieval-augmented_2021</bcf:citekey>
     <bcf:citekey order="18" intorder="1">gao_retrieval-augmented_2024</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">edge_local_2025</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
