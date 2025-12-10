@@ -111,7 +111,70 @@ In this thesis however, we will not implement such a system, but provide the add
 
 % What is topological geographic data and why is it relevant to this study.
 
-\section{Topological Geographic Data}
+\section{Qualitative Geographic Data}
+
+As we have seen, LLMs possess the ability to generate coherent sequences of text \citep{minaee_large_2025}and their emerging abilities open the door to solving more complex tasks as well \citep{wei_emergent_2022}.
+Additionaly, by using context enrichment techniques such as RAG, unwanted effects like hallucinations can be mitigated \citep{gao_retrieval-augmented_2024}.
+In this thesis, we want to explore the potential of these techniques in the domain of navigation by testing whether LLM navigation can be improved by providing additional geographic context.
+The missing piece of the puzzle is thus a suitable representation of geographic data which can then be provided to the LLM.
+
+Geographic data can be represented in many ways.
+A key distinction can be made between qualitative and quantitative geographic data.
+While quantitative geographic data contains precise measurements such as distances or coordinates, qualitative geographic data describes properties and relationships of geographic entities \citep{lwin_quantitative_2012}. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{p{0.25\textwidth} p{0.3\textwidth} p{0.35\textwidth}}
+        \hline
+        \textbf{Aspect} & \textbf{Qualitative representation} & \textbf{Quantitative representation} \\
+        \hline
+        Description &
+        ``Examplestreet'' starts at the intersection with ``Teststreet''. \newline
+        ``Examplestreet'' ends at the intersection with ``Endstreet''. &
+        Name: Examplestreet \newline
+        Length: 300 m \newline
+        Width: 6 m \newline
+        Starting coordinates: (1,1) \newline
+        End coordinates: (6,7) \\
+        \hline
+    \end{tabular}
+    \caption{Example of qualitative and quantitative representations of a street.}
+    \label{tab:qual_quant_road}
+\end{table}
+
+In the example given in Table 2.1, we demonstrate the difference between qualitative and quantitative geographic data in the context of our research topic.
+While the quantitative representation focuses on precise numbers such as "Length: 300 m", the qualitative representation describes the same road purely based on qualitative descriptions.
+This does not mean that the two descriptions have the same information content, or that one representation is better than the other, however; both descriptions follow a unique paradigm and are suited for different tasks.
+We hope that the qualitative representation may be better suited for LLM digestion, since as the example shows, qualitative geographic data can be represented nicely using natural language, the native medium of LLMs \citep{minaee_large_2025}.
+
+So far, we have only seen a small example of qualitative geographic data.
+In the end, we want to represent entire street networks in a qualitative manner.
+To achieve this, a framework capable of representing topological data qualitatively is necessary.
+Next, we will present such a framework, called the dipole calculus.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{chapter/dipole_relations.png} % Adjust width as needed
+    \caption{All qualitatively different dipole relations that are necessary to describe a street network.}
+    \label{fig:pasted_graphic}
+\end{figure}
+
+The dipole calculus is a qualitative spatial reasoning framework.
+In the framework, elongated, oriented objects (such as road segments) are represented as directed line segments with a start and end point, called dipoles.
+Pairing two of these dipoles together results in a relation that can be classified into one of several relational categories.
+The set of these relational categories is finite.
+Examples include relations where one dipole continues another, crosses it, or branches off from it.
+This is an abstraction of the real world, and coordinates or distances are not represented in this framework.
+In the end, this results in a framework which allows for qualitative reasoning on line-based geographic structures such as road networks \citep{moratz_condensed_2011}.
+
+Although extended versions of the dipole calculus exist, all necessary dipole relations for our study are shown in Figure 2.1.
+In the Figure, each dipole is represented by a unidirectional arrow.
+Each dipole has a unique label (A-N) for identification.
+For example, we see that dipole G branches off left from dipole B.
+We can also see, that dipole A continues straight onwards from dipole B, and dipole E continues straight onwards from dipole A.
+In practice, this means that a street may be broken down into several dipoles using this approach.
+The mapping between dipoles and streets is thus not necessarily a strict one to one relationship:
+While a dipole is always mapped to a single street, a street may be mapped to several dipoles.
 
 % Introduction to topological geographic data.
 
@@ -162,13 +225,6 @@ As we have seen in the previous section, we can represent geographic data in the
 In this section, we will present the technique of qualitatively describing such topological data using dipole relations.
 
 % Figure on the dipole relations needed for our study.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{chapter/dipole_relations.png} % Adjust width as needed
-    \caption{All qualitatively different dipole relations necessary to describe a street network.}
-    \label{fig:pasted_graphic}
-\end{figure}
 
 % Explanation of Dipole Relations Figure.
 

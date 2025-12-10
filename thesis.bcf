@@ -2393,6 +2393,12 @@
     <bcf:citekey order="17" intorder="1">lewis_retrieval-augmented_2021</bcf:citekey>
     <bcf:citekey order="18" intorder="1">gao_retrieval-augmented_2024</bcf:citekey>
     <bcf:citekey order="19" intorder="1">edge_local_2025</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">minaee_large_2025</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">wei_emergent_2022</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">gao_retrieval-augmented_2024</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">lwin_quantitative_2012</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">minaee_large_2025</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">moratz_condensed_2011</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
