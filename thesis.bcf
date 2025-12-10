@@ -2399,6 +2399,13 @@
     <bcf:citekey order="23" intorder="1">lwin_quantitative_2012</bcf:citekey>
     <bcf:citekey order="24" intorder="1">minaee_large_2025</bcf:citekey>
     <bcf:citekey order="25" intorder="1">moratz_condensed_2011</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">haklay_openstreetmap_2008</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">university_of_nottingham_gb_mapping_2017</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">sehra_assessment_2013</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">neis_recent_2014</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">neis_recent_2014</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">luxen_real-time_2011</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">boeing_osmnx_2017</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

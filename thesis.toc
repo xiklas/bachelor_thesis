@@ -8,27 +8,27 @@
 \contentsline {section}{\numberline {2.2}Emerging Abilities of LLMs}{8}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Context Enrichment for LLMs}{9}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Qualitative Geographic Data}{10}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Dipole Representations of Topological Data}{13}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Current Navigation Systems}{13}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Navigation: A Spatial Reasoning Task}{14}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Reasoning Capabilities of Large Language Models}{14}{section.2.8}%
-\contentsline {section}{\numberline {2.9}LLMs in Spatial Reasoning and Navigation}{15}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Context Enrichment Techniques for LLMs}{16}{section.2.10}%
-\contentsline {chapter}{\numberline {3}Methods}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Data Acquisition and Preparation}{17}{section.3.1}%
-\contentsline {section}{\numberline {3.2}LLM Configuration}{18}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Experimental Design and Procedure}{19}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Evaluation Metrics and Statistical Analysis}{20}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Results}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Experiment Results}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Statistical Significance Testing}{26}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Summary of Findings}{27}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Interpretation of Results}{29}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Limitations}{32}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{33}{chapter.6}%
+\contentsline {section}{\numberline {2.5}Dipole Representations of Topological Data}{14}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Current Navigation Systems}{14}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Navigation: A Spatial Reasoning Task}{15}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Reasoning Capabilities of Large Language Models}{15}{section.2.8}%
+\contentsline {section}{\numberline {2.9}LLMs in Spatial Reasoning and Navigation}{16}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Context Enrichment Techniques for LLMs}{17}{section.2.10}%
+\contentsline {chapter}{\numberline {3}Methods}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Data Acquisition and Preparation}{19}{section.3.1}%
+\contentsline {section}{\numberline {3.2}LLM Configuration}{20}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Experimental Design and Procedure}{21}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Evaluation Metrics and Statistical Analysis}{22}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Results}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Experiment Results}{23}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Statistical Significance Testing}{28}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Summary of Findings}{29}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Interpretation of Results}{31}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Limitations}{34}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{35}{chapter.6}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Some Appendix Chapter}{35}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{37}{chapter*.22}%
-\contentsline {chapter}{\nonumberline List of Tables}{39}{chapter*.23}%
+\contentsline {chapter}{\numberline {A}Some Appendix Chapter}{37}{appendix.A}%
+\contentsline {chapter}{\nonumberline List of Figures}{39}{chapter*.22}%
+\contentsline {chapter}{\nonumberline List of Tables}{41}{chapter*.23}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

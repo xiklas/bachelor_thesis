@@ -176,6 +176,35 @@ In practice, this means that a street may be broken down into several dipoles us
 The mapping between dipoles and streets is thus not necessarily a strict one to one relationship:
 While a dipole is always mapped to a single street, a street may be mapped to several dipoles.
 
+Another key pillar for our research will be the identification of a reliable datasource for street networks, which can be transformed into dipole relations.
+One such datasource is OpenStreetMap (OSM).
+OpenStreetMap was created in 2004 and is a community driven, collaborative project providing free geographic data \citep{haklay_openstreetmap_2008}.
+Because it is not a commercial product, OpenStreetMap relies on Volunteered Geographic Information (VGI) provided by citizens.
+This has lead to the term "Citizen Sensor" being introduced to describe the means of data collection \citep{university_of_nottingham_gb_mapping_2017}.
+Although this approach has benefits like removing corporate interests from the data, it also has downsides.
+Since the data is provided by volunteers, the data quality may vary depending on the region of interest.
+Some studies have investigated the data quality of OSM.
+A metastudy conducted in 2013 synthesized several of these studies on OSM data quality. 
+To summarize, the study found that OSM data was rapidly growing.
+While the overall data quality was found to be heterogenous, meaning that it varied from region to region, the data quality was assessed to have improved over time \citep{sehra_assessment_2013}.
+In an article published in 2014, researchers specifically compared the OSM road data available for Germany to proprietary datasets and found a 9\% difference in total network length, indicating that the OSM dataset contained relatively few gaps in the investigated region \citep{neis_recent_2014}.
+The same article also notes that many studies mention an urban bias in OSM data, meaning that more densely populated areas tend to have better data coverage than rural areas \citep{neis_recent_2014}.
+While this may be a limitation for other use cases, for our study this may not be a major issue, since we are investigating navigation tasks in urban scenarios, where the coverage reportedly tends to be better.
+Even though we cannot ignore the fact that OSM data quality may vary, some researchers have shown that it is a robust choice for practical implementations.
+In a conference paper from 2011, researchers investigated the use of OSM data for real time routing.
+The researchers successfully demonstrated that OSM data was a suitable choice for both server side and hand held routing implementations \citep{luxen_real-time_2011}.
+For us, this indicates that OSM data may be a suitable choice for our research regarding improved LLM navigation, especially since we are mainly focused on urban environments.
+
+Many studies analyzing or utilizing OSM data have suffered from poor reproducibility and small sample sizes.
+To adress these issues, a research initiative called OSMnx was created in 2017.
+OSMnx provides an open source Python library, which allows users to easily download and visualize street networks from OpenStreetMap \citep{boeing_osmnx_2017}.
+In this study, we will make use of OSMnx to obtain the street networks we require for our experiments.
+
+Further, we will require a reliable tool to validate the generated navigation instructions.
+Since the validation in this study will be done manually, we need a tool with a user friendly interface and reliable data coverage.
+Also, because we do not want to validate the instruction on the same data source we obtained the street networks from, we will not use OpenStreetMap for this purpose.
+Instead we will use a tried and tested commercial prouct called Google Maps.
+
 % Introduction to topological geographic data.
 
 Our study heavily relies on the concept of topological geographic data, which has been widely used and investigated already.
