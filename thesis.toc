@@ -7,11 +7,11 @@
 \contentsline {section}{\numberline {2.1}Large Language Models}{7}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Emerging Abilities of LLMs}{8}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Context Enrichment for LLMs}{9}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Topological Geographic Data}{9}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Dipole Representations of Topological Data}{10}{section.2.5}%
+\contentsline {section}{\numberline {2.4}Topological Geographic Data}{10}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Dipole Representations of Topological Data}{11}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Current Navigation Systems}{11}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Navigation: A Spatial Reasoning Task}{11}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Reasoning Capabilities of Large Language Models}{11}{section.2.8}%
+\contentsline {section}{\numberline {2.7}Navigation: A Spatial Reasoning Task}{12}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Reasoning Capabilities of Large Language Models}{12}{section.2.8}%
 \contentsline {section}{\numberline {2.9}LLMs in Spatial Reasoning and Navigation}{13}{section.2.9}%
 \contentsline {section}{\numberline {2.10}Context Enrichment Techniques for LLMs}{14}{section.2.10}%
 \contentsline {chapter}{\numberline {3}Methods}{15}{chapter.3}%

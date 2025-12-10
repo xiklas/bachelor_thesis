@@ -70,6 +70,31 @@ With their emerging abilities, LLMs may be able to perform these tasks despite n
 \section{Context Enrichment for LLMs}
 
 In this section, we will discuss the concept of context enrichment for large language models.
+Unfortunately, in many cases LLMs have shown to produce incrorrect or misleading outputs, a phenomenon often referred to as "hallucination".
+Although the content of a hallucinatiion may seem plausible at first glance, it is often factually incorrect \citep{huang_survey_2025}.
+The navigation example given in the introductory chapter of this thesis can be considered as an example of such a hallucination:
+Although it appeared like a sensible set of directions to get from start to finish, under closer inspection the directions could be shown to contain many errors.
+The initial plausability and semantic correctness are the key differences between a hallucination and random, degenerate output \citep{huang_survey_2025}.
+To mitigate the frequency of hallucinations, researchers have come up with techniques to provide additional information to the LLM after the training process is complete \citep{minaee_large_2025}.
+
+In practice, this is usually done by enriching the LLMs' context.
+LLMs possess a finite context window, within which they can attend to tokens.
+Traditionally, this context window would contain the chat history of the session as well as optional system prompts.
+With context enrichment techniques however, additional information can be included in the context window \citep{minaee_large_2025}.
+
+Retrieval augmented generation (or RAG) is one such technique.
+With RAG, an additional external knowledge base is connected to the LLM system.
+This external knowledge base can contain arbitrary sets of information, for example company documents or other niche specific knowledge which may be underrepresented in the training data.
+When a user prompts the LLM, the system first queries the external knowledge base.
+This query is directly derived from the user prompt.
+Relevant snippets of the external knowledge base are then appended to the LLMs' context window.
+Finally, after the context window has been enriched with this addtional information from the knowledge base, the LLM can start generating its output \citep{lewis_retrieval-augmented_2021}.
+
+The effects of RAG on LLM hallucinations have been studied in previous research.
+In knowledge-intensive tasks such as question asnwering, RAG has been shown to substantially reduce hallucinations \citep{gao_retrieval-augmented_2024}.
+This may serve as a first indication that the technique could be useful for our study:
+If we consider navigation tasks to be knowledge-intensive as well, RAG could potentially help LLMs generate accurate navigation instructions.
+
 
 
 % While a graph rag pipeline is a long term goal for the academic efforts surrounding this study, in our case we will simply emulate the effect by providing additional context in the prompt.

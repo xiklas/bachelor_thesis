@@ -2386,6 +2386,12 @@
     <bcf:citekey order="10" intorder="1">minaee_large_2025</bcf:citekey>
     <bcf:citekey order="11" intorder="1">minaee_large_2025</bcf:citekey>
     <bcf:citekey order="12" intorder="1">wei_emergent_2022</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">huang_survey_2025</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">huang_survey_2025</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">minaee_large_2025</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">minaee_large_2025</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">lewis_retrieval-augmented_2021</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">gao_retrieval-augmented_2024</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

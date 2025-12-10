@@ -103,6 +103,58 @@
 	file = {PDF:/Users/niklasdaute/Zotero/storage/KRY7UZLI/Wei et al. - 2022 - Emergent Abilities of Large Language Models.pdf:application/pdf},
 }
 
+@article{huang_survey_2025,
+	title = {A {Survey} on {Hallucination} in {Large} {Language} {Models}: {Principles}, {Taxonomy}, {Challenges}, and {Open} {Questions}},
+	volume = {43},
+	issn = {1046-8188, 1558-2868},
+	shorttitle = {A {Survey} on {Hallucination} in {Large} {Language} {Models}},
+	url = {http://arxiv.org/abs/2311.05232},
+	doi = {10.1145/3703155},
+	abstract = {The emergence of large language models (LLMs) has marked a significant breakthrough in natural language processing (NLP), fueling a paradigm shift in information acquisition. Nevertheless, LLMs are prone to hallucination, generating plausible yet nonfactual content. This phenomenon raises significant concerns over the reliability of LLMs in real-world information retrieval (IR) systems and has attracted intensive research to detect and mitigate such hallucinations. Given the open-ended general-purpose attributes inherent to LLMs, LLM hallucinations present distinct challenges that diverge from prior task-specific models. This divergence highlights the urgency for a nuanced understanding and comprehensive overview of recent advances in LLM hallucinations. In this survey, we begin with an innovative taxonomy of hallucination in the era of LLM and then delve into the factors contributing to hallucinations. Subsequently, we present a thorough overview of hallucination detection methods and benchmarks. Our discussion then transfers to representative methodologies for mitigating LLM hallucinations. Additionally, we delve into the current limitations faced by retrieval-augmented LLMs in combating hallucinations, offering insights for developing more robust IR systems. Finally, we highlight the promising research directions on LLM hallucinations, including hallucination in large vision-language models and understanding of knowledge boundaries in LLM hallucinations.},
+	number = {2},
+	urldate = {2025-12-10},
+	journal = {ACM Transactions on Information Systems},
+	author = {Huang, Lei and Yu, Weijiang and Ma, Weitao and Zhong, Weihong and Feng, Zhangyin and Wang, Haotian and Chen, Qianglong and Peng, Weihua and Feng, Xiaocheng and Qin, Bing and Liu, Ting},
+	month = mar,
+	year = {2025},
+	note = {arXiv:2311.05232 [cs]},
+	keywords = {Computer Science - Computation and Language},
+	pages = {1--55},
+	file = {Full Text PDF:/Users/niklasdaute/Zotero/storage/923PYBQ8/Huang et al. - 2025 - A Survey on Hallucination in Large Language Models Principles, Taxonomy, Challenges, and Open Quest.pdf:application/pdf;Snapshot:/Users/niklasdaute/Zotero/storage/CFIVI84B/2311.html:text/html},
+}
+
+@misc{lewis_retrieval-augmented_2021,
+	title = {Retrieval-{Augmented} {Generation} for {Knowledge}-{Intensive} {NLP} {Tasks}},
+	url = {http://arxiv.org/abs/2005.11401},
+	doi = {10.48550/arXiv.2005.11401},
+	abstract = {Large pre-trained language models have been shown to store factual knowledge in their parameters, and achieve state-of-the-art results when fine-tuned on downstream NLP tasks. However, their ability to access and precisely manipulate knowledge is still limited, and hence on knowledge-intensive tasks, their performance lags behind task-specific architectures. Additionally, providing provenance for their decisions and updating their world knowledge remain open research problems. Pre-trained models with a differentiable access mechanism to explicit non-parametric memory can overcome this issue, but have so far been only investigated for extractive downstream tasks. We explore a general-purpose fine-tuning recipe for retrieval-augmented generation (RAG) -- models which combine pre-trained parametric and non-parametric memory for language generation. We introduce RAG models where the parametric memory is a pre-trained seq2seq model and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever. We compare two RAG formulations, one which conditions on the same retrieved passages across the whole generated sequence, the other can use different passages per token. We fine-tune and evaluate our models on a wide range of knowledge-intensive NLP tasks and set the state-of-the-art on three open domain QA tasks, outperforming parametric seq2seq models and task-specific retrieve-and-extract architectures. For language generation tasks, we find that RAG models generate more specific, diverse and factual language than a state-of-the-art parametric-only seq2seq baseline.},
+	urldate = {2025-12-10},
+	publisher = {arXiv},
+	author = {Lewis, Patrick and Perez, Ethan and Piktus, Aleksandra and Petroni, Fabio and Karpukhin, Vladimir and Goyal, Naman and Küttler, Heinrich and Lewis, Mike and Yih, Wen-tau and Rocktäschel, Tim and Riedel, Sebastian and Kiela, Douwe},
+	month = apr,
+	year = {2021},
+	note = {arXiv:2005.11401 [cs]},
+	keywords = {Computer Science - Computation and Language, Computer Science - Machine Learning},
+	file = {Preprint PDF:/Users/niklasdaute/Zotero/storage/5YJFGTF3/Lewis et al. - 2021 - Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.pdf:application/pdf;Snapshot:/Users/niklasdaute/Zotero/storage/Q2IZ2F78/2005.html:text/html},
+}
+
+@misc{gao_retrieval-augmented_2024,
+	title = {Retrieval-{Augmented} {Generation} for {Large} {Language} {Models}: {A} {Survey}},
+	shorttitle = {Retrieval-{Augmented} {Generation} for {Large} {Language} {Models}},
+	url = {http://arxiv.org/abs/2312.10997},
+	doi = {10.48550/arXiv.2312.10997},
+	abstract = {Large Language Models (LLMs) showcase impressive capabilities but encounter challenges like hallucination, outdated knowledge, and non-transparent, untraceable reasoning processes. Retrieval-Augmented Generation (RAG) has emerged as a promising solution by incorporating knowledge from external databases. This enhances the accuracy and credibility of the generation, particularly for knowledge-intensive tasks, and allows for continuous knowledge updates and integration of domain-specific information. RAG synergistically merges LLMs' intrinsic knowledge with the vast, dynamic repositories of external databases. This comprehensive review paper offers a detailed examination of the progression of RAG paradigms, encompassing the Naive RAG, the Advanced RAG, and the Modular RAG. It meticulously scrutinizes the tripartite foundation of RAG frameworks, which includes the retrieval, the generation and the augmentation techniques. The paper highlights the state-of-the-art technologies embedded in each of these critical components, providing a profound understanding of the advancements in RAG systems. Furthermore, this paper introduces up-to-date evaluation framework and benchmark. At the end, this article delineates the challenges currently faced and points out prospective avenues for research and development.},
+	urldate = {2025-12-10},
+	publisher = {arXiv},
+	author = {Gao, Yunfan and Xiong, Yun and Gao, Xinyu and Jia, Kangxiang and Pan, Jinliu and Bi, Yuxi and Dai, Yi and Sun, Jiawei and Wang, Meng and Wang, Haofen},
+	month = mar,
+	year = {2024},
+	note = {arXiv:2312.10997 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computation and Language},
+	file = {Preprint PDF:/Users/niklasdaute/Zotero/storage/79Y6SMNP/Gao et al. - 2024 - Retrieval-Augmented Generation for Large Language Models A Survey.pdf:application/pdf;Snapshot:/Users/niklasdaute/Zotero/storage/PDDUUKYE/2312.html:text/html},
+}
+
+
 
 
 
