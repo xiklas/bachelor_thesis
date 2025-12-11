@@ -176,6 +176,8 @@ In practice, this means that a street may be broken down into several dipoles us
 The mapping between dipoles and streets is thus not necessarily a strict one to one relationship:
 While a dipole is always mapped to a single street, a street may be mapped to several dipoles.
 
+\section{Datasources and GIS Tools}
+
 Another key pillar for our research will be the identification of a reliable datasource for street networks, which can be transformed into dipole relations.
 One such datasource is OpenStreetMap (OSM).
 OpenStreetMap was created in 2004 and is a community driven, collaborative project providing free geographic data \citep{haklay_openstreetmap_2008}.
@@ -202,9 +204,13 @@ In this study, we will make use of OSMnx to obtain the street networks we requir
 
 Further, we will require a reliable tool to validate the generated navigation instructions.
 Since the validation in this study will be done manually, we need a tool with a user friendly interface and reliable data coverage.
-Also, because we do not want to validate the instruction on the same data source we obtained the street networks from, we will not use OpenStreetMap for this purpose.
-Instead we will use a tried and tested commercial prouct called Google Maps.
+Also, because we do not want to validate the instructions on the same data source we obtained the street networks from, we will not use OpenStreetMap for this purpose.
+Instead we will use a tried and tested commercial product called Google Maps.
 
+Google Maps is a web based mapping platform which originated from the Australian company Where 2 Technologies, which was acquired by Google in 2004 \citep{noauthor_google_2025}.
+In a recent report from 2020, Google, the company behind Google Maps, claims that the platform counts over 1 billion monthly active users \citep{noauthor_look_2020}.
+Additionally, a survey conducted on 511 smartphone users in 2018 found that 67\% of respondents used Google Maps as their primary navigation app \citep{noauthor_popularity_nodate}.
+In 2019 Google claimed that the data they use for Google Maps was sourced from over 1000 third party services globally \citep{noauthor_google_2019}.
 
 % Introduction to topological geographic data.
 
