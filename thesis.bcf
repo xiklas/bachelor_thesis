@@ -2410,6 +2410,7 @@
     <bcf:citekey order="34" intorder="1">noauthor_look_2020</bcf:citekey>
     <bcf:citekey order="35" intorder="1">noauthor_popularity_nodate</bcf:citekey>
     <bcf:citekey order="36" intorder="1">noauthor_google_2019</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">noauthor_apple_nodate</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
