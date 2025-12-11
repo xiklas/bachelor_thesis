@@ -198,7 +198,7 @@ The researchers successfully demonstrated that OSM data was a suitable choice fo
 For us, this indicates that OSM data may be a suitable choice for our research regarding improved LLM navigation, especially since we are mainly focused on urban environments.
 
 Many studies analyzing or utilizing OSM data have suffered from poor reproducibility and small sample sizes.
-To adress these issues, a research initiative called OSMnx was created in 2017.
+To adress these issues, a research initiative called OSMnx was brought to life in 2017.
 OSMnx provides an open source Python library, which allows users to easily download and visualize street networks from OpenStreetMap \citep{boeing_osmnx_2017}.
 In this study, we will make use of OSMnx to obtain the street networks we require for our experiments.
 
@@ -206,12 +206,22 @@ Further, we will require a reliable tool to validate the generated navigation in
 Since the validation in this study will be done manually, we need a tool with a user friendly interface and reliable data coverage.
 Also, because we do not want to validate the instructions on the same data source we obtained the street networks from, we will not use OpenStreetMap for this purpose.
 Instead we will use a tried and tested commercial product called Google Maps.
+Following this approach seperates the data used in our method from the data used in the validation process, which reflects a key principle in model validation \citep{steyerberg_prediction_2016}.
 
-Google Maps is a web based mapping platform which originated from the Australian company Where 2 Technologies, which was acquired by Google in 2004 \citep{noauthor_google_2025}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter/google_maps_interface.png} % Adjust width as needed
+    \caption{A screenshot demonstrates the Google Maps web interface, map data © Google.}
+    \label{fig:pasted_graphic}
+\end{figure}
+
+Google Maps is a web based mapping platform originating from the Australian company Where 2 Technologies, which was fully acquired by Google in 2004 \citep{noauthor_google_2025}.
 In a recent report from 2020, Google, the company behind Google Maps, claims that the platform counts over 1 billion monthly active users \citep{noauthor_look_2020}.
 Additionally, a survey conducted on 511 smartphone users in 2018 found that 67\% of respondents used Google Maps as their primary navigation app \citep{noauthor_popularity_nodate}.
 In 2019 Google claimed that the data they use for Google Maps was sourced from over 1000 third party services globally \citep{noauthor_google_2019}.
-Although many other competing commercial products such as Apple Maps, released in 2012 \citep{noauthor_apple_nodate}, exist today, Google Maps will be the tool of choice for our study, backed by its widespread popularity.
+Although many other competing commercial products such as Apple Maps, released in 2012 \citep{noauthor_apple_nodate}, exist in the modern app landscape, Google Maps, backed by its long history and widespread popularity, will be the tool of choice for the validation process in this study.
+
+
 
 % Introduction to topological geographic data.
 

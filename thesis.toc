@@ -12,9 +12,9 @@
 \contentsline {section}{\numberline {2.6}Dipole Representations of Topological Data}{15}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Current Navigation Systems}{15}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Navigation: A Spatial Reasoning Task}{15}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Reasoning Capabilities of Large Language Models}{15}{section.2.9}%
+\contentsline {section}{\numberline {2.9}Reasoning Capabilities of Large Language Models}{16}{section.2.9}%
 \contentsline {section}{\numberline {2.10}LLMs in Spatial Reasoning and Navigation}{17}{section.2.10}%
-\contentsline {section}{\numberline {2.11}Context Enrichment Techniques for LLMs}{17}{section.2.11}%
+\contentsline {section}{\numberline {2.11}Context Enrichment Techniques for LLMs}{18}{section.2.11}%
 \contentsline {chapter}{\numberline {3}Methods}{19}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Data Acquisition and Preparation}{19}{section.3.1}%
 \contentsline {section}{\numberline {3.2}LLM Configuration}{20}{section.3.2}%
@@ -30,6 +30,6 @@
 \contentsline {chapter}{\numberline {6}Conclusion and Outlook}{35}{chapter.6}%
 \def \@chapapp {\appendixname }
 \contentsline {chapter}{\numberline {A}Some Appendix Chapter}{37}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{39}{chapter*.22}%
-\contentsline {chapter}{\nonumberline List of Tables}{41}{chapter*.23}%
+\contentsline {chapter}{\nonumberline List of Figures}{39}{chapter*.23}%
+\contentsline {chapter}{\nonumberline List of Tables}{41}{chapter*.24}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
