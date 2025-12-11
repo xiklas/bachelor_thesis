@@ -11,7 +11,7 @@
 \contentsline {section}{\numberline {2.5}Datasources and GIS Tools}{12}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Dipole Representations of Topological Data}{15}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Current Navigation Systems}{15}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Navigation: A Spatial Reasoning Task}{15}{section.2.8}%
+\contentsline {section}{\numberline {2.8}Navigation: A Spatial Reasoning Task}{16}{section.2.8}%
 \contentsline {section}{\numberline {2.9}Reasoning Capabilities of Large Language Models}{16}{section.2.9}%
 \contentsline {section}{\numberline {2.10}LLMs in Spatial Reasoning and Navigation}{17}{section.2.10}%
 \contentsline {section}{\numberline {2.11}Context Enrichment Techniques for LLMs}{18}{section.2.11}%
