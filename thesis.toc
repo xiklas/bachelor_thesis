@@ -10,28 +10,22 @@
 \contentsline {section}{\numberline {2.4}Qualitative Geographic Data}{10}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Datasources and GIS Tools}{12}{section.2.5}%
 \contentsline {section}{\numberline {2.6}LLM Benchmarks and Opportunities}{14}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Ethical, Legal and Environmental Considerations}{15}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Dipole Representations of Topological Data}{16}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Current Navigation Systems}{17}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Navigation: A Spatial Reasoning Task}{17}{section.2.10}%
-\contentsline {section}{\numberline {2.11}Reasoning Capabilities of Large Language Models}{17}{section.2.11}%
-\contentsline {section}{\numberline {2.12}LLMs in Spatial Reasoning and Navigation}{18}{section.2.12}%
-\contentsline {section}{\numberline {2.13}Context Enrichment Techniques for LLMs}{19}{section.2.13}%
-\contentsline {chapter}{\numberline {3}Methods}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Data Acquisition and Preparation}{21}{section.3.1}%
-\contentsline {section}{\numberline {3.2}LLM Configuration}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Experimental Design and Procedure}{23}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Evaluation Metrics and Statistical Analysis}{24}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Results}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Experiment Results}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Statistical Significance Testing}{30}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Summary of Findings}{31}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{33}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Interpretation of Results}{33}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Limitations}{36}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{37}{chapter.6}%
+\contentsline {section}{\numberline {2.7}Ethical, Legal and Environmental Aspects of LLM usage}{16}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Methods}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Data Acquisition and Preparation}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}LLM Configuration}{18}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Experimental Design and Procedure}{19}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Evaluation Metrics and Statistical Analysis}{20}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Results}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Experiment Results}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Statistical Significance Testing}{26}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Summary of Findings}{27}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{29}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Interpretation of Results}{29}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Limitations}{32}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{33}{chapter.6}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Some Appendix Chapter}{39}{appendix.A}%
-\contentsline {chapter}{\nonumberline List of Figures}{41}{chapter*.23}%
-\contentsline {chapter}{\nonumberline List of Tables}{43}{chapter*.24}%
+\contentsline {chapter}{\numberline {A}Some Appendix Chapter}{35}{appendix.A}%
+\contentsline {chapter}{\nonumberline List of Figures}{37}{chapter*.22}%
+\contentsline {chapter}{\nonumberline List of Tables}{39}{chapter*.23}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
