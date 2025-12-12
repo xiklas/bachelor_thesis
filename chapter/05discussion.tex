@@ -3,17 +3,16 @@
 \label{ch:05discussion}
 
 Our study aimed to investigate the impact of qualitative geographic context on the navigation performance of LLMs.
-We hypothesized that our approach would significantly improve the ability of LLMs to provide accurate navigation instructions.
-In order to validate our hypothesis, we conducted a series of experiments by means of the methods described in chapter 2.
-The results of these experiments presented in chapter 3 serve as the basis for the following discussion.
+We hypothesized that our approach would improve the ability of LLMs to provide accurate navigation instructions.
+In order to test our hypothesis, we conducted a series of experiments by means of the methods described in Chapter~3.
+The results of these experiments presented in Chapter~4 serve as the basis for the following discussion.
 
 \section{Interpretation of Results}
 
 Our experiments revealed that the inclusion of qualitative geographic context had a positive effect on LLM navigation performance.
-The overall success rate increased from 20\% in the control group to 80\& in the test group.
-This is a significant improvement in task success rate, which can be backed by further statistical analysis as presented towards the end of chapter 3.
-Thus, our experiments clearly support our initial research hypothesis.
-Concequently, the alternative hypothesis stating that additional qualitative geographic context does not significantly improve LLM navigation performance may be rejected.
+The overall success rate increased from 0/120 (0\%) in the control group to 75/120 (62.5\%) in the test group (see Table~4.1).
+This is a substantial improvement in task success rate, and thus our experiments support our initial research hypothesis within the scope of the tested setup.
+However, since the evaluation in this thesis does not include formal statistical significance testing, these results should be interpreted as empirical evidence rather than a general claim about all possible cities, models, or navigation scenarios.
 
 To ensure we didn't get lucky with a specific city or model combination, we analyzed multiple cities and LLMs.
 Across all of the tested combinations, we observed similar levels of improvement.
@@ -39,7 +38,7 @@ In fact, suggesting such a thing would feel irresponsible:
 The many mistakes made by the LLMs in the control group as well as the mistakes still present in the test group highlight the current limitations of LLM based navigation and the need for additional research.
 
 Navigation is often critical, and any mistakes can have serious consequences in terms of time, safety or efficency.
-Although certainly impressive, a success rate of 80\% is therefore not sufficient for many use cases, when tradiitional navigation solutions operate at near perfection.
+Although certainly encouraging, a success rate of 62.5\% is therefore not sufficient for many use cases, when tradiitional navigation solutions operate at near perfection.
 If the gap could be closed further in the future, LLMs could someday seriously be considered as alternatives to current navigation solutions.
 
 So far, we have only considered topological information when providing geographic context to LLMs.
@@ -59,7 +58,7 @@ Automated validation methods could help address this issue and provide further e
 In this study, we demonstrated one possible way to improve LLM navigation performance.
 Although, to our delight, the results were very promising, this doesn't mean that other methods could not achieve similar or even better results than ours.
 We invite researchers to try their hand at coming up with alternative methods.
-Our easily reproducible testing framework described in chapter 2 may be used as basis for such future studies.
+Our easily reproducible testing framework described in Chapter~3 may be used as basis for such future studies.
 
 If we look beyond the scope of navigation tasks, our findings may also have relevance for other areas in which LLMs could be combined with graph data.
 Knowledge graphs are used in many domains and have a similar makeup to geographic networks.
