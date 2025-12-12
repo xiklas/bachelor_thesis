@@ -2428,6 +2428,11 @@
     <bcf:citekey order="51" intorder="1">noauthor_openaievals_2025</bcf:citekey>
     <bcf:citekey order="52" intorder="1">chiang_chatbot_2024</bcf:citekey>
     <bcf:citekey order="53" intorder="1">ding_mango_2024</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">valmeekam_large_2022</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">shojaee_illusion_2025</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">valmeekam_large_2022</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">shojaee_illusion_2025</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">ding_mango_2024</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

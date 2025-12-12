@@ -276,11 +276,28 @@ In a paper published in 2024, researchers introduced a benchmark called MANGO th
 In their trials the LLMs were provided with textual walkthroughs covering the maze environments, and subsequently asked to answer navigation questions about these mazes.
 The authors report that models including GPT-4 struggled with the navigation tasks, while humans achieved high accuracy on the problems \citep{ding_mango_2024}. 
 
+A paper from 2022 illustrated the shortcomings of LLMs in planning tasks.
+Several prominent LLMs were evaluated on a suite of action and change reasoning tasks.
+Across these planning tasks, the models achieved very low success rates.
+The models struggled even more to produce optimal results \citep{valmeekam_large_2022}.
+Since navigation tasks can be considered as planning tasks, this study can be seen as evidence that LLMs may struggle with navigation.
 
+In 2025, researchers investigating recent ‘reasoning’ variants of LLMs identified a sharp decline in performance as problem complexity increased.
+They demonstrated these effects in controllable puzzle environments, where both reasoning and non-reasoning models ultimately collapsed to near-zero accuracy.
+A counterintuitive discovery was made as well:
+As problem complexity increased, the models initially increased their ‘thinking' effort;
+however, after a certain point, reasoning traces became shorter again, even though token budget was still available \citep{shojaee_illusion_2025}.
+For our navigation tasks, this could indicate that LLMs could be able to solve simpler navigation problems, but may fail if the problems become too complex.
 
-Lastly, since we have now discussed several current GIS technologies, it is worth considering whether there is a demand for new solutions in this domain.
+\section{Summary}
 
-
-\section{Ethical, Legal and Environmental Aspects of LLM usage}
-
-Test 123.
+We began this chapter by introducing large language models and their emerging abilities.
+Next, we discussed context enrichment techniques such as retrieval augmented generation and one specific implementation called graph RAG.
+Afterwards, we presented how geographic data can be represented qualitatively using the dipole calculus.
+Thereafter, we discussed our choice of datasources and GIS tools.
+Finally, we reviewed existing research on LLM benchmarks.
+Prior benchmarks on LLMs show that they struggle with tasks requiring planning \citep{valmeekam_large_2022}.
+Some research has also identified that even more recent reasoning variants struggle with complex problems \citep{shojaee_illusion_2025}.
+While navigation tasks have been studied in maze environments \citep{ding_mango_2024}, real-world street-network navigation remains comparatively unexplored in existing LLM benchmarks.
+To the best of our knowledge there is also no research on whether qualitative dipole relations can be used to improve LLM navigation performance.
+This motivates an opportunity to create a benchmark for LLM navigation tasks using real-world problems and to evaluate whether qualitative geographic context offers significant performance improvements.
