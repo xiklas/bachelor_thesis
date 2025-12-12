@@ -228,7 +228,7 @@ What is left to do before moving on to the description of our method, is to revi
 
 Exploring LLM Benchmarks is a vast topic.
 Since we are interested in creating our own benchmark for LLM navigation tasks, it is important for us to take a look at the existing landscape however.
-Therefore, in this section we will discuss how LLMs are ususally benchmarked today, and whether any existing benchmarks take navigation tasks into consideration.
+Therefore, in this section we will discuss how LLMs were historically benchmarked, and whether any existing benchmarks take navigation problems into consideration.
 
 Some of the historical benchmarks for natural language tasks include GLUE \citep{wang_glue_2019} and SuperGLUE \citep{wang_superglue_2020}.
 In GLUE, a model is evaluated on a set of nine different NLP tasks such as sentiment analysis or textual entailment.
@@ -245,7 +245,12 @@ The BIG-bench paper describes a benchmark of over 200 tasks, contributed by 450 
 The included tasks span a diverse range of topics such as mathematics, physics and software development, shifting evaluation from NLU toward more general problems.
 A human baseline score was established, and in addition model scale was taken into account during performance evaluation \citep{srivastava_beyond_2023}.
 
-
+Another shift in model evaluation could be observed with the introduction of HELM (Holistic Evaluation of Language Models) in 2022.
+Language models were increasingly used as the basis for real-world applications, and this called for additional evaluation dimensions.
+Helm introduced a framework to evaluate model responses not only on their accuracy, but also on aspects such as fairness, robustness and efficiency.
+Fairness describes whether model responses differ systematically between certain groups.
+With robustness, a measure was introduced to evaluate whether a model's performance degrades when faced with adversarial inputs.
+The computational resources required to run a model were evaluated using the efficiency metric \citep{liang_holistic_2023}.
 
 Lastly, since we have now discussed several current GIS technologies, it is worth considering whether there is a demand for new solutions in this domain.
 

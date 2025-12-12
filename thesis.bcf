@@ -2418,6 +2418,7 @@
     <bcf:citekey order="42" intorder="1">nangia_human_2019</bcf:citekey>
     <bcf:citekey order="43" intorder="1">wang_superglue_2020</bcf:citekey>
     <bcf:citekey order="44" intorder="1">srivastava_beyond_2023</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">liang_holistic_2023</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
