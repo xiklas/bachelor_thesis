@@ -224,7 +224,33 @@ Although many other competing commercial products such as Apple Maps, released i
 By discussing LLMs, their emerging capabilities such as reasoning, context enrichment techniques, a framework for qualitative geographic representations and our choice of data sources, we have now discussed they key ingredients for our research.
 What is left to do before moving on to the description of our method, is to review existing research on LLM benchmarks.
 
-\section{LLM Benchmarks}
+\section{LLM Benchmarks and Opportunities}
+
+Exploring LLM Benchmarks is a vast topic.
+Since we are interested in creating our own benchmark for LLM navigation tasks, it is important for us to take a look at the existing landscape however.
+Therefore, in this section we will discuss how LLMs are ususally benchmarked today, and whether any existing benchmarks take navigation tasks into consideration.
+
+Some of the historical benchmarks for natural language tasks include GLUE \citep{wang_glue_2019} and SuperGLUE \citep{wang_superglue_2020}.
+In GLUE, a model is evaluated on a set of nine different NLP tasks such as sentiment analysis or textual entailment.
+Sentiment analysis describes the task of classifying a given text by its sentiment.
+Textual entailment on the other hand describes whether one text (a hypothesis) is supported by another (a premise).
+For each of the nine tasks, a model produces predictions, and the individual task scores are aggregated into a final GLUE score.
+The GLUE score could then be used as a single metric to compare different models \citep{wang_glue_2019}.
+A study conducted in 2019 showed that non-expert human annotators outperformed models on six of nine GLUE tasks, achieving an average score of 87.1 compared to then state-of-the-art (and fine tuned) models scoring 83.9 \citep{nangia_human_2019}.
+The headroom began to close however, and in 2020 SuperGLUE was introduced to provide more challenging tasks \citep{wang_superglue_2020}.
+
+While GLUE and SuperGLUE provided standardized evaluation for the NLU capabilities of models, they were less suited to measuring the broader capabilities that LLMs began to exhibit.
+To address this gap, new benchmark suites were proposed, including BIG-bench (Beyond the Imitiation Game) introduced in 2022.
+The BIG-bench paper describes a benchmark of over 200 tasks, contributed by 450 researchers across 132 institutions.
+The included tasks span a diverse range of topics such as mathematics, physics and software development, shifting evaluation from NLU toward more general problems.
+A human baseline score was established, and in addition model scale was taken into account during performance evaluation \citep{srivastava_beyond_2023}.
+
+
+
+Lastly, since we have now discussed several current GIS technologies, it is worth considering whether there is a demand for new solutions in this domain.
+
+
+\section{Ethical, Legal and Environmental Considerations}
 
 % Introduction to topological geographic data.
 
