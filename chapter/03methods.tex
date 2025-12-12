@@ -1,6 +1,6 @@
 %!TEX root = ../thesis.tex
 \chapter{Methods}
-\label{ch:02methods}
+\label{ch:03methods}
 
 % Chapter Introduction:
 % Outlines the scope and structure of the Methods chapter.
@@ -107,23 +107,31 @@ After trial execution, each model's response was saved in a database. In case of
 
 % How was the obtained data evaluated and which statistical tools were used?
 
-\section{Evaluation Metrics and Statistical Analysis}
+\section{Evaluation Metrics}
 
 % Responses were reviewed manually against Google Maps.
 
 All responses were then reviewed manually by comparing the produced instructions against Google Maps, one of the most widely used geographic information systems on the internet.
 When looking at any response, the objective was to determine whether the produced steps could be executed in sequence to solve the navigation task.
 If this was the case, the response was labelled as correct, otherwise it was labelled as incorrect.
+Since the responses were labelled manually by a single evaluator, they may contain some subjective judgement in few cases.
 
 % What does correct/incorrect mean in this study?
 
 This means that just one incorrect instruction in any LLM response, control or test group, would consequently render the entire response incorrect.
+Examples of incorrect instructions include but are not limited to referencing non-existing streets or making impossible turns.
 Our validation does not take into account any further measures like distance measures or number of turns.
-While these additional measures could provide interesting insights, they are ourside the scope of this study.
+While these additional measures could provide interesting insights, they are outside the scope of this study.
+The task success rate is therefore defined as the proportion of navigation tasks which were labelled as correct over the total number of navigation tasks conducted.
+
+\[
+\text{TaskSuccessRate} \;=\; \frac{N_{\text{correct}}}{N_{\text{total}}}
+\]
+
 
 % How was the task success rate calculated?
 
-After all responses were labelled, we were able to calculate task success rates for the control and test groups.
+After all responses were labelled, we were thus able to calculate task success rates for the control and test groups.
 
 % Conclusion of the Methods chapter.
 
