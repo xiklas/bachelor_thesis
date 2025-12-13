@@ -7,8 +7,8 @@
 
 Our research hypothesis states that the navigation capabilities of large language models may be significantly improved by the inclusion of qualitative geographic context.
 To test our hypothesis, we designed an experimental setup involving large language models, qualitative geographic context and navigation tasks.
-Our approach can be broken down into the data used, the configuration of the LLMs - including the context enrichtment setup -, and ultimately the procedures used to conduct the experiments.
-To make statements about the significance of the results, we also define the necessary metrics and statistical methods used for the subsequent evaluation.
+Our approach can be broken down into the data used, the configuration of the LLMs - including the context enrichment setup -, and ultimately the procedures used to conduct the experiments.
+To evaluate the results, we define a strict correctness criterion and compute task success rates for the control and test groups.
 
 
 % Data Acquisition and Preparation:
@@ -33,12 +33,11 @@ The most common way of encountering street network data is in the form of graphm
 
 % Which data was downloaded and how was it processed to generate the dipole relations.
 
-As basis for our experiments, we downloaded three of these graphs from the OpenStreetMap database using OSMnx, a powerful Python library capable of handling and processing OpenStreetMap data.
-In order to ensure a reasonable degree of geographic variation, we selected three different cities as sites for our datasets: Hamburg, Münster and Vienna.
+As basis for our experiments, we downloaded two of these graphs from the OpenStreetMap database using OSMnx, a powerful Python library capable of handling and processing OpenStreetMap data.
+In order to ensure a reasonable degree of geographic variation, we selected two different cities as sites for our datasets: Hamburg and Münster.
 This way, we end up with one dataset per city, each containing a varying number of nodes and edges.
-The largest dataset, Vienna, contains approximately x nodes and y edges, while the smaller dataset of Hamburg and Münster contain approximately a and b as well as c and d nodes and edges respectively.
 To extract qualitative descriptions from these datasets, we implemented an algorithm capable of generating dipole relations in natural language which describe the topology of any graph given to the algorithm.
-In essence, the algorithm works by iterating over all nodes, and creating dipole relations for each intersection.
+In essence, the algorithm works by iterating over all nodes and creating dipole relations for each intersection.
 While the full algorithm is provided in the appendix, a conceptual description of the algorithm in pseudocode is given here:
 
 (Pseudocode)
@@ -47,7 +46,6 @@ While the full algorithm is provided in the appendix, a conceptual description o
 
 Following this method, we were able to generate a set of dipole relations for each of our initial street network datasets.
 These relations were stored in the form of simple .txt files, with one relation per line.
-The largest resulting file was the one generated for Vienna, containing x dipole relations, while the files for Hamburg and Münster contained x and y dipole relations respectively.
 
 (Table with nodes and edges and resulting dipole relations per city)
 
@@ -96,10 +94,10 @@ While the Test Group performs the exact same tasks as the Control Group, it was 
 
 % How were the navigation tasks designed and executed?
 
-To generate problem statements without any bias towards certain areas or streets for each dataset, we simply extracted the set of available street names from the original graphml data.
+To generate problem statements without any bias towards certain areas or streets for each dataset, we extracted the set of available street names from the original graphml data.
 These lists were then each sampled randomly 20 times, with the resulting street names serving as the start-points for the navigation tasks for the given dataset.
 This process was then repeated and another random 20 items were selected from each list to serve as the end-points for the tasks.
-In total, this sums up to 60 unique trials over all three datasets. Since each trial will be executed twice using all three models, in combination a total of 360 individual trials will be conducted over the course of our study.
+In total, this sums up to 40 unique navigation tasks over both datasets. Since each task was executed for both control and test conditions using all three models, this results in a total of 240 evaluated trials over the course of our study.
 
 % How were the trial responses stored?
 
@@ -114,7 +112,7 @@ After trial execution, each model's response was saved in a database. In case of
 All responses were then reviewed manually by comparing the produced instructions against Google Maps, one of the most widely used geographic information systems on the internet.
 When looking at any response, the objective was to determine whether the produced steps could be executed in sequence to solve the navigation task.
 If this was the case, the response was labelled as correct, otherwise it was labelled as incorrect.
-Since the responses were labelled manually by a single evaluator, they may contain some subjective judgement in few cases.
+Since the responses were labelled manually by a single evaluator, they may contain some subjective judgement in a few cases.
 
 % What does correct/incorrect mean in this study?
 
