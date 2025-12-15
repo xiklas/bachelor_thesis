@@ -2,17 +2,22 @@
 \chapter{Conclusion and Outlook}
 \label{ch:06conclusion}
 
-\Blindtext
-\blindtext
+In this study, we have explored the effects of qualitative geographic context on LLM navigation performance.
+Our research hypothesis stated that giving language models access to qualitative geographic context would improve their navigation capabilities.
+To test this hypothesis, we designed a series of experiments comparing LLM performance with navigation tasks in two independent conditions:
+one with qualitative geographic context and one without.
+We utilized randomly generated navigation tasks in our two chosen test areas (Münster and Hamburg) and let both conditions generate answers for each task.
+The answers were then evaluated manually based on a correctness criterion.
 
-\begin{definition}[\texorpdfstring{$\sigma$}-algebra]
-    Let $X$ be some set. A subset $\Sigma \in \mathcal{P}\left(X\right)$ is called a
-    $\sigma$-algebra if it satisfies the following three properties:
-    \begin{enumerate}
-        \item $X \in \Sigma$
-        \item $A \in \Sigma \implies X \setminus A \in \Sigma$
-        \item $A_1,A_2,\dots \in \Sigma \implies A_1 \cup A_2 \cup \dots \in \Sigma$
-    \end{enumerate}
-\end{definition}
-For a full list of environments see \texttt{preamble.tex}
+The results of our experiments show that LLMs perform poorly in navigation tasks without qualitative geographic context, answering 0 out of 120 tasks correctly, corresponding to a success rate of 0\%.
+In contrast, with additional geographic context, the models achieved a significantly higher performance, answering 75 out of 120 tasks correctly, corresponding to a success rate of 62.5\%.
+These findings support our initial research hypothesis:
+All three tested LLMs (GPT-4o, Gemini 2.5 Pro, Claude Sonnet 4.5) demonstrated a higher success rate on navigation tasks when provided with qualitative geographic context.
 
+Our setup involved just two specific urban areas from the cities of Münster and Hamburg.
+In addition, out of many available LLMs, we only tested three models.
+In future research, these limitations could be addressed by including more variety both in the tested geographic areas and in the selected LLMs.
+Further, our evaluation was based on human labelling of large amounts of generated answers.
+This time-consuming process could be improved in future studies by developing methods for automated evaluation of navigation task answers.
+Thus, while our approach showed promising first results, these limitations can hopefully be addressed in future research.
+Overall, this study establishes a foundation for context-enriched LLM navigation and motivates continued research in this domain.

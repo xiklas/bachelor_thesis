@@ -25,11 +25,9 @@ The most common way of encountering street network data is in the form of graphm
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{chapter/hamburg.png} % Reduced to 60% of text width
-    \caption{Image credit: James Odienki.}
+    \caption{Graph representation of area of interest in Hamburg, Germany as used in this study.}
     \label{fig:graphic6}
 \end{figure}
-
-(Graphic)
 
 % Which data was downloaded and how was it processed to generate the dipole relations.
 
@@ -40,14 +38,46 @@ To extract qualitative descriptions from these datasets, we implemented an algor
 In essence, the algorithm works by iterating over all nodes and creating dipole relations for each intersection.
 While the full algorithm is provided in the appendix, a conceptual description of the algorithm in pseudocode is given here:
 
-(Pseudocode)
+\begin{algorithm}
+\caption{Generate Street Descriptions from OSM}
+\label{alg:street_desc}
+\begin{algorithmic}[1]
+\Require Bounding box
+\Ensure Text descriptions for streets in bounding box
+\State Download road network for bounding box
+\State Remove motorways and isolated nodes
+\For{each street name in network}
+    \State Collect all road segments with this name
+    \State Keep largest connected component
+    \State Find main end-to-end path
+    \State Orient path consistently (S$\to$N or W$\to$E)
+    \For{each junction along path}
+        \State Inspect connected streets
+        \State Use bearings to classify as left/right/crossing
+        \State Generate natural-language statement
+    \EndFor
+\EndFor
+\State Export all descriptions to file
+\end{algorithmic}
+\end{algorithm}
 
 % How was the data stored and how can the data be described.
 
 Following this method, we were able to generate a set of dipole relations for each of our initial street network datasets.
 These relations were stored in the form of simple .txt files, with one relation per line.
+A full example of these relations is given in the appendix. 
+To demonstrate the relations here, a small excerpt may be helpful:
 
-(Table with nodes and edges and resulting dipole relations per city)
+\begin{tcolorbox}[title={Excerpt of qualitative relations (Hamburg)}, colback=white]
+\small
+\begin{verbatim}
+Borchlingweg begins at the intersection with Ansorgestraße, Halbmondsweg.
+Stindeweg then branches off to the right.
+Langmaackweg then branches off to the right.
+\end{verbatim}
+\end{tcolorbox}
+
+
 
 After discussing the data acquisition process, we now focus on a detailed description of the configuration of the LLMs used in this study.
 
