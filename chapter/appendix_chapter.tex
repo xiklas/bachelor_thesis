@@ -242,3 +242,41 @@ Walderseestraße then branches off to the right. \par
 
 \textbf{Övelgönner Hohlweg} \par
 Övelgönner Hohlweg begins at the intersection with Elbchaussee, Halbmondsweg. \par
+
+\section{Prompts}
+
+\subsection{Control Group Prompt}
+
+\begin{quote}
+You are an expert navigator for [city]. Your sole task is to generate walking routes. Use your internal knowledge to derive the route.
+\end{quote}
+
+\subsection{Test Group Prompt}
+
+\begin{quote}
+You are an expert navigator for [city]. Your sole task is to generate walking routes. Base your answer on the geographic relations provided.
+\end{quote}
+
+\subsection{User Prompt}
+
+\begin{quote}
+Generate a walking route from the start point [start] to the end point [end].
+\end{quote}
+
+\section{Example Navigation Tasks}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l l}
+\hline
+\textbf{Start} & \textbf{End} \\
+\hline
+Stindeweg & Slevogtstieg \\
+Lobsienweg & Schlagbaumtwiete \\
+Behringstraße & Röpers Weide \\
+Övelgönner Hohlweg & Taxusweg \\
+Corinthstraße & Olshausenstraße \\
+\hline
+\end{tabular}
+\caption{Example navigation tasks (start and end streets).}
+\end{table}
