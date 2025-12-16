@@ -8,7 +8,7 @@
 \contentsline {section}{\numberline {2.2}Emerging Abilities of LLMs}{8}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Context Enrichment for LLMs}{9}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Qualitative Geographic Data}{10}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Datasources and GIS Tools}{12}{section.2.5}%
+\contentsline {section}{\numberline {2.5}Data sources and GIS Tools}{12}{section.2.5}%
 \contentsline {section}{\numberline {2.6}LLM Benchmarks and Opportunities}{14}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Summary}{16}{section.2.7}%
 \contentsline {chapter}{\numberline {3}Methods}{19}{chapter.3}%

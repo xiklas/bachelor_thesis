@@ -20,7 +20,7 @@ With this many requests to ChatGPT alone and many other competing LLMs such as G
 If that is indeed the case, we should study whether LLMs are actually capable of delivering accurate responses to such requests.
 If it can be argued that they are not yet up to the task, we should also invest time into improving their performance in this regard.
 
-In the following example depicted in Figure 1.1 we prompted GPT-4o with a simple navigation task to observe whether the model could successfully provide a useful answer to a simple path finding problem.
+In the following example depicted in Figure 1.1, we prompted GPT-4o with a simple navigation task to observe whether the model could successfully provide a useful answer to a simple path finding problem.
 The prompt used to generate the response shown in Figure 1.1 was as follows:
 
 \begin{quote}
@@ -84,9 +84,9 @@ Continuing with the next instruction:
 \end{quote}
 
 This instruction is puzzling in many ways. 
-For once, the destination does not lie one kilometer away from the Central Station, therefore traversal of any road for "about 1km" should lead to scepticism about the correctness of the instruction.
+For once, the destination does not lie one kilometer away from the Central Station, therefore traversal of any road for "about 1 km" should lead to scepticism about the correctness of the instruction.
 Further, the "Aasee Park area" exists in Münster, but it does not make sense to mention it in this example, since it is too far away from any point along the actual route, and it also is not located near the "Albersloher Weg".
-With the next instruction, the mistakes made by ChatGPT-4o continue:
+With the next instruction, the mistakes made by GPT-4o continue:
 
 \begin{quote}
     \textit{5. When you reach the intersection with Hammer Straße, turn right.}
@@ -123,7 +123,7 @@ In order to gain a clear picture of the current state of research in this area, 
 
 At the moment, no literature explores the impact of qualitative geographic context on navigation performance in LLMs.
 Without any research, a clear verdict on the viability of LLMs as natural language interfaces for navigation tasks will remain inconclusive. 
-While previous research has addressed the general capabilities of LLMs in reasoning tasks, it can not automatically be assumed that these capabilities translate to strong navigation performance in real world scenarios.
+While previous research has addressed the general capabilities of LLMs in reasoning tasks, it cannot automatically be assumed that these capabilities translate to strong navigation performance in real world scenarios.
 Many potential uses for LLMs in GIScience applications have been theorized, among those the possibility to act as natural language interfaces for spatial queries such as navigation.
 The existing research regarding LLM navigation performance however paints a clear picture: Currently, LLMs are not able to perform navigation tasks reliably, and thus this potential use case remains unfulfilled.
 
@@ -133,21 +133,21 @@ If research could identify techniques that significantly improve LLM navigation 
 Even though one study alone will not be sufficient to fully explore this area and answer all open questions, it could provide first evidence on the viability of such techniques and serve as a benchmark for future research.
 
 One technique that has shown promise in reducing shortcomings such as hallucinations in other areas where LLMs are applied is context enrichment.
-By providing additional context to the model, blindspots in LLM training data such as recent events, niche topics or internal company data can be addressed by this method.
-It seems likely, although unproven, that a similar blindspot could be manifest in the area of topological data required for urban navigation tasks.
+By providing additional context to the model, blind spots in LLM training data such as recent events, niche topics or internal company data can be addressed by this method.
+It seems likely, although unproven, that a similar blind spot could be manifest in the area of topological data required for urban navigation tasks.
 
-Any attempts to addressed the issue of poor LLM navigation performance using context enrichment must however answer the initial question of how to best provide geographic context in a way that is suitable for LLMs.
+Any attempts to address the issue of poor LLM navigation performance using context enrichment must however answer the initial question of how to best provide geographic context in a way that is suitable for LLMs.
 Since LLMs mostly consume text data during training, we hypothesize that the geographic context should be present in the form of text as well.
 Fortunately, spatial data is available in vast quantities on the internet for free.
 Unfortunately, this data is usually not in a text based natural-language format.
 
-A solution to addressed this tangential issue could be to utilize a framework for qualitatively describing topological data such as the dipole calculus.
-The dipole calculus is a established framework that has been used in applications such as robotics.
+A solution to address this related issue could be to utilize a framework for qualitatively describing topological data such as the dipole calculus.
+The dipole calculus is an established framework that has been used in applications such as robotics.
 In the framework, purely qualitative relations are defined to describe topological relations in an elegant manner.
 These relations could be translated into natural language statements, suitable for LLM context enrichment.
 
 In this study we therefore aim to show first empirical evidence on whether this technique of improving LLM navigation using qualitative geographic context could prove viable.
-As mentioned, this research will addressed a gap in the existing literature, but will not be sufficient to fully explore the area.
+As mentioned, this research will address a gap in the existing literature, but will not be sufficient to fully explore the area.
 The testing framework we establish can also be utilized by future researchers studying additional ways of improving LLM navigation performance.
 In the end, this study will serve as a first step on the long-term path towards LLM usage in navigation tasks.
 

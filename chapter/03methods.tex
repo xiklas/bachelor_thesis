@@ -31,7 +31,7 @@ The most common way of encountering street network data is in the form of graphm
 
 % Which data was downloaded and how was it processed to generate the dipole relations.
 
-As basis for our experiments, we downloaded two of these graphs from the OpenStreetMap database using OSMnx, a powerful Python library capable of handling and processing OpenStreetMap data.
+As a basis for our experiments, we downloaded two of these graphs from the OpenStreetMap database using OSMnx, a powerful Python library capable of handling and processing OpenStreetMap data.
 In order to ensure a reasonable degree of geographic variation, we selected two different cities as sites for our datasets: Hamburg and Münster.
 This way, we end up with one dataset per city, each containing a varying number of nodes and edges.
 To extract qualitative descriptions from these datasets, we implemented an algorithm capable of generating dipole relations in natural language which describe the topology of any graph given to the algorithm.
@@ -65,7 +65,7 @@ While the full algorithm is provided in the appendix, a conceptual description o
 
 Following this method, we were able to generate a set of dipole relations for each of our initial street network datasets.
 These relations were stored in the form of simple .txt files, with one relation per line.
-A full example of these relations is given in the appendix. 
+An example of these relations is given in the appendix. 
 To demonstrate the relations here, a small excerpt may be helpful:
 
 \begin{tcolorbox}[title={Excerpt of qualitative relations (Hamburg)}, colback=white]
@@ -94,7 +94,7 @@ While most LLM providers also offer APIs to interact with their models, this app
 % Why openrouter was selected and how the platform works.
 
 One additional solution to access a wide range of current or legacy LLMs through a unified interface is to use a platform like OpenRouter, which is the platform we have chosen to use for this study.
-Through it's user-friendly web-interface it is possible to query multiple LLMs concurrently without any additional programming effort.
+Through its user-friendly web interface it is possible to query multiple LLMs concurrently without any additional programming effort.
 It is important to note however, that even though OpenRouter makes it possible to query multiple LLMs at the same time, this does not mean that the queried models share a common context window or share any other information between each other.
 
 % Which models were selected and why.
@@ -118,21 +118,21 @@ Other than that, no further changes were made to the model's default configurati
 
 % Traditional A/B testing approach with Test and Control Group.
 
-Our experimental design follows a traditional A/B-testing approach, where we compare the performance of a Control Group against the performance of a Test Group.
+Our experimental design follows a traditional A/B testing approach, where we compare the performance of a Control Group against the performance of a Test Group.
 In our case, the Control Group consists of LLMs performing navigation tasks on their own, without any additional context.
 Respectively, the Test Group consists of LLMs performing the same navigation tasks, but with access to our dipole relations.
 While the Test Group performs the exact same tasks as the Control Group, it was ensured that no memories of previous trials were available to the models in the Test Group sessions by starting each individual trial of both groups in a fresh session, disconnected from any previously conducted trials.
 
 % How were the navigation tasks designed and executed?
 
-To generate problem statements without any bias towards certain areas or streets for each dataset, we extracted the set of available street names from the original graphml data.
-These lists were then each sampled randomly 20 times, with the resulting street names serving as the start-points for the navigation tasks for the given dataset.
-This process was then repeated and another random 20 items were selected from each list to serve as the end-points for the tasks.
+To generate problem statements without any bias towards certain areas or streets for each dataset, we extracted the set of available street names from the original GraphML data.
+These lists were then each sampled randomly 20 times, with the resulting street names serving as the start points for the navigation tasks for the given dataset.
+This process was then repeated and another random 20 items were selected from each list to serve as the end points for the tasks.
 In total, this sums up to 40 unique navigation tasks over both datasets. Since each task was executed for both control and test conditions using all three models, this results in a total of 240 evaluated trials over the course of our study.
 
 % How were the trial responses stored?
 
-After trial execution, each model's response was saved in a database. In case of an exceedingly verbose model response, the response was truncated to contain only the relevant navigational instructions which we intend to investigate in this study.
+After trial execution, each model's response was saved in a database. In the case of an exceedingly verbose model response, the response was truncated to contain only the relevant navigational instructions which we intend to investigate in this study.
 
 % How was the obtained data evaluated and which statistical tools were used?
 

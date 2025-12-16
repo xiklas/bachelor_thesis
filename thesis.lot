@@ -5,7 +5,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Overview of test datasets.}}{25}{table.caption.10}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Overview of experiment results in control and test groups with success and failure counts and complimentary success rates.}}{26}{table.caption.11}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Overview of experiment results in control and test groups with success and failure counts and corresponding success rates.}}{26}{table.caption.11}%
 \contentsline {table}{\numberline {4.3}{\ignorespaces \textbf {Frequency Distribution of Correct LLM Responses}}}{28}{table.caption.15}%
 \contentsline {table}{\numberline {4.4}{\ignorespaces \textbf {Cumulative Percentage Distribution of Correct LLM Responses with Group Drop}}}{29}{table.caption.16}%
 \contentsline {table}{\numberline {4.5}{\ignorespaces \textbf {Distribution of Correct Models in Single-Success Trials}}}{29}{table.caption.17}%
