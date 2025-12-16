@@ -9,6 +9,27 @@ These results will then be summarized and serve as the basis for the discussion 
 
 % Overview of Task Success Rates
 
+\section{Dataset Overview}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c c}
+\hline
+\textbf{City} & \textbf{\# Individual Streets} & \textbf{\# Avg. Task Distance (m)} \\
+\hline
+Hamburg & 38 & 899 \\
+Münster    & 128 & 1272 \\
+\hline
+\end{tabular}
+\caption{Overview of test datasets.}
+\end{table}
+
+In Table 4.1, we provide an overview of the two datasets used in our experiments.
+We were able to successfully extract symbolic dipole relations for both tested cities.
+For the Hamburg dataset, this resulted in a total of 38 individual streets and an average task distance between start and end point of 899 meters as measured via Google Maps.
+On the other hand, the Münster dataset contained a total of 128 individual streets, and also had a higher average task distance of 1272 meters as measured via Google Maps.
+
+
 \section{Experiment Results}
 
 \begin{table}[h!]
@@ -32,7 +53,7 @@ All trials could be executed successfully by the methods described in Chapter 3.
 This means that we got a valid LLM response for each navigation task under all test conditions.
 However, this does not imply that all responses were correct in terms of navigation success, but simply that we were able to collect all the necessary data.
 In total, 240 navigation tasks were answered by the LLMs and manually labeled as either correct or incorrect.
-Table 4.1 summarizes the overall results of our experiments.
+Table 4.2 summarizes the overall results of our experiments.
 
 % What is the total performance gain between control and test group?
 
@@ -116,7 +137,7 @@ The lowest overall task success rate in the test group was thus observed with GP
 \end{table}
 
 We may also take a look at the frequency distribution of correctly answered navigation tasks in the test group.
-The above Table 4.2 summarizes how many navigation tasks were answered correctly by how many models in this group.
+The above Table 4.3 summarizes how many navigation tasks were answered correctly by how many models in this group.
 Only six navigation tasks were answered incorrectly by all three models.
 Counting the occurences of navigation tasks where just one model gave a correct answer, we find that there are nine such tasks.
 The occurence of two correct answers per navigation task is also nine.
@@ -255,7 +276,7 @@ Gemini vs. Claude & 8 & 10 \\
 Finally, we may analyze the pairwise disagreement performance of the three studied models.
 Setting aside the 22 cases where all models either answered correctly or incorrectly, we are left with 18 trials where the results were ambiguous.
 In these trials, we can analyze how often two models disagreed with each other, meaning that one model answered correctly while the other answered incorrectly or the other way around.
-The results of this analysis are summarized in Table 4.7.
+The results of this analysis are summarized in Table 4.8.
 Out of the 18 ambiguous trials, GPT-4o and Gemini 2.5 disagreed in 15 cases, while agreeing on 3 cases.
 The next highest disagreement count was observed in the pairing GPT-4o and Claude 4.5, which disagreed in 13 cases and agreed in 5 cases.
 With just 8 disagreements and 10 agreements, the pairing of Gemini 2.5 and Claude 4.5 showed the lowest amount of disagreements out of all combinations.
@@ -264,7 +285,7 @@ On the other hand, any combination involving ChatGPT-4o resulted in more disagre
 
 \section{Summary of Findings}
 
-In summary, our experiments revealed that LLM navigation perfomance with additional geographic context was higher than without it.
+In summary, our experiments revealed that LLM navigation perfomance with additional symbolic geographic context was higher than without it.
 This effect was not limited to a specific city or model, but could be observed across all combinations tested in this study.
 
 
