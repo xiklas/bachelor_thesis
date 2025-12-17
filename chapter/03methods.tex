@@ -35,7 +35,7 @@ The most common way of encountering street network data is in the form of graphm
 As a basis for our experiments, we downloaded two of these graphs from the OpenStreetMap database using OSMnx, a powerful Python library capable of handling and processing OpenStreetMap data.
 In order to ensure a reasonable degree of geographic variation, we selected two different cities as sites for our datasets: Hamburg and Münster.
 This way, we end up with one dataset per city, each containing a varying number of nodes and edges.
-To extract qualitative descriptions from these datasets, we implemented an algorithm capable of generating dipole relations in natural language which describe the topology of any graph given to the algorithm.
+To extract qualitative descriptions from these datasets, an algorithm capable of generating dipole relations in natural language describing the topology of a given graph was used.
 In essence, the algorithm works by iterating over all nodes and creating dipole relations for each intersection.
 While the full algorithm is provided in the appendix, a conceptual description of the algorithm in pseudocode is given here:
 
@@ -78,8 +78,7 @@ Langmaackweg then branches off to the right.
 \end{verbatim}
 \end{tcolorbox}
 
-
-
+The software implementation used to generate the qualitative dipole relations was implemented primarily by James Odienki, and the code is available upon request.
 After discussing the data acquisition process, we now focus on a detailed description of the configuration of the LLMs used in this study.
 
 % Which LLMs were selected and how were they configured.
