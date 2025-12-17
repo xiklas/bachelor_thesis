@@ -16,9 +16,9 @@ We then identify the research gap we aim to address in this thesis and formulate
 
 Today, users rely on large language models every day, with leading systems like ChatGPT processing over 2 billion user queries per day as of July 2025 \citep{openai_unlocking_2025}.
 A recent journal article has highlighted the many unique use cases for LLMs, ranging from information retrieval to various other tasks such as drafting text or generating computer code \citep{chatterji_how_2025}.
-With this many requests to ChatGPT alone and many other competing LLMs such as Google's Gemini or Anthropic's Claude also available on the market, it is possible to imagine that some users may have attempted to use LLMs for navigational tasks as well.
-If that is indeed the case, we should study whether LLMs are actually capable of delivering accurate responses to such requests.
-If it can be argued that they are not yet up to the task, we should also invest time into improving their performance in this regard.
+With this many requests to ChatGPT alone and many other competing LLMs such as Google's Gemini or Anthropic's Claude also available on the market, it is plausible that some users may feel tempted to use LLMs for navigational tasks as well.
+This motivates evaluating whether LLMs are currently capable of delivering accurate and reliable responses to user navigation queries. 
+If performance can be shown to be insufficient, this motivates research exploring techniques to improve LLM navigation performance. 
 
 In the following example depicted in Figure 1.1, we prompted GPT-4o with a simple navigation task to observe whether the model could successfully provide a useful answer to a simple path finding problem.
 The prompt used to generate the response shown in Figure 1.1 was as follows:
@@ -39,7 +39,7 @@ The prompt used to generate the response shown in Figure 1.1 was as follows:
 % Why would users want to use LLMs for navigation?
 
 Although alternative route planning solutions such as Google Maps or OpenStreetMap exist, the model response depicted in Figure 1.1 illustrates the potential of using LLMs as purely text-based interfaces for navigational tasks, as compared to the traditional map-based implementations.
-For this concept to be viable in practice however, LLMs would have to be able to provide accurate and reliable responses, as mistakes in navigation can lead to significant problems in many scenarios.
+For this concept to be viable in practice however, LLMs would have to be able to provide accurate and reliable responses, as mistakes in navigation can lead to deviations from the intended route, and thus to lost time and frustration.
 
 % Map with Correct Route vs. GPT-4o Response
 
@@ -52,48 +52,51 @@ For this concept to be viable in practice however, LLMs would have to be able to
 
 % What is wrong with the LLM response?
 
-Even though the model response shown in Figure 1.1 appears structurally sound and plausible at first glance, upon closer inspection there are several critical mistakes present in the response.
-To understand the mistakes, we are going to break down the response step by step, starting with the first instruction:
+Even though the model response shown in Figure 1.1 appears structurally sound and plausible at first glance, upon closer inspection there are several mistakes that would prevent the user from following the proposed route.
+To understand the mistakes, we are going to break down the response step by step, starting with the first instruction.
+To ensure followability, we provide Figure 1.2 showing one possible correct route as context.
 
 \begin{quote}
     \textit{1. Exit Münster Hauptbahnhof through the main entrance onto Willy-Brandt-Allee.}
 \end{quote}
 
-Although exiting Münster Hauptbahnhof to reach the destination is certainly a sensible step, the actual best way would be to use the secondary exit away from the city center and towards the actual destination.
-Also, a street called "Willy-Brandt-Allee" does not exist in Münster at the time of writing, rendering the instruction impossible to follow.
+Although exiting Münster Hauptbahnhof to reach the destination is certainly a sensible step, a more direct choice would be to use the secondary exit away from the city center and towards the actual destination.
+Also, the response introduces a street called "Willy-Brandt-Allee" which does not align with the map context shown in Figure 1.2.
 The second instruction is as follows:
 
 \begin{quote}
     \textit{2. Turn right and walk southeast on Willy-Brandt-Allee toward the city center.}
 \end{quote}
 
-Although the destination indeed lies southeast of the central train station in Münster, this instruction is impossible, since the street mentioned does not exist in the first place.
-Additionally, the direction "toward the city center" is incorrect, since the destination lies further away relative to the city center.
+In the example, the destination "Hafenweg" lies generally southeast of the starting point.
+The direction "toward the city center" is also inconsistent with the intended destination.
 The next instruction reads:
 
 \begin{quote}
     \textit{3. After about 500 meters, you'll reach Albersloher Weg. Turn left onto Albersloher Weg.}
 \end{quote}
  
-The "Albersloher Weg" is actually an existing street in Münster, and also somewhat close to the destination "Hafenweg".
-However, turning onto this street based on the previous instruction is impossible, and taking this street based on the starting point of the route does not make sense navigationally.
+Next, the LLM response introduces the street "Albersloher Weg".
+However, the map shown in Figure 1.2 suggests no visible connection between "Willy-Brandt-Allee" and "Albersloher Weg".
 Continuing with the next instruction:
 
 \begin{quote}
     \textit{4. Continue along Albersloher Weg for about 1 km, passing the Aasee park area on your right.}
 \end{quote}
 
-This instruction is puzzling in many ways. 
-For once, the destination does not lie one kilometer away from the Central Station, therefore traversal of any road for "about 1 km" should lead to scepticism about the correctness of the instruction.
-Further, the "Aasee Park area" exists in Münster, but it does not make sense to mention it in this example, since it is too far away from any point along the actual route, and it also is not located near the "Albersloher Weg".
+This instruction raises many questions. 
+For once, the destination does not lie one kilometer away from the Central Station, therefore the stated distance appears inconsistent with the approximate start-destination distance in this example.
+Further, the response introduces the "Aasee park area", which is inconsistent with the route context shown in Figure 1.2
+Additionally, the map shown in Figure 1.2 shows no visible connection between the two segments.
 With the next instruction, the mistakes made by GPT-4o continue:
 
 \begin{quote}
     \textit{5. When you reach the intersection with Hammer Straße, turn right.}
 \end{quote}
 
-Again, "Hammer Straße" is an actual street in Münster, however:
-It does not intersect with the "Albersloher Weg" - and taking this street does not make sense in the context of the presented problem.
+The response then refers to "Hammer Straße".
+Again, this instruction does not appear viable in the example situation, as Figure 1.2 does not show a visible connection between the two required streets. 
+Thus, it doesn't appear that this instruction can be followed.
 Finally, the last two instructions read:
 
 \begin{quote}
@@ -101,15 +104,12 @@ Finally, the last two instructions read:
     \textit{7. Look for Hafenweg on your left. Turn left onto Hafenweg.}
 \end{quote}
 
-Again, these instructions are not viable, as the Hammer Straße and Hafenweg are not connected.
+Again, these instructions do not appear viable, as the map context shown in Figure 1.2 does not show a visible connection between the two streets.
 Whether there are "residential and commercial buildings" along the Hammer Straße is irrelevant, although it may as well be true.
-In total, GPT-4o suggested several wrong and disconnected directions, a striking contrast compared to the actual route.
-Additionally, traversal of a street was suggested that doesn't exist in the investigated city at the time of writing (Willy-Brandt-Allee).
+In total, GPT-4o suggested several steps that may be difficult to follow in practice when compared against the map context shown in Figure 1.2.
 
-Dr. Reinhard Moratz, the supervisor of this thesis, has experimented with the navigational capabilities of LLMs earlier this year and was able to make similar observations like this on their apparent struggle to provide useful answers.
-This tendency seems to persist even in more recent models such as GPT-4o, as can be seen in the example above.
-
-
+Preliminary, informal tests discussed during thesis supervision suggested similar shortcomings in contemporary LLM navigation in urban environments.
+In line with these preliminary observations, the routing task shown above illustrates that such issues may occur in recent LLMs such as GPT-4o.
 
 % What have observations like these led us to think about?
 
@@ -121,28 +121,26 @@ In order to gain a clear picture of the current state of research in this area, 
 
 \section{Research Overview}
 
-At the moment, no literature explores the impact of qualitative geographic context on navigation performance in LLMs.
-Without any research, a clear verdict on the viability of LLMs as natural language interfaces for navigation tasks will remain inconclusive. 
+During a targeted literature review for this thesis, we did not identify prior research explicitly evaluating the impact of qualitative geographic context on LLM navigation performance.
+Without identified prior research explicitly addressing this issue, the viability of LLMs as natural language interfaces for navigation tasks remains unclear.
 While previous research has addressed the general capabilities of LLMs in reasoning tasks, it cannot automatically be assumed that these capabilities translate to strong navigation performance in real world scenarios.
 Many potential uses for LLMs in GIScience applications have been theorized, among those the possibility to act as natural language interfaces for spatial queries such as navigation.
-The existing research regarding LLM navigation performance however paints a clear picture: Currently, LLMs are not able to perform navigation tasks reliably, and thus this potential use case remains unfulfilled.
+Across the literature reviewed for this thesis, LLMs seem to struggle with navigation-style tasks.
 
 This research alone is however not sufficient to fully dismiss the idea of using LLMs for navigation.
-Few attempts have been made to improve their performance in this regard.
 If research could identify techniques that substantially improve LLM navigation performance, the idea of their usage in this area could become practical in the future.
 Even though one study alone will not be sufficient to fully explore this area and answer all open questions, it could provide first evidence on the viability of such techniques and serve as a benchmark for future research.
 
-One technique that has shown promise in reducing shortcomings such as hallucinations in other areas where LLMs are applied is context enrichment.
-By providing additional context to the model, blind spots in LLM training data such as recent events, niche topics or internal company data can be addressed by this method.
-It seems likely, although unproven, that a similar blind spot could be manifest in the area of topological data required for urban navigation tasks.
+Context enrichment is commonly used to supply missing information in the LLMs training data.
+Although this thesis does not test this explanation, one possible reason for poor navigation performance in LLMs could be such a blind spot in the training data, in this case regarding topological data suitable for navigation.
 
 Any attempts to address the issue of poor LLM navigation performance using context enrichment must however answer the initial question of how to best provide geographic context in a way that is suitable for LLMs.
 Since LLMs mostly consume text data during training, we hypothesize that the geographic context should be present in the form of text as well.
-Fortunately, spatial data is available in vast quantities on the internet for free.
-Unfortunately, this data is usually not in a text based natural-language format.
+Many sources provide openly available spatial data online.
+Much of this data is however present in machine-readable formats, rather than in natural language.
 
 A solution to address this related issue could be to utilize a framework for qualitatively describing topological data such as the dipole calculus.
-The dipole calculus is an established framework that has been used in applications such as robotics.
+The dipole calculus is a framework that has been discussed in applications such as robotics.
 In the framework, purely qualitative relations are defined to describe topological relations in an elegant manner.
 These relations could be translated into natural language statements, suitable for LLM context enrichment.
 
@@ -157,7 +155,7 @@ In the end, this study will serve as a first step on the long-term path towards 
 
 Drawing from the current state of research, we propose that context enrichment using qualitative geographic relations may have a positive effect on LLM navigation performance.
 Context enrichment has been shown to make LLM responses less prone to hallucinations in other domains, while dipole relations provide a proven framework for qualitatively describing topological data.
-Combined, these techniques should aid the LLM and allow it to provide more accurate answer to navigational tasks.
+Combined, these techniques may aid the LLM in generating more accurate navigation responses.
 We thus formulate the following research hypothesis H1: 
 \begin{quote} 
     \textit{The inclusion of qualitative geographic context in the form of natural language dipole relations substantially improves the navigation performance of large language models.}
