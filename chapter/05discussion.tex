@@ -11,18 +11,18 @@ The results of these experiments presented in Chapter~4 serve as the basis for t
 
 Our experiments suggest that the inclusion of qualitative geographic context had a positive effect on LLM navigation performance in the tested setup.
 The overall success rate increased from 0/120 (0\%) in the control group to 75/120 (62.5\%) in the test group (see Table~4.2).
-This is a substantial improvement in task success rate, supporting our initial research hypothesis in the within the scope of our experiments.
+This is a substantial improvement in task success rate, supporting our initial research hypothesis within the scope of our experiments.
 However, since the evaluation in this thesis does not include formal statistical significance testing, these results should be interpreted as empirical evidence rather than a general claim about all possible cities, models, or navigation scenarios.
 
 To reduce the risk that results depend on a specific city-model combination, we analyzed multiple cities and LLMs.
-Across all of the tested combinations, we observed improvements in trial success rates when qualitative geographic context was provide (see Table~4.3).
+Across all of the tested combinations, we observed improvements in trial success rates when qualitative geographic context was provided (see Table~4.3).
 This suggests a potential generalizable effect of our approach, although further research beyond the scope of this thesis would be necessary to confirm this effect.
 Although we tested six different city-model combinations in total (2 cities and 3 models), and saw improvements across all of them, it is important to state that this is just a small fraction of the possible combinations of cities and LLMs that exist.
 
 The causes for the poor control group performance remain speculative.
-Although the reasoning capabilities of LLMs have been shown to be impressive in other areas, one possible explanation is that these are not sufficient for navigation task yet.
-Another possible cause is that there may be a lack of geographic knowledge in the training data of LLMs. 
-After all, traditional navigation solutions usually do not rely on qualitative spatial data published on the internet, but rather on large databases of geospatial datasets.
+Although the reasoning capabilities of LLMs have been shown to be impressive in other areas, one possible explanation is that these are not sufficient for navigation tasks yet.
+Another possible cause is a training data blindspot.
+This would mean that there is simply not enough relevant geographic data in the training data of LLMs for effective navigation.
 Our approach would thus simply provide the LLMs with the information they need to make up for this blind spot in the training data.
 Although this may be a sensible explanation, our research cannot confirm this assumption, and further studies would be necessary to answer this tangential question.
 
@@ -32,7 +32,6 @@ This serves as yet another example of LLMs and their many different abilities, b
 While it has become easier to imagine LLMs being used for navigation tasks, as we have shown that their performance could be improved measurably, in our view it is irresponsible to make such bold claims.
 
 This study does not claim that traditional navigation solutions are no longer necessary or that LLMs are going to replace them.
-In fact, suggesting such a thing would feel irresponsible:
 The many mistakes made by the LLMs in the control group as well as the mistakes still present in the test group highlight the current limitations of LLM-based navigation and the need for additional research.
 
 Mistakes in navigation can lead to serious consequences in time, safety and cost in real world scenarios.
@@ -42,7 +41,7 @@ If the gap could be closed further in the future, LLMs could someday seriously b
 So far, we have only considered topological information when providing geographic context to LLMs.
 In practice, there are countless other types of geographic information that could be supplied for various use cases as well.
 Future work could explore the inclusion of additional types of geographic context:
-accessibility information, data on points of interest or data on real-time dynamic conditions could potentially be rich avenous.
+accessibility information, data on points of interest or data on real-time dynamic conditions could potentially be rich avenues.
 
 The development of new models is rapid and ongoing:
 areas of poor performance today may be addressed by a new model tomorrow.
@@ -58,7 +57,7 @@ Although the results were promising, this doesn't mean that other methods could 
 We encourage researchers to explore the development of other alternative methods.
 The testing framework described in Chapter~3 was designed to be easily reproducible and could serve as a basis for future research. 
 
-Beyond navigation, our approach could be used in similar scenarios involving graph like structures.
+Beyond navigation, our approach could be used in similar scenarios involving graph-like structures.
 One interesting avenue for additional research could thus be to study whether knowledge graphs could be represented using qualitative relations as well, and whether this could allow LLMs to reason about knowledge graphs in a similar way as we have shown for geographic networks.
 
 Our results can also be interpreted in another way: If it takes additional, non-trivial work to achieve better navigation performance with LLMs, maybe they are currently not the best tool for the job after all.
@@ -67,9 +66,9 @@ At present, implementing a comparable pipeline in user navigation applications c
 It is difficult to imagine users, especially those without a technical background, recreating our setup on mobile devices such as smartphones or smartwatches for example, which are so commonly used for navigation in this era of mobile computing.
 
 Following this interpretation, LLM systems may benefit from further calibration, and explicit caveats about their limitations when answering user's navigation queries could be an appropriate measure.
-Our control group experiments, did not indicate this in present implementations of LLMs, however.
+Our control group experiments did not indicate this in present implementations of LLMs, however.
 Many mistakes of various nature were made by the tested LLMs, even though they are widely used state-of-the-art models at the time of writing.
-And since these models used so frequently today, it is not implausible that some users have already tried to navigate using them.
+And since these models are used so frequently today, it is not implausible that some users have already tried to navigate using them.
 
 It would be interesting to know whether users would be aware of the potentially poor results.
 In the best case, users would quickly realize the mistakes before following them and move to other existing navigation solutions to get accurate navigation results.
