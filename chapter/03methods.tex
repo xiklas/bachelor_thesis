@@ -78,7 +78,7 @@ Langmaackweg then branches off to the right.
 \end{verbatim}
 \end{tcolorbox}
 
-The software implementation used to generate the qualitative dipole relations was implemented primarily by James Odienki, and the code is available upon request.
+The python software used to generate the qualitative dipole relations was primarily implemented  by James Odienki, and the code is available upon request.
 After discussing the data acquisition process, we now focus on a detailed description of the configuration of the LLMs used in this study.
 
 % Which LLMs were selected and how were they configured.
@@ -149,7 +149,7 @@ After trial execution, each model's response was saved in a database. In the cas
 
 % Responses were reviewed manually against Google Maps.
 
-All responses were then reviewed manually by comparing the produced instructions against Google Maps, one of the most widely used geographic information systems on the internet.
+All responses were then reviewed manually by comparing the generated instructions against Google Maps.
 When looking at any response, the objective was to determine whether the produced steps could be executed in sequence to solve the navigation task.
 If this was the case, the response was labelled as correct, otherwise it was labelled as incorrect.
 Since the responses were labelled manually by a single evaluator, they may contain some subjective judgement in a few borderline cases.
@@ -163,13 +163,13 @@ While these additional measures could provide interesting insights, they are out
 The trial success rate is therefore defined as the proportion of navigation trials which were labelled as correct over the total number of navigation trials conducted.
 
 \[
-\text{TaskSuccessRate} \;=\; \frac{N_{\text{correct}}}{N_{\text{total}}}
+\text{TrialSuccessRate} \;=\; \frac{N_{\text{correct}}}{N_{\text{total}}}
 \]
 
 
-% How was the task success rate calculated?
+% How was the trial success rate calculated?
 
-After all responses were labelled, we were thus able to calculate task success rates for the control and test groups.
+After all responses were labelled, we were thus able to calculate trial success rates for the control and test groups.
 
 % Conclusion of the Methods chapter.
 
