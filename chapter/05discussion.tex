@@ -14,25 +14,59 @@ The overall success rate increased from 0/120 (0\%) in the control group to 75/1
 This is a substantial improvement in task success rate, supporting our initial research hypothesis within the scope of our experiments.
 However, since the evaluation in this thesis does not include formal statistical significance testing, these results should be interpreted as empirical evidence rather than a general claim about all possible cities, models, or navigation scenarios.
 
-To reduce the risk that results depend on a specific city-model combination, we analyzed multiple cities and LLMs.
-Across all of the tested combinations, we observed improvements in trial success rates when qualitative geographic context was provided (see Table~4.3).
-This suggests a potential generalizable effect of our approach, although further research beyond the scope of this thesis would be necessary to confirm this effect.
-Although we tested six different city-model combinations in total (2 cities and 3 models), and saw improvements across all of them, it is important to state that this is just a small fraction of the possible combinations of cities and LLMs that exist.
+The success rate of 0\% in the control group is striking, and raises multiple questions.
+First: was the experimental setup appropriate to test LLM navigation performance in real world scenarios?
+Since the navigation tasks were designed by combining two real world streets in each city with each other to form a routing task, the setup realistically reflects potential real world user scenarios.
+Additionally, the sole use of LLMs for navigation without any additional tools may be questioned.
+However, since a goal of this study was to evaluate LLM navigation performance in the first place, this setup was necessary to isolate the LLMs' capabilities from any external sources or information.
+Further, our correctness criteria could be considered too strict by some.
+This does not align with typical navigation use cases however, where a single wrong instruction can lead to failed navigation, regardless of the system used.
+Under this evaluation framework, the 0\% success rate indicates that the tested LLMs were not reliable for navigation in the tested areas.
 
-The causes for the poor control group performance remain speculative.
-Although the reasoning capabilities of LLMs have been shown to be impressive in other areas, one possible explanation is that these are not sufficient for navigation tasks yet.
-Another possible cause is a training-data blind spot.
-This would mean that there is simply not enough relevant geographic information in the models' training data for effective navigation.
-Our approach would then provide the LLMs with additional context to compensate for this blind spot.
-Although this may be a sensible explanation, our research cannot confirm this assumption, and further studies would be necessary to answer this tangential question.
+Further, as depicted in Table~4.1, the performance increase across the two tested cities was not equal.
+In Hamburg, the success rate in the test group was 86.6\%, while in Münster it was only 38.3\%.
+Several factors could explain this discrepancy.
+One possible explanation is the size difference between the two tested datasets.
+The Hamburg dataset contained just 38 individual streets, while the Münster dataset contained 128 individual streets.
+Perhaps the smaller dataset was easier for the LLM to process in its context window, leading to better performance.
+Additionally, the navigation tasks in Münster spanned a larger distance (1272m) compared to Hamburg (899m), as measured using Google Maps.
+Thus, another possible explanation is that the LLMs struggled to find effective solutions for these longer routes.
+Since the control group performance was equally poor in both cities, it seems unlikely that any intrinsic model bias towards one of the cities played a role in the observed results.
+However, such biases cannot be entirely ruled out without further experiments.
+In total, it may be possible that multiple factors contributed to the observed performance difference between the two cities.
+
+We may also consider the performance differences between the three tested LLMs shown in Figure~4.2 and discuss whether it made sense to test multiple models, and whether the choice of models was appropriate.
+The results indicate that while all three models benefited from the provided geographic context, their performance varied in the tested setup.
+This suggests that navigation performance using our approach may depend on the specific LLM used, justifying our decision to test multiple models.
+While the exact reasons for the performance differences remain speculative, differences in model architecture, training process, or fine tuning could have played a role.
+The best performing model in our experiments was Gemini 2.5 Pro.
+This does not imply however, that it is the best model using our approach in general: other models not evaluated in this study may perform better or worse than our tested models.
+However, the substantial increase in success rates across all three models indicates that our approach has the potential to improve navigation performance in a variety of current LLMs, which could be an area of interest for future research.
+
+In Chapter~2 we discussed several LLM related benchmarks.
+This raises the question whether our framework could be integrated or expand on existing benchmarks.
+As we have seen, all models in the control group had a success rate of 0\%.
+Therefore, it seems unlikely that our framework would provide interesting insights when purely testing LLM performance without any additional techniques to boost navigation performance. 
+For any techniques aiming to improve LLM navigation however, our framework could serve as a navigation-specific task suite to compare performance improvements.
+
+We also discussed the suitability of OpenStreetMap data for our approach in Chapter~2.
+In this thesis, OSM data was used to extract street networks for Hamburg and Münster.
+Whether variance in OSM data quality could influence our results was not explicitly tested in this study and remains speculative.
+Issues in OSM data quality are unlikely to be the main cause for all test group mistakes however, since the provided context was sufficient to improve results across all tested models and cities.
+Future research could explore different data sources in order to better understand the influence of data sources on LLM based navigation.
+
+In addition, we may consider the suitability of the dipole relations presented in Chapter~2 for our approach.
+In this study, these relations were used to represent geographic context in a qualitative manner.
+The results indicate that this representation was effective:
+While the previously discussed variations in performance across cities and models cannot be ignored, the overall improvements show that dipole relations can be a useful tool for LLM navigation tasks.
+Whether alternative frameworks for spatial representation could yield comparable or even better results remains an open question for future research.
 
 Our results indicate that poor LLM navigation performance is not necessarily inevitable in the tested setup.
 By providing qualitative geographic context, navigation performance improved substantially in our experiments.
 This indicates that LLM navigation performance can be improved with additional techniques.
-At the same time, this does not imply that established navigation solutions are obsolete.
-
-This study does not claim that traditional navigation solutions are no longer necessary or that LLMs are going to replace them.
-The many mistakes made by the LLMs in the control group as well as the mistakes still present in the test group highlight the current limitations of LLM-based navigation and the need for additional research.
+In practice, this does not imply that established navigation solutions are obsolete.
+Based on the results of this study, no claim of LLM based navigation entirely replacing established navigation solutions can be made.
+The many mistakes made by the LLMs in the control group as well as the mistakes still present in the test group highlight the current limitations of LLM-based navigation and justify alternative solutions.
 
 Mistakes in navigation can lead to serious consequences in time, safety and cost in real world scenarios.
 Although certainly encouraging, a success rate of 62.5\% is therefore not sufficient for many use cases, while established navigation systems typically achieve high reliability in everyday use.

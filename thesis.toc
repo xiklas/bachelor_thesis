@@ -22,16 +22,16 @@
 \contentsline {section}{\numberline {4.3}Summary of Findings}{28}{section.4.3}%
 \contentsline {chapter}{\numberline {5}Discussion}{31}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Interpretation of Results}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Limitations}{34}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{35}{chapter.6}%
+\contentsline {section}{\numberline {5.2}Limitations}{35}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{37}{chapter.6}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Appendix}{37}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Hamburg Street Descriptions}{37}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Prompts}{43}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Control Group Prompt}{43}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Test Group Prompt}{43}{subsection.A.2.2}%
-\contentsline {subsection}{\numberline {A.2.3}User Prompt}{43}{subsection.A.2.3}%
-\contentsline {section}{\numberline {A.3}Example Navigation Tasks}{43}{section.A.3}%
-\contentsline {chapter}{\nonumberline List of Figures}{45}{chapter*.21}%
-\contentsline {chapter}{\nonumberline List of Tables}{47}{chapter*.22}%
+\contentsline {chapter}{\numberline {A}Appendix}{39}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Hamburg Street Descriptions}{39}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Prompts}{45}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Control Group Prompt}{45}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Test Group Prompt}{45}{subsection.A.2.2}%
+\contentsline {subsection}{\numberline {A.2.3}User Prompt}{45}{subsection.A.2.3}%
+\contentsline {section}{\numberline {A.3}Example Navigation Tasks}{45}{section.A.3}%
+\contentsline {chapter}{\nonumberline List of Figures}{47}{chapter*.21}%
+\contentsline {chapter}{\nonumberline List of Tables}{49}{chapter*.22}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
