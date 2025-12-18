@@ -14,17 +14,17 @@ Finally, we discuss whether these techniques have been applied in prior work on 
 
 Large language models (LLMs) are the model class evaluated in this thesis.
 The history of LLMs is extensive, with early work on language modeling dating back to the 1950s \citep{minaee_large_2025}, and therefore out of scope for this thesis.
-Accordingly, this section provides a high-level overview on LLMs and summarizes their relevant characteristics to this study.
+Accordingly, this section provides a high-level overview of LLMs and summarizes their relevant characteristics to this study.
 
 Large language models are a recent class of language models in general \citep{minaee_large_2025}.
 In practice, a common training objective for LLMs is next token prediction \citep{minaee_large_2025}.
-For example, given the input tokens (tokens are typically words or subword units) "Roses are", a large language model would generate a plausbile next token such as "red".
+For example, given the input tokens (tokens are typically words or subword units) ``Roses are'', a large language model may generate a plausible next token such as ``red''.
 Adding the predicted token to the input sequence, the model can then repeat this process iteratively.
 This process is known as autoregressive generation and is also used in other domains such as computer vision \citep{xiong_autoregressive_2025}.
-In the running example, the next token after "Roses are red" could be "violets".
-After further iterations this could eventually result in a full sequence such as "Roses are red, violets are blue".
+In the running example, the next token after ``Roses are red'' could be ``violets''.
+After further iterations this could eventually result in a full sequence such as ``Roses are red, violets are blue''.
 
-Training models to perform high quality next-token prediction is non-trivial.
+Training models to perform high-quality next-token prediction is non-trivial.
 In fact, a key limitation of pre-transformer architectures such as recurrent neural networks (RNNs) is that they can struggle to model long-range dependencies in long sequences.
 This difficulty has been cited as motivation to improve sequence modeling on long time horizons \citep{johnston_revisiting_2025}.
 
@@ -37,14 +37,13 @@ High-performing LLMs are typically trained on large amounts of data.
 Training corpora often include sources such as books and web pages.
 Although exact figures on training dataset sizes are difficult to obtain for current models, earlier models were trained on datasets containing billions of tokens \citep{minaee_large_2025}.
 
-In the pre-training process, the model parameters are optimized to minimuze a training objective.
-This means that the model, often consisting of billions of parameters is adjusted iteratively.
-In each iteration, the objective is evaluated and the parameters are updated accordingly.
-Using this error, the parameters of the model are adjusted and the process is repeated until predefined stopping criteria are met.
+In the pre-training process, the model parameters are optimized to minimize a training objective.
+This means that the model, often consisting of billions of parameters, is adjusted iteratively.
+In each iteration, the training objective is evaluated and the model parameters are updated, until predefined stopping criteria are eventually met.
 In addition to pre-training, the model can also be fine-tuned to match a specific task or setting \citep{minaee_large_2025}.
 
-Many additionl details regarding LLM architectures and training process are out of the scope of this thesis.
-The preceeding overview provides the necessary concepts for the remainder of this thesis.
+Many additional details regarding LLM architectures and training processes are out of the scope of this thesis.
+The preceding overview provides the necessary concepts for the remainder of this thesis.
 Building on this overview, this thesis evaluates whether LLMs can be used to generate usable navigational instructions.
 
 GPT-3 released by OpenAI in 2020 is often cited as an early example of a large language model \citep{minaee_large_2025}.
@@ -56,14 +55,13 @@ GPT-3 released by OpenAI in 2020 is often cited as an early example of a large l
 Beyond language understanding and generation, LLMs may exhibit additional abilities.
 The term ``emerging abilities'' is used to refer to LLM abilities that may arise with increased model scale \citep{wei_emergent_2022}.
 This means that these abilities are not just scaled up versions of existing capabilities of smaller models.
-Examples include in-context learning and multi-step problem solving (often referred to as ``reasoning'').
+Examples include in-context learning and multi-step problem solving (often referred to as ``reasoning'') \citep{wei_emergent_2022}.
 With in-context learning, LLMs are able to learn new tasks from examples provided in the prompt, without any updates to the model parameters.
-``Reasoning'' is commonly used to describe the ability of problem solving requiring multiple intermediate steps, for example math problems \citep{wei_emergent_2022}.
+The term ``reasoning'' is commonly used to describe multi-step problem solving \citep{wei_emergent_2022}.
 
 These emerging abilities motivate evaluating LLMs on navigation tasks.
 Solving navigational tasks may require text generation of route descriptions as well as maintaining spatial context.
 If emerging abilities transfer to navigation tasks, LLMs may be able to solve them without task-specific training.
-To the best of our knowledge, we did not find any publicly documented claims on LLM navigation abilities.
 
 % Context Enrichment for LLMs
 
@@ -72,21 +70,21 @@ To the best of our knowledge, we did not find any publicly documented claims on 
 LLMs can produce incorrect or misleading outputs, a phenomenon often referred to as ``hallucination'' \citep{huang_survey_2025}.
 Hallucinated outputs may appear plausible at first, while being factually incorrect upon closer inspection \citep{huang_survey_2025}.
 The navigation example given in the introductory chapter illustrates this phenomenon: a seemingly plausible set of route instructions may contain errors when validated against a map.
-This plausibility can distinguish hallucinated outputs from obviously degenerate output.
-To reduce hallucinations, techniques have been developed to provide LLMs with additional information after the training process \citep{minaee_large_2025}.
+This plausibility can distinguish hallucinations from nonsensical outputs.
+To reduce hallucinations, techniques have been developed to provide LLMs with additional information at inference time \citep{minaee_large_2025}.
 
 In practice, this is often done by enriching the LLMs' context.
-LLMs possess a finite context window, within which they can attend to tokens.
+LLMs have a finite context window.
 Typically, this context window consists of the prompt and the current chat history.
-With context enrichment techniques however, additional information can be included in the context window \citep{minaee_large_2025}.
+With context enrichment techniques, however, additional information can be included in the context window \citep{minaee_large_2025}.
 
 Retrieval-augmented generation (RAG) is one such technique \citep{lewis_retrieval-augmented_2021}.
 With RAG, an additional external knowledge base is connected to the LLM system.
 This external knowledge base contains a collection of information, for example company documents or other domain-specific knowledge.
-Given a user prompts, the system retrieves relevant information from this knowledge base using a retrieval query.
+Given a user prompt, the system retrieves relevant information from this knowledge base using a retrieval query.
 The retrieval query is derived from the user prompt.
 Relevant snippets of the external knowledge base are then added to the LLMs' context window.
-The LLM can then generate an output using the previously retrieved knowledge as an additional source \citep{lewis_retrieval-augmented_2021}.
+The LLM then generates an output conditioned on the prompt and the retrieved knowledge as an additional source \citep{lewis_retrieval-augmented_2021}.
 
 The effects of RAG on LLM hallucinations have been studied in previous research.
 In knowledge-intensive tasks such as question answering, RAG has been shown to reduce hallucinations \citep{gao_retrieval-augmented_2024}.
@@ -103,7 +101,7 @@ In some cases, the graph structure may first have to be constructed from text, w
 Recent work has applied graph-based RAG to LLM-based navigation \citep{moratz_bilateral_2025}.
 
 Examples of graph structures include knowledge graphs, social networks or road networks.
-This suggests that a graph based RAG system could be used for navigation tasks.
+This suggests that a graph-based RAG system could be used for navigation tasks.
 However, this thesis does not implement a full graph RAG system.
 Instead, the technique is emulated by providing additional geographic context within the prompt.
 
@@ -167,7 +165,7 @@ Pairing two of these dipoles together results in a relation that can be classifi
 The set of these relational categories is finite.
 Examples include relations where one dipole continues another, crosses it, or branches off from it.
 The calculus abstracts from metric information such as distances and instead focuses on qualitative relations.
-This yields in a framework allowing for qualitative reasoning on line-based geographic structures such as road networks \citep{moratz_condensed_2011}.
+This yields a framework allowing for qualitative reasoning on line-based geographic structures such as road networks \citep{moratz_condensed_2011}.
 Dipole relations have recently been used as context for LLM-based navigation \citep{moratz_bilateral_2025}.
 
 Although extended versions of the dipole calculus exist, Figure~2.1 shows the set of dipole relations used in this thesis.
@@ -176,41 +174,40 @@ Each dipole has a unique label (A-N) for identification.
 For example, dipole G branches off from dipole B.
 Similarly, dipole A continues from dipole B, and dipole E continues from dipole A.
 In practice, a street can be represented by one or multiple dipoles under this representation.
-A single street may correspond to multpile dipoles depending on the segmentation of its geometry.
+A single street may correspond to multiple dipoles depending on the segmentation of its geometry.
 
 \section{Data sources and GIS Tools}
 
-Another key pillar for our research will be the identification of a reliable data source for street networks, which can be transformed into dipole relations.
+This thesis requires a data source for street network data which can be transformed into dipole relations.
 One such data source is OpenStreetMap (OSM).
 OpenStreetMap was created in 2004 and is a community driven, collaborative project providing free geographic data \citep{haklay_openstreetmap_2008}.
-Because it is not a commercial product, OpenStreetMap relies on Volunteered Geographic Information (VGI) provided by citizens.
-This has led to the term "Citizen Sensor" being introduced to describe the means of data collection \citep{university_of_nottingham_gb_mapping_2017}.
+OpenStreetMap relies on Volunteered Geographic Information (VGI) provided by volunteers.
+This form of data collection is sometimes discussed under the term ``citizen sensor'' \citep{university_of_nottingham_gb_mapping_2017}.
 Although this approach has benefits like removing corporate interests from the data, it also has downsides.
 
 Since the data is provided by volunteers, the data quality may vary depending on the region of interest.
 Some studies have investigated the data quality of OSM.
-A metastudy conducted in 2013 synthesized several of these studies on OSM data quality. 
+A 2013 review synthesized prior studies on OSM data quality. 
 To summarize, the study found that OSM data was rapidly growing.
 While the overall data quality was found to be heterogeneous, meaning that it varied from region to region, the data quality was assessed to have improved over time \citep{sehra_assessment_2013}.
-In an article published in 2014, researchers specifically compared the OSM road data available for Germany to proprietary datasets and found a 9\% difference in total network length, indicating that the OSM dataset contained relatively few gaps in the investigated region \citep{neis_recent_2014}.
+In an article published in 2014, researchers specifically compared the OSM road data available for Germany to proprietary datasets and found a 9\% difference in total network length, suggesting relatively high completeness in the investigated region \citep{neis_recent_2014}.
 The same article also notes that many studies mention an urban bias in OSM data, meaning that more densely populated areas tend to have better data coverage than rural areas \citep{neis_recent_2014}.
-While this may be a limitation for other use cases, for our study this may not be a major issue, since we are investigating navigation tasks in urban scenarios, where the coverage reportedly tends to be better.
+While this may be a limitation for other use cases, for our study this may not be a major issue, since we are investigating navigation tasks in urban scenarios, where coverage is often reported to be better.
 
-Even though we cannot ignore the fact that OSM data quality may vary, some researchers have shown that it is a robust choice for practical implementations.
-In a conference paper from 2011, researchers investigated the use of OSM data for real time routing.
+Even though we cannot ignore the fact that OSM data quality may vary, prior work suggests that it can be used for routing applications:
+in a conference paper from 2011, researchers investigated the use of OSM data for real time routing.
 The researchers successfully demonstrated that OSM data was a suitable choice for both server side and handheld routing implementations \citep{luxen_real-time_2011}.
-For us, this indicates that OSM data may be a suitable choice for our research regarding improved LLM navigation, especially since we are mainly focused on urban environments.
+This supports the choice of OSM as the underlying data source for this thesis.
 
 Many studies analyzing or utilizing OSM data have suffered from poor reproducibility and small sample sizes.
-To address these issues, a research initiative called OSMnx was brought to life in 2017.
+To address these issues OSMnx was introduced in 2017.
 OSMnx provides an open source Python library, which allows users to easily download and visualize street networks from OpenStreetMap \citep{boeing_osmnx_2017}.
 In this study, we will make use of OSMnx to obtain the street networks we require for our experiments.
 
-Further, we will require a reliable tool to validate the generated navigation instructions.
+Further, manual verification of the generated routes requires a reliable mapping tool.
 Since the validation in this study will be done manually, we need a tool with a user-friendly interface and reliable data coverage.
-Also, because we do not want to validate the instructions on the same data source we obtained the street networks from, we will not use OpenStreetMap for this purpose.
-Instead we will use a tried and tested commercial product called Google Maps.
-Following this approach separates the data used in our method from the data used in the validation process, which reflects a key principle in model validation \citep{steyerberg_prediction_2016}.
+To reduce dependence on a single data source, verification is done using a different map provider.
+Instead we will use a widely used commercial mapping platform called Google Maps:
 
 \begin{figure}[h!]
     \centering
@@ -226,14 +223,14 @@ Additionally, a survey conducted on 511 smartphone users in 2018 found that 67\%
 In 2019 Google claimed that the data they use for Google Maps was sourced from over 1000 third party services globally \citep{noauthor_google_2019}.
 Although many other competing commercial products such as Apple Maps, released in 2012 \citep{noauthor_apple_nodate}, exist in the modern app landscape, Google Maps, backed by its long history and widespread popularity, will be the tool of choice for the validation process in this study.
 
-By discussing LLMs, their emerging capabilities such as reasoning, context enrichment techniques, a framework for qualitative geographic representations and our choice of data sources, we have now discussed the key ingredients for our research.
-What is left to do before moving on to the description of our method, is to review existing research on LLM benchmarks.
+By discussing LLMs, their emerging capabilities such as reasoning, context enrichment techniques, a framework for qualitative geographic representations and our choice of data sources, we have now covered most relevant concepts for this thesis.
+In the next section we will review existing research on LLM benchmarks and whether they cover navigation tasks.
 
 \section{LLM Benchmarks and Opportunities}
 
-Exploring LLM Benchmarks is a vast topic.
-Since we are interested in creating our own benchmark for LLM navigation tasks, it is important for us to take a look at the existing landscape however.
-Therefore, in this section we will discuss how LLMs were historically benchmarked, and whether any existing benchmarks take navigation problems into consideration.
+LLM benchmarking spans a wide range of tasks and approaches.
+In this thesis, we focus on navigation-focused evaluation of LLMs.
+This motivates the question of whether prior LLM benchmarks have covered navigation specifically.
 
 Some of the historical benchmarks for language models include GLUE \citep{wang_glue_2019} and SuperGLUE \citep{wang_superglue_2020}.
 In GLUE, a model is evaluated on a set of nine different NLU (natural language understanding) tasks such as sentiment analysis or textual entailment.
@@ -242,28 +239,28 @@ Textual entailment on the other hand describes whether one text (a hypothesis) i
 For each of the nine tasks, a model produces predictions, and the individual task scores are aggregated into a final GLUE score.
 The GLUE score could then be used as a single metric to compare different models \citep{wang_glue_2019}.
 
-A study conducted in 2019 showed that non-expert human annotators outperformed models on six of nine GLUE tasks, achieving an average score of 87.1 compared to then state-of-the-art (and fine tuned) models scoring 83.9 \citep{nangia_human_2019}.
-The headroom began to close however, and in 2020 SuperGLUE was introduced to provide more challenging tasks \citep{wang_superglue_2020}.
+A study conducted in 2019 showed that non-expert human annotators outperformed models on six of nine GLUE tasks, achieving an average score of 87.1 compared to then state-of-the-art (and fine-tuned) models scoring 83.9 \citep{nangia_human_2019}.
+As model performance improved, SuperGLUE was introduced in 2020 to provide more challenging tasks \citep{wang_superglue_2020}.
 
-While GLUE and SuperGLUE provided standardized evaluation for the NLU capabilities of models, they were less suited to measuring the broader capabilities that LLMs began to exhibit.
+While GLUE and SuperGLUE provided standardized evaluation benchmarks, they do not cover many broader LLM abilities addressed in later benchmarks.
 To address this gap, new benchmark suites were proposed, including BIG-bench (Beyond the Imitation Game) introduced in 2022.
 The BIG-bench paper describes a benchmark of over 200 tasks, contributed by 450 researchers across 132 institutions.
 The included tasks span a diverse range of topics such as mathematics, physics and software development, shifting evaluation from NLU toward more general problems.
 A human baseline score was established, and in addition model scale was taken into account during performance evaluation \citep{srivastava_beyond_2023}.
 
-Another shift in model evaluation could be observed with the introduction of HELM (Holistic Evaluation of Language Models) in 2022.
+A further shift occurred with the introduction of HELM (Holistic Evaluation of Language Models) in 2022.
 Language models were increasingly used as the basis for real-world applications, and this called for additional evaluation dimensions.
 Helm introduced a framework to evaluate model responses not only on their accuracy, but also on aspects such as fairness, robustness and efficiency.
 Fairness describes whether model responses differ systematically between certain groups.
 With robustness, a measure was introduced to evaluate whether a model's performance degrades when faced with adversarial inputs.
 The computational resources required to run a model were evaluated using the efficiency metric \citep{liang_holistic_2023}.
 
-Beyond mere benchmark suites, evaluation practices have also shifted toward reusable infrastructure.
+Beyond benchmark suites, evaluation practices have also shifted toward reusable infrastructure.
 An example of this is OpenAI's Evals framework.
 The framework is an open source registry of existing evaluation suites, as well as tools to create new evaluations \citep{noauthor_openaievals_2025}.
 
 In addition to benchmark suites and evaluation frameworks, crowd-sourced model evaluation methods have also emerged.
-The web based platform LMArena (formerly Chatbot Arena) enables users to compare two models' responses side-by-side in anonymous pairwise "battles".
+The web-based platform LMArena (formerly Chatbot Arena) enables users to compare two models' responses side-by-side in anonymous pairwise ``battles''.
 These human preference evaluations are then aggregated into a leaderboard \citep{chiang_chatbot_2024}.
 
 Together, these developments show that the field of LLM evaluation has evolved to account for different factors:
@@ -272,7 +269,7 @@ Since language models increasingly found their way into real-world applications,
 Frameworks such as OpenAI's Evals allowed for reusable evaluation infrastructure \citep{noauthor_openaievals_2025}.
 Finally, to incorporate human preference signals into model evaluation, crowd-sourced platforms like LMArena have emerged \citep{chiang_chatbot_2024}.
 
-While the previously presented LLM benchmarks are impressive and cover a wide array of topics, they do not target navigation tasks specifically.
+However, these benchmarks and evaluation frameworks do not specifically cover navigation tasks.
 
 In a paper published in 2024, researchers introduced a benchmark called MANGO that evaluates mapping and navigation in maze environments.
 In their trials the LLMs were provided with textual walkthroughs covering the maze environments, and subsequently asked to answer navigation questions about these mazes.
@@ -282,14 +279,14 @@ A paper from 2022 illustrated the shortcomings of LLMs in planning tasks.
 Several prominent LLMs were evaluated on a suite of action and change reasoning tasks.
 Across these planning tasks, the models achieved very low success rates.
 The models struggled even more to produce optimal results \citep{valmeekam_large_2022}.
-Since navigation tasks can be considered as planning tasks, this study can be seen as evidence that LLMs may struggle with navigation.
+Since navigation can be framed as a planning problem, these results could indicate that LLMs could struggle with navigation as well, although the study does not specifically cover navigation.
 
-In 2025, researchers investigating recent ‘reasoning’ variants of LLMs identified a sharp decline in performance as problem complexity increased.
+In 2025, researchers investigating recent reasoning-variants of LLMs identified a sharp decline in performance as problem complexity increased.
 They demonstrated these effects in controllable puzzle environments, where both reasoning and non-reasoning models ultimately collapsed to near-zero accuracy.
 A counterintuitive discovery was made as well:
-As problem complexity increased, the models initially increased their ‘thinking' effort;
-however, after a certain point, reasoning traces became shorter again, even though token budget was still available \citep{shojaee_illusion_2025}.
-For our navigation tasks, this could indicate that LLMs could be able to solve simpler navigation problems, but may fail if the problems become too complex.
+As problem complexity increased, the models initially increased their thinking effort.
+However, after a certain point, reasoning traces became shorter again, even though token budget was still available \citep{shojaee_illusion_2025}.
+This suggests that performance on complex navigation tasks could also be limited, even though the study does not specifically cover navigation.
 
 \section{Summary}
 
@@ -297,10 +294,10 @@ We began this chapter by introducing large language models and their emerging ab
 Next, we discussed context enrichment techniques such as retrieval augmented generation and one specific implementation called graph RAG.
 Afterwards, we presented how geographic data can be represented qualitatively using the dipole calculus.
 Thereafter, we discussed our choice of data sources and GIS tools.
+
 Finally, we reviewed existing research on LLM benchmarks.
 Prior benchmarks on LLMs show that they struggle with tasks requiring planning \citep{valmeekam_large_2022}.
 Some research has also identified that even more recent reasoning variants struggle with complex problems \citep{shojaee_illusion_2025}.
 While navigation tasks have been studied in maze environments \citep{ding_mango_2024}, real-world street-network navigation remains comparatively unexplored in existing LLM benchmarks.
-Within the scope of our literature review, we were not able to identify any studies investigating any dipole-relation based solutions for LLM navigation tasks.
 This motivates an opportunity to create a benchmark for LLM navigation tasks using real-world problems and to evaluate whether qualitative geographic context offers substantial performance improvements.
-Having this background knowledge firmly in place, we continue now by present our experimental methods in the following chapter.
+Having this background knowledge firmly in place, we continue by presenting our experimental methods in the next chapter.

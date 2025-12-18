@@ -56,23 +56,23 @@ To ensure followability, we provide Figure 1.2 showing one possible correct rout
 \end{quote}
 
 Although exiting Münster Hauptbahnhof to reach the destination is certainly a sensible step, a more direct choice would be to use the secondary exit away from the city center and towards the actual destination.
-Also, the response introduces a street called "Willy-Brandt-Allee" which does not align with the map context shown in Figure 1.2.
+Also, the response introduces a street called ``Willy-Brandt-Allee'' which does not align with the map context shown in Figure 1.2.
 The second instruction is as follows:
 
 \begin{quote}
     \textit{2. Turn right and walk southeast on Willy-Brandt-Allee toward the city center.}
 \end{quote}
 
-In the example, the destination "Hafenweg" lies generally southeast of the starting point.
-The direction "toward the city center" is also inconsistent with the intended destination.
+In the example, the destination ``Hafenweg'' lies generally southeast of the starting point.
+The direction ``toward the city center'' is also inconsistent with the intended destination.
 The next instruction reads:
 
 \begin{quote}
     \textit{3. After about 500 meters, you'll reach Albersloher Weg. Turn left onto Albersloher Weg.}
 \end{quote}
  
-Next, the LLM response introduces the street "Albersloher Weg".
-However, the map shown in Figure 1.2 suggests no visible connection between "Willy-Brandt-Allee" and "Albersloher Weg".
+Next, the LLM response introduces the street ``Albersloher Weg''.
+However, the map shown in Figure 1.2 suggests no visible connection between ``Willy-Brandt-Allee'' and ``Albersloher Weg''.
 Continuing with the next instruction:
 
 \begin{quote}
@@ -81,7 +81,7 @@ Continuing with the next instruction:
 
 This instruction raises many questions. 
 For once, the destination does not lie one kilometer away from the Central Station, therefore the stated distance appears inconsistent with the approximate start-destination distance in this example.
-Further, the response introduces the "Aasee park area", which is inconsistent with the route context shown in Figure 1.2
+Further, the response introduces the ``Aasee park area'', which is inconsistent with the route context shown in Figure 1.2
 Additionally, the map shown in Figure 1.2 shows no visible connection between the two segments.
 With the next instruction, the mistakes made by GPT-4o continue:
 
@@ -89,7 +89,7 @@ With the next instruction, the mistakes made by GPT-4o continue:
     \textit{5. When you reach the intersection with Hammer Straße, turn right.}
 \end{quote}
 
-The response then refers to "Hammer Straße".
+The response then refers to ``Hammer Straße''.
 Again, this instruction does not appear viable in the example situation, as Figure 1.2 does not show a visible connection between the two required streets. 
 Thus, it doesn't appear that this instruction could be followed in practice.
 Finally, the last two instructions read:
@@ -100,7 +100,7 @@ Finally, the last two instructions read:
 \end{quote}
 
 Again, these instructions do not appear viable, as the map context shown in Figure 1.2 does not show a visible connection between the two streets.
-Whether there are "residential and commercial buildings" along the Hammer Straße is irrelevant, although it may as well be true.
+Whether there are ``residential and commercial buildings'' along the Hammer Straße is irrelevant, although it may as well be true.
 In total, GPT-4o suggested several steps that may be difficult to follow in practice when compared against the map context shown in Figure 1.2.
 
 Preliminary, informal tests discussed during thesis supervision suggested similar shortcomings in contemporary LLM navigation in urban environments.
