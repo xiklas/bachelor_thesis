@@ -3,11 +3,9 @@
 \label{ch:04results}
 
 This chapter serves to present the results of our experiments.
-In total, 240 individual trials were conducted across various LLM configurations to find out whether the inclusion of qualitative geographic context helps improve the navigation performance of LLMs.
+In total, 240 individual LLM responses were collected across various configurations to find out whether the inclusion of qualitative geographic context helps improve the navigation performance of LLMs.
 We are first going to provide an overview of the results obtained from our experiments, before breaking down the results by different factors such as test city or large language model tested.
 These results will then be summarized and serve as the basis for the discussion following in the Chapter 5.
-
-% Overview of Task Success Rates
 
 \section{Dataset Overview}
 
@@ -24,10 +22,10 @@ Münster    & 128 & 1272 \\
 \caption{Overview of test datasets.}
 \end{table}
 
-In Table 4.1, we provide an overview of the two datasets used in our experiments.
-We were able to successfully extract symbolic dipole relations for both tested cities.
-For the Hamburg dataset, this resulted in a total of 38 individual streets and an average task distance between start and end point of 899 meters as measured via Google Maps.
-On the other hand, the Münster dataset contained a total of 128 individual streets, and also had a higher average task distance of 1272 meters as measured via Google Maps.
+Table 4.1 provides an overview of the two datasets used in our experiments.
+We were able to successfully derive symbolic dipole relations for both tested cities.
+For the Hamburg dataset, this resulted in a total of 38 individual streets and an average start-end distance of 899 meters.
+On the other hand, the Münster dataset contained a total of 128 individual streets, and also had a higher average start-end distance of 1272 meters (both measured using Google Maps).
 
 
 \section{Experiment Results}
@@ -36,7 +34,7 @@ On the other hand, the Münster dataset contained a total of 128 individual stre
 \centering
 \begin{tabular}{l c c c c}
 \hline
-\textbf{Group} & \textbf{\# Experiments} & \textbf{\# Successful} & \textbf{\# Failed} & \textbf{Success Rate (\%)} \\
+\textbf{Group} & \textbf{\# Trials} & \textbf{\# Successful} & \textbf{\# Failed} & \textbf{Success Rate (\%)} \\
 \hline
 Control Group & 120 & 0  & 120 & 0\% \\
 Test Group    & 120 & 75 & 45  & 62.5\% \\
@@ -44,76 +42,77 @@ Test Group    & 120 & 75 & 45  & 62.5\% \\
 \textbf{Total} & \textbf{240} & \textbf{75} & \textbf{165} & \textbf{31.25\%} \\
 \hline
 \end{tabular}
-\caption{Overview of experiment results in control and test groups with success and failure counts and corresponding success rates.}
+\caption{Overview of trial outcomes in control and test groups with success and failure counts and corresponding success rates.}
 \end{table}
 
 % Could all data be collected successfully?
 
-All trials could be executed successfully by the methods described in Chapter 3. 
+All trials could be conducted successfully by the methods described in Chapter 3. 
 This means that we got a valid LLM response for each navigation task under all test conditions.
 However, this does not imply that all responses were correct in terms of navigation success, but simply that we were able to collect all the necessary data.
-In total, 240 navigation tasks were answered by the LLMs and manually labeled as either correct or incorrect.
-Table 4.2 summarizes the overall results of our experiments.
+In total, 240 LLM navigation responses (trials) were collected and manually labeled as either correct or incorrect.
+Table 4.2 provides an overview of the trial outcomes.
 
 % What is the total performance gain between control and test group?
 
-There is a visible difference in navigation task success rates between the control and test groups.
-In each group, the exact same 120 navigation tasks were executed.
-Out of these 120 tasks, no trial in the control group could be labeled as successful.
-Consequently, all trials in this group were labeled as failures, leading to a task success rate of 0\%.
-In the test group however, 75 out of 120 trials could be labeled as successful.
-With 45 remaining failures, this results in a task success rate of 62.5\%.
-Across both groups, this means that 75 out of 240 navigation tasks were successfully answered, while 165 tasks were answered incorrectly.
-This leads to an overall task success rate of 31.25\% across all experiments conducted in this thesis.
-To summarize, the inclusion of qualitative geographic context in the test group led to an increase in task success rate by 62.5\% when compared to the control group.
+There is a visible difference in navigation success rates between the control and test groups.
+In each group, the exact same 120 navigation trials were conducted.
+Out of these 120 trials, no LLM response in the control group could be labelled as successful.
+Consequently, all trials in this group were labelled as failures, leading to a success rate of 0\%.
+However, in the test group, 75 out of 120 trials could be labelled as successful.
+With 45 remaining failures, this results in a success rate of 62.5\%.
+Across both groups, this means that 75 out of 240 navigation trials were labelled as successful, while 165 trials were labelled as failed.
+This leads to an overall success rate of 31.25\% across all experiments conducted in this thesis.
+To summarize, the inclusion of qualitative geographic context increased the success rate by 62.5 percentage points when compared to the control group.
 
 % Comparing Test Group Performance By City
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{chapter/tg_by_city.png} % Adjust width as needed
-    \caption{Test Group Performance by City.}
+    \caption{Test Group success rate by City.}
     \label{fig:graphic7}
 \end{figure}
 
-When comparing the test group performance across the two test cities, we can make several key observations.
-First, the task success rate was increased in both cities compared to the control group (which had a success rate of 0\% in both cities).
-In Hamburg, the task success rate climbed to 86.6\% while in Münster it reached just 38.3\%.
-This means that the task success rate in Hamburg was more than double that of Münster.
-Out of the 75 correctly answered navigation tasks in the test group, 52 were from Hamburg, while only 23 were from navigation trials conducted using the Münster dataset.
+When comparing the test group performance across the two test cities, we can make several observations.
+First, the success rate increased in both cities compared to the control group (which had a success rate of 0\% in both cities).
+In Hamburg, the success rate climbed to 86.6\%, while in Münster it reached just 38.3\%.
+This means that the success rate in Hamburg was more than double that of Münster.
+Out of the 75 correctly labelled navigation trials in the test group, 52 were conducted using the Hamburg dataset, while 23 were conducted using the Münster dataset.
 
 % Breakdown Per Model
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{chapter/tg_rate_by_model.png} % Adjust width as needed
-    \caption{Test Group Performance by LLM.}
+    \caption{Test group success rate by LLM.}
     \label{fig:graphic8}
 \end{figure}
 
-Further, comparing the test group performance across the three tested LLMs as depicted in Figure 4.2, we are able to observe that while all LLMs performed better, there are noteworthy differences in their performance increase.
-While all models performed better compared to their control group performance of 0\%, the model which performed best across all trials in the test group was Google's Gemini 2.5 Pro.
-It achieved a task success rate of 70\%, answering 28 out of 40 navigation tasks correctly.
-The next best performing model was Claude Sonnet 4.5, which achieved a slightly lower task success rate of 65\%.
-Claude answered 26 out of 40 navigation tasks correctly.
-In total, the worst performing model in the test group was GPT-4o, with 21 correct answers out of 40 possible, amounting to a task success rate of 52.5\%.
+Further, comparing the success rates across the three tested LLMs in the test group as depicted in Figure~4.2 yields additional insights. 
+While all models performed better compared to their control group success rate of 0\%, the best-performing model in the test group was Google's Gemini 2.5 Pro.
+It achieved a success rate of 70\%, with 28 out of 40 navigation trials labelled as correct.
+The next best-performing model was Claude Sonnet 4.5 with a slightly lower success rate of 65\%.
+Claude answered 26 out of 40 navigation trials correctly.
+GPT-4o performed worst in the test group: with 21 out of 40 navigation trials labelled as correct, it achieved a success rate of 52.5\%.
 
 % Breakdown per city and model
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{chapter/model_city.png} % Adjust width as needed
-    \caption{Test Group Performance by LLM per city.}
+    \caption{Test group success rate by model and city.}
     \label{fig:graphic9}
 \end{figure}
 
-Breaking down the test group performance by both test city and LLM as shown in Figure 4.3 leads to several valuable observations.
+Breaking down the test group success rates by both test city and LLM as shown in Figure~4.3 leads to several additional observations.
 First, we can see that all models performed better with the Hamburg dataset compared to the Münster dataset.
-All models using the Hamburg dataset scored at least 75\% task success rate, with Gemini 2.5 Pro ranking the highest at 95\%.
-Claude Sonnet 4.5 followed with a task success rate of 90\%, a decrease of 5\%, and GPT-4o achieved a task success rate of 75\%, which is 20\% lower than Gemini 2.5 Pro.
-With the Münster dataset, all models performed worse overall, although their relative rankings toward each other remained the same.
-Gemini 2.5 Pro again ranked highest among the three with a task success rate of 45\%, followed by Claude Sonnet 4.5 at 40\% and GPT-4o at 30\%.
-The lowest overall task success rate in the test group was thus observed with GPT-4o using the Münster dataset at 30\%, while the highest overall task success rate was achieved by Gemini 2.5 Pro using the Hamburg dataset at 95\%.
+All models using the Hamburg dataset achieved a success rate of at least 75\%, with Gemini 2.5 Pro ranking the highest at 95\%.
+Claude Sonnet 4.5 followed with a success rate of 90\%, five percentage points below Gemini 2.5 Pro.
+GPT-4o achieved a success rate of 75\%, 20 percentage points lower than Gemini 2.5 Pro.
+With the Münster dataset, all models performed worse overall, although their relative rankings remained the same.
+Gemini 2.5 Pro again ranked highest among the three with a success rate of 45\%, followed by Claude Sonnet 4.5 at 40\% and GPT-4o at 30\%.
+The lowest overall success rate in the test group was thus observed with GPT-4o using the Münster dataset at 30\%, while the highest overall success rate was achieved by Gemini 2.5 Pro using the Hamburg dataset at 95\%.
 
 % How many tasks were correctly answered by all models?
 
@@ -136,43 +135,16 @@ The lowest overall task success rate in the test group was thus observed with GP
 \label{tab:llm_frequency}
 \end{table}
 
-We may also take a look at the frequency distribution of correctly answered navigation tasks in the test group.
-The above Table 4.3 summarizes how many navigation tasks were answered correctly by how many models in this group.
+We may also examine the frequency distribution of correctly answered navigation tasks in the test group.
+Table~4.3 summarizes, for each navigation task, how many of the three tested models produced a response labelled as correct.
 Only six navigation tasks were answered incorrectly by all three models.
-Counting the occurernces of navigation tasks where just one model gave a correct answer, we find that there are nine such tasks.
-The occurence of two correct answers per navigation task is also nine.
-This means that the likelihood of all models failing given that at least one model failed was exactly 25\% (The number of cases where all models failed (6) divided by the number of cases where at least one model failed (24)).
+Nine navigation tasks were answered correctly by just one model.
+Nine navigation tasks were answered correctly by two models.
+This means that the likelihood of all models failing given that at least one model failed was exactly 25\% (the number of cases where all models failed (6) divided by the number of cases where at least one model failed (24)).
 The highest frequency could be observed for navigation tasks where all three models answered correctly, with a total of 16.
 Conversely, this means that the likelihood of all models answering correctly when at least one model answered correctly was approximately 47.06\% (The number of cases where all models answered correctly (16) divided by the number of cases where at least one model answered correctly (34)).
 
-\begin{table}[h]
-\centering
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{At Least $x$ Correct LLMs} & \textbf{Cumulative \%} & \textbf{Drop Relative to Previous Group} \\
-\hline
-0 & 100.0\% & N/A \\
-\hline
-1 & 85.0\% & 15.0\% \\
-\hline
-2 & 62.5\% & 22.5\% \\
-\hline
-3 & 40.0\% & 22.5\% \\
-\hline
-\end{tabular}
-\caption{\textbf{Cumulative Percentage Distribution of Correct LLM Responses with Group Drop}}
-\label{tab:llm_cumulative_drop}
-\end{table}
-
-Looking at these results in another way, we can analyze the cumulative percentage distribution of correctly answered navigation tasks.
-Unsurprisingly, the percentage of navigation tasks where at least zero models answered correctly is 100\%.
-85\% of navigation tasks were answered correctly by at least one model.
-The percentage then drops to 62.5\% for navigation tasks where at least two models answered correctly.
-Lastly, just 40\% of navigation tasks were answered correctly by all three models.
-This means that from zero correct responses to one correct response, there is a drop of 15\%.
-From one to two and two to three correct responses, there is a drop of 22.5\% each.
-In total, this results in an overall drop of 60\% from zero to three correct responses.
-
+% Continue Here
 % Which model performed best when only one model succeeded?
 
 \begin{table}[h]
@@ -188,15 +160,16 @@ Gemini 2.5 Pro & 4 \\
 Claude Sonnet 4.5 & 2 \\
 \hline
 \end{tabular}
-\caption{\textbf{Distribution of Correct Models in Single-Success Trials}}
+\caption{\textbf{Distribution of Correct Models in Single-Success Tasks.}}
 \label{tab:single_correct_llm}
 \end{table}
 
-Additionally, we analyzed which model performed best when just one model succeeded in answering a navigation task correctly.
-Although there are just nine such cases overall and the results deviate by just two between the best and worst performing model, the winner in this category is also Gemini 2.5 Pro.
-It answered four navigation tasks correctly where both other models failed.
+Additionally, we analyzed which model performed best in cases where exactly one model provided a response to a navigation task that was labelled as correct.
+The results of this analysis are summarized in Table~4.4.
+Although there were only nine such cases overall and the spread between the best- and worst-performing model was small, Gemini 2.5 Pro performed best in this category.
+It was able to provide a correct answer in four cases when GPT-4o and Claude Sonnet 4.5 both failed.
 GPT-4o then followed with three such cases.
-Claude Sonnet 4.5 performed worst in this category, answering just two navigation tasks correctly when no other model could. 
+Claude Sonnet 4.5 performed worst, answering two navigation tasks correctly when both other models failed. 
 
 % When just one model failed, which model was most likely to fail?
 
@@ -217,10 +190,10 @@ Claude Sonnet 4.5 & 1 \\
 \label{tab:single_failed_llm}
 \end{table}
 
-We may also look at the inverse case: When just one model failed, which model was most likely to be the one failing?
-The results of this analysis paint a clearer picture:
-out of the nine occurrences where just one model failed, GPT-4o was responsible for seven of these failures.
-Both Gemini 2.5 Pro and Claude Sonnet 4.5 were only responsible for one failure of this kind each.
+We also consider the complementary case: for tasks where exactly one model failed, we aim to identify which model was most likely to fail.
+The results of this analysis are summarized in Table~4.5.
+GPT-4o accounted for seven out of nine such cases, making it the model most likely to fail when both other models succeeded.
+Gemini 2.5 Pro and Claude Sonnet 4.5 accounted for exactly one failure of this kind each, so their performance in this category was identical.
 
 % Failures by City
 
@@ -243,18 +216,25 @@ Both Gemini 2.5 Pro and Claude Sonnet 4.5 were only responsible for one failure 
 \label{tab:failures_by_city}
 \end{table}
 
-Next, we may analyze the failures in the test group by the dataset they occurred on.
-While failures where just one model failed to answer a navigation task occurred almost equally in both cities, the results look different for failures by two or even three models.
-In Hamburg, there were 4 occurrences where one model failed to answer a navigation task.
-In Münster, this number was just slightly higher at 5.
-In the next category however, where two models failed to answer a navigation task, there were two such occurrences in Hamburg and seven in Münster.
-The last category presents the most striking difference:
-No navigation trial in Hamburg resulted in all three models failing to provide a correct answer.
-In Münster however, there were six such occurrences.
-Counting together the occurrences of failures, we find that six out of a total 24 failure cases occurred in Hamburg, while 18 occurred in Münster.
-As a percentage, this means that 25\% and 75\% of failures occurred in Hamburg and Münster respectively.
-Shifting our view at failure cases where at least two models failed, just two out of a total of 15, or 13.33\% of such cases occurred in Hamburg, while 13 out of 15, or 86.67\% occurred in Münster.
-Counting just the cases where all three models failed, 100\% of the failures can be attributed to navigation tasks in Münster.
+%% FIX THIS
+
+Next, we analyzed the failures by the dataset they occurred on (Hamburg or Münster).
+Cases in which only one model answered incorrectly were distributed almost evenly across both city datasets:
+using the Hamburg dataset, there were 4 occurrences where one model failed to answer a navigation task.
+Using the Münster dataset, this number was just slightly higher at 5.
+For tasks in which exactly two models failed, we counted two such cases in Hamburg and seven cases in Münster.
+
+The largest disparity between both cities could be observed in cases where all three models failed:
+No navigation task conducted on the Hamburg dataset resulted in all three models failing to provide a correct answer.
+Using the Münster dataset however, there were six such occurrences.
+
+Aggregating across categories, there are 24 total cases where at least one model failed to answer a navigation task correctly.
+Out of these, 6 cases, or 25\% occurred using the Hamburg dataset, while the remaining 18 cases, or 75\% occurred using the Münster dataset.
+
+In total, there are 15 total cases where at least two models failed to answer a navigation task correctly.
+Out of these, just 2 cases, or 13.33\% occurred using the Hamburg dataset, while the remaining 13 cases, or 86.67\% occurred using the Münster dataset.
+
+Lastly, all of the six instances where all three models failed to answer a navigation task correctly occurred using the Münster dataset.
 
 \begin{table}[h]
 \centering
@@ -273,20 +253,25 @@ Gemini 2.5 Pro vs. Claude Sonnet 4.5 & 8 & 10 \\
 \label{tab:pairwise_disagreement}
 \end{table}
 
-Finally, we may analyze the pairwise disagreement performance of the three studied models.
-Setting aside the 22 cases where all models either answered correctly or incorrectly, we are left with 18 trials where the results were non-unanimous.
-In these trials, we can analyze how often two models disagreed with each other, meaning that one model answered correctly while the other answered incorrectly or the other way around.
-The results of this analysis are summarized in Table 4.8.
-Out of the 18 non-unanimous trials, GPT-4o and Gemini 2.5 Pro disagreed in 15 cases, while agreeing on 3 cases.
+Finally, we analyze pairwise disagreement among the three studied models.
+To do so, we exclude all tasks which were answered unanimously, meaning that either all models answered correctly or all models answered incorrectly.
+This leaves us with a total of 18 non-unanimous tasks.
+
+Within this subset of 18 tasks, we measure how often each pair of models disagreed.
+Disagreement is defined here as one model answering correctly while the other model answered incorrectly (or vice versa).
+The results of this analysis are summarized in Table~4.8.
+
+Out of the 18 non-unanimous tasks, GPT-4o and Gemini 2.5 Pro disagreed in 15 cases, while agreeing on 3 cases.
 The next highest disagreement count was observed in the pairing GPT-4o and Claude Sonnet 4.5, which disagreed in 13 cases and agreed in 5 cases.
 With just 8 disagreements and 10 agreements, the pairing of Gemini 2.5 Pro and Claude Sonnet 4.5 showed the lowest amount of disagreements out of all combinations.
-This means that Gemini 2.5 Pro and Claude Sonnet 4.5 agreed more often than they disagreed.
+
+Accordingly, we conclude that Gemini 2.5 Pro and Claude Sonnet 4.5 agreed more often than they disagreed.
 On the other hand, any combination involving GPT-4o resulted in more disagreements than agreements.
 
 \section{Summary of Findings}
 
-In summary, our experiments revealed that LLM navigation performance with additional symbolic geographic context was higher than without it.
-This effect was not limited to a specific city or model, but could be observed across all combinations tested in this study.
-
-
-
+Overall, our experiments indicate that LLM navigation performance with additional symbolic geographic context improved compared to the control group without context in our test setup.
+While the control group achieved no successful trials, the control group achieved non-zero success rates across all tested LLMs and datasets.
+The magnitude of performance gains varied by the two city datasets: success rates in Hamburg were higher for all models compared to Münster.
+Among the tested LLMs, Gemini 2.5 Pro achieved the highes success rate, followed by Claude Sonnet 4.5 and GPT-4o.
+These results will serve as the basis for the discussion following in Chapter 5.

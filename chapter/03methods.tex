@@ -9,7 +9,7 @@ In this chapter, we introduce the methods used in this thesis.
 Our research hypothesis states that the navigation capabilities of large language models may be substantially improved by the inclusion of qualitative geographic context.
 To test our hypothesis, we designed an experimental setup involving large language models, qualitative geographic context and navigation tasks.
 Our approach can be broken down into the data used, the configuration of the LLMs - including the context enrichment setup -, and ultimately the procedures used to conduct the experiments.
-To evaluate the results, we define a strict correctness criterion and compute task success rates for the control and test groups.
+To evaluate the results, we define a strict correctness criterion and determine success rates for the control and test groups.
 
 
 % Data Acquisition and Preparation:
@@ -160,16 +160,16 @@ This means that just one incorrect instruction in any LLM response, control or t
 A trial was labelled as incorrect if the response contained at least one instruction that (i) referenced a non-existing street, (ii) required an impossible turn, or (iii) produced a disconnected route.
 Our validation does not take into account any further measures like distance measures or number of turns.
 While these additional measures could provide interesting insights, they are outside the scope of this study.
-The trial success rate is therefore defined as the proportion of navigation trials which were labelled as correct over the total number of navigation trials conducted.
+The success rate is therefore defined as the proportion of navigation trials which were labelled as correct over the total number of navigation trials conducted.
 
 \[
-\text{Trial Success Rate} \;=\; \frac{N_{\text{correct}}}{N_{\text{total}}}
+\text{Success Rate} \;=\; \frac{N_{\text{correct}}}{N_{\text{total}}}
 \]
 
 
-% How was the trial success rate calculated?
+% How was the success rate calculated?
 
-After all responses were labelled, we were thus able to calculate trial success rates for the control and test groups.
+After labelling all model responses, we were thus able to calculate success rates for the control and test groups.
 
 % Conclusion of the Methods chapter.
 
