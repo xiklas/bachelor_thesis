@@ -11,27 +11,27 @@
 \contentsline {section}{\numberline {2.5}Data sources and GIS Tools}{12}{section.2.5}%
 \contentsline {section}{\numberline {2.6}LLM Benchmarks and Opportunities}{14}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Summary}{16}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Methods}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Data Acquisition and Preparation}{19}{section.3.1}%
-\contentsline {section}{\numberline {3.2}LLM Configuration}{20}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Experimental Design and Procedure}{22}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Evaluation Metrics}{22}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Results}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Dataset Overview}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Experiment Results}{25}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Summary of Findings}{30}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{33}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Interpretation of Results}{33}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Limitations}{36}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{37}{chapter.6}%
+\contentsline {chapter}{\numberline {3}Methods}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Data Acquisition and Preparation}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}LLM Configuration}{18}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Experimental Design and Procedure}{20}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Evaluation Metrics}{20}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Results}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Dataset Overview}{23}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Experiment Results}{23}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Summary of Findings}{28}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Interpretation of Results}{31}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Limitations}{34}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{35}{chapter.6}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Appendix}{39}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Hamburg Street Descriptions}{39}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Prompts}{45}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Control Group Prompt}{45}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Test Group Prompt}{45}{subsection.A.2.2}%
-\contentsline {subsection}{\numberline {A.2.3}User Prompt}{45}{subsection.A.2.3}%
-\contentsline {section}{\numberline {A.3}Example Navigation Tasks}{45}{section.A.3}%
-\contentsline {chapter}{\nonumberline List of Figures}{47}{chapter*.21}%
-\contentsline {chapter}{\nonumberline List of Tables}{49}{chapter*.22}%
+\contentsline {chapter}{\numberline {A}Appendix}{37}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Hamburg Street Descriptions}{37}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Prompts}{43}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Control Group Prompt}{43}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Test Group Prompt}{43}{subsection.A.2.2}%
+\contentsline {subsection}{\numberline {A.2.3}User Prompt}{43}{subsection.A.2.3}%
+\contentsline {section}{\numberline {A.3}Example Navigation Tasks}{43}{section.A.3}%
+\contentsline {chapter}{\nonumberline List of Figures}{45}{chapter*.21}%
+\contentsline {chapter}{\nonumberline List of Tables}{47}{chapter*.22}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

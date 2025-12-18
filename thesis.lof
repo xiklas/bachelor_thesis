@@ -6,11 +6,11 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces All qualitatively different dipole relations that are necessary to describe a street network.}}{11}{figure.caption.7}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces A screenshot demonstrates the Google Maps web interface, map data © Google.}}{13}{figure.caption.8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Graph representation of area of interest in Hamburg, Germany as used in this study.}}{20}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Graph representation of area of interest in Hamburg, Germany as used in this study.}}{18}{figure.caption.9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Test Group success rate by City.}}{26}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Test group success rate by LLM.}}{27}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Test group success rate by model and city.}}{27}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Test Group success rate by City.}}{24}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Test group success rate by LLM.}}{25}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Test group success rate by model and city.}}{25}{figure.caption.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }

@@ -5,7 +5,7 @@
 % Chapter Introduction
 
 In this chapter, we introduce the research topic of navigation using large language models.
-After briefly discussing the current capabilities of LLMs in navigation tasks, we review the existing body of research in this emergent area.
+After briefly discussing the current behavior of LLMs in the evaluated setting, we discuss the existing body of research in this area.
 We then identify the research gap we aim to address in this thesis and formulate a corresponding research hypothesis.
 
 % The Current State of Navigation using LLMs
@@ -16,7 +16,7 @@ We then identify the research gap we aim to address in this thesis and formulate
 
 Today, users rely on large language models every day, with leading systems like ChatGPT processing over 2 billion user queries per day as of July 2025 \citep{openai_unlocking_2025}.
 A recent journal article has highlighted the many unique use cases for LLMs, ranging from information retrieval to various other tasks such as drafting text or generating computer code \citep{chatterji_how_2025}.
-With this many requests to ChatGPT alone and many other competing LLMs such as Google's Gemini or Anthropic's Claude also available on the market, it is plausible that some users may feel tempted to use LLMs for navigational tasks as well.
+Given their widespread use, LLMs may already be used for navigational queries in practice.
 This motivates evaluating whether LLMs are currently capable of delivering accurate and reliable responses to user navigation queries. 
 If performance can be shown to be insufficient, this motivates research exploring techniques to improve LLM navigation performance. 
 
@@ -36,11 +36,6 @@ The prompt used to generate the response shown in Figure 1.1 was as follows:
     \label{fig:graphic1}
 \end{figure}
 
-% Why would users want to use LLMs for navigation?
-
-Although alternative route planning solutions such as Google Maps or OpenStreetMap exist, the model response depicted in Figure 1.1 illustrates the potential of using LLMs as purely text-based interfaces for navigational tasks, as compared to the traditional map-based implementations.
-For this concept to be viable in practice however, LLMs would have to be able to provide accurate and reliable responses, as mistakes in navigation can lead to deviations from the intended route, and thus to lost time and frustration.
-
 % Map with Correct Route vs. GPT-4o Response
 
 \begin{figure}[h!]
@@ -52,8 +47,8 @@ For this concept to be viable in practice however, LLMs would have to be able to
 
 % What is wrong with the LLM response?
 
-Even though the model response shown in Figure 1.1 appears structurally sound and plausible at first glance, upon closer inspection there are several mistakes that would prevent the user from following the proposed route.
-To understand the mistakes, we are going to break down the response step by step, starting with the first instruction.
+Even though the model response shown in Figure 1.1 appears structurally sound and plausible at first glance, upon closer inspection there are several mistakes that would likely prevent the user from following the proposed route.
+To understand the mistakes, we analyze the response step by step, starting with the first instruction.
 To ensure followability, we provide Figure 1.2 showing one possible correct route as context.
 
 \begin{quote}
@@ -96,7 +91,7 @@ With the next instruction, the mistakes made by GPT-4o continue:
 
 The response then refers to "Hammer Straße".
 Again, this instruction does not appear viable in the example situation, as Figure 1.2 does not show a visible connection between the two required streets. 
-Thus, it doesn't appear that this instruction can be followed.
+Thus, it doesn't appear that this instruction could be followed in practice.
 Finally, the last two instructions read:
 
 \begin{quote}
@@ -110,10 +105,11 @@ In total, GPT-4o suggested several steps that may be difficult to follow in prac
 
 Preliminary, informal tests discussed during thesis supervision suggested similar shortcomings in contemporary LLM navigation in urban environments.
 In line with these preliminary observations, the routing task shown above illustrates that such issues may occur in recent LLMs such as GPT-4o.
+In the remainder of this thesis, we will evaluate this question systematically across multiple models and geographic areas.
 
 % What have observations like these led us to think about?
 
-Experiments like these have left room for research systematically studying the shortcomings of contemporary LLMs in spatial reasoning, and if the inclusion of qualitative geographic context in the form of natural language dipole relations can substantially improve their performance in this regard. 
+These observations motivate a systematic evaluation of LLMs and their abilities in spatial reasoning, and whether their performance can be improved using qualitative geographic context.
 We thus conduct a series of experiments to evaluate the navigation capabilities of select LLMs across multiple geographic areas, both with and without the inclusion of qualitative geographic context.
 In order to gain a clear picture of the current state of research in this area, we must first review the relevant literature.
 
@@ -121,21 +117,21 @@ In order to gain a clear picture of the current state of research in this area, 
 
 \section{Research Overview}
 
-During a targeted literature review for this thesis, we did not identify prior research explicitly evaluating the impact of qualitative geographic context on LLM navigation performance.
-Without identified prior research explicitly addressing this issue, the viability of LLMs as natural language interfaces for navigation tasks remains unclear.
+Within the scope of our literature review for this thesis, we did not identify prior work explicitly evaluating the impact of qualitative geographic context on LLM navigation performance.
+Without identified prior research explicitly addressing this issue, the viability of LLMs as natural language interfaces for navigation tasks remains insufficiently characterized in the existing body of research.
 While previous research has addressed the general capabilities of LLMs in reasoning tasks, it cannot automatically be assumed that these capabilities translate to strong navigation performance in real world scenarios.
 Many potential uses for LLMs in GIScience applications have been theorized, among those the possibility to act as natural language interfaces for spatial queries such as navigation.
-Across the literature reviewed for this thesis, LLMs seem to struggle with navigation-style tasks.
+Several benchmarks indicate that LLMs struggle with planning- and navigation-related tasks.
 
 This research alone is however not sufficient to fully dismiss the idea of using LLMs for navigation.
 If research could identify techniques that substantially improve LLM navigation performance, the idea of their usage in this area could become practical in the future.
 Even though one study alone will not be sufficient to fully explore this area and answer all open questions, it could provide first evidence on the viability of such techniques and serve as a benchmark for future research.
 
-Context enrichment is commonly used to supply missing information in the LLMs training data.
+Context enrichment is widely used to provide task-relevant external information to LLMs.
 Although this thesis does not test this explanation, one possible reason for poor navigation performance in LLMs could be such a blind spot in the training data, in this case regarding topological data suitable for navigation.
 
 Any attempts to address the issue of poor LLM navigation performance using context enrichment must however answer the initial question of how to best provide geographic context in a way that is suitable for LLMs.
-Since LLMs mostly consume text data during training, we hypothesize that the geographic context should be present in the form of text as well.
+Since LLMs are primarily trained on text corpora, we hypothesize that the geographic context should be present in the form of text as well.
 Many sources provide openly available spatial data online.
 Much of this data is however present in machine-readable formats, rather than in natural language.
 
@@ -156,13 +152,14 @@ In the end, this study will serve as a first step on the long-term path towards 
 Drawing from the current state of research, we propose that context enrichment using qualitative geographic relations may have a positive effect on LLM navigation performance.
 Context enrichment has been shown to make LLM responses less prone to hallucinations in other domains, while dipole relations provide a proven framework for qualitatively describing topological data.
 Combined, these techniques may aid the LLM in generating more accurate navigation responses.
-We thus formulate the following research hypothesis H1: 
+We thus formulate the following research hypothesis ($\mathcal{H}_1$): 
 \begin{quote} 
     \textit{The inclusion of qualitative geographic context in the form of natural language dipole relations substantially improves the navigation performance of large language models.}
 \end{quote}
-The alternative hypothesis can thus be formulated as follows H0:
+The alternative hypothesis can thus be formulated as follows ($\mathcal{H}_0$):
 \begin{quote} 
     \textit{The inclusion of qualitative geographic context in the form of natural language dipole relations does not substantially improve the navigation performance of large language models.}
 \end{quote}
+A substantial improvement in this context is defined as a practically meaningful increase in success rate (in percentage points) relative to the control condition.
 In the following chapters, we will describe the methods used to test our hypothesis and present the results of our experiments.
 The thesis will then conclude with a discussion of the findings and their meaning for future research in this area.
