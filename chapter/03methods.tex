@@ -8,7 +8,7 @@
 In this chapter, we introduce the methods used in this thesis.
 Our research hypothesis states that the navigation capabilities of large language models may be substantially improved by the inclusion of qualitative geographic context.
 To test our hypothesis, we designed an experimental setup involving large language models, qualitative geographic context and navigation tasks.
-Our approach can be broken down into the data used, the configuration of the LLMs - including the context enrichment setup -, and ultimately the procedures used to conduct the experiments.
+Our approach can be broken down into the data used, the configuration of the LLMs (including the context enrichment setup) and ultimately the procedures used to conduct the experiments.
 To evaluate the results, we define a strict correctness criterion and determine success rates for the control and test groups.
 
 
@@ -213,7 +213,7 @@ In case any start and end street pairs were identical, these pairs were also rep
 In a final check, we ensured that all generated navigation tasks were unique within each dataset.
 In total, this results in 40 unique navigation tasks (20 per dataset).
 A subset of example tasks from the Hamburg dataset is provided in the appendix.
-In the following, we refer to a task as a single Start-to-End street navigation problem, while a trial refers to a single model response to a specific task.
+In the following, we refer to a task as a single start-to-end navigation problem, while a trial refers to a single model response to a specific task.
 Each navigation task was evaluated once per model and context condition.
 This results in a total of 240 trials (3 models \( \times \) 2 context conditions \( \times \) 40 navigation tasks).
 
