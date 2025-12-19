@@ -7,10 +7,11 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces A screenshot demonstrates the Google Maps web interface, map data © Google.}}{13}{figure.caption.8}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Area of interest in Hamburg. Data \copyright {} OpenStreetMap contributors.}}{18}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Demonstration of OpenRouter usage.}}{20}{figure.caption.10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Test Group success rate by City.}}{24}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Test group success rate by LLM.}}{25}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Test group success rate by model and city.}}{26}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Test Group success rate by City.}}{26}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Test group success rate by LLM.}}{27}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Test group success rate by model and city.}}{28}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }
