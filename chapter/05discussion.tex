@@ -108,19 +108,22 @@ In the above examples, we see how additional geographic context could be used to
 In the first example, real-time data could be used to avoid crowded streets in a major city.
 In the second example, accessibility information could help users with specific needs to find adequate routes without complex queries.
 In the last example, information on dynamic conditions could help users navigate in case of temporaray changes in the street network.
+These prompts are however purely hypothetical and do not reflect the capabilities of the tested setups in this study.
 
-However, our results could also be interpreted in another way: If it takes additional, non-trivial work to achieve better navigation performance with LLMs, maybe they are currently not the best tool for the job after all.
+The results of this study could also be interpreted in another way.
+If it takes additional, non-trivial work to achieve better navigation performance with LLMs, maybe they are currently not adequate tools for navigation tasks yet.
 With our context enrichment setup, we were able to achieve higher trial success rates in our test group compared to the low success rate of the control group.
 At present, implementing a comparable pipeline in user navigation applications could prove to be non-trivial however.
 It is difficult to imagine users, especially those without a technical background, recreating our setup on mobile devices such as smartphones or smartwatches for example, which are so commonly used for navigation in this era of mobile computing.
-Following this interpretation, LLM systems may benefit from further calibration, and explicit caveats about their limitations when answering users' navigation queries could be an appropriate measure.
-This study does not concern itself with mechanisms like these however.
+
+Following this interpretation, LLM systems may benefit from further calibration or explicit caveats about their limitations when answering users' navigation queries could be an appropriate measure.
+This study did not concern investigate such mechanisms however.
+
 Many mistakes of various nature were made by the tested LLMs, even though they are widely used state-of-the-art models today.
 And since these models are used so frequently today, it is not implausible that some users have already tried to navigate using them.
-
-It would be interesting to know whether users would be aware of the potentially poor results.
+Research into the current usage of LLMs for navigation tasks could provide interesting insights into this topic.
 In the best case, users would quickly realize the mistakes before following them and move to other existing navigation solutions to get accurate navigation results.
-Even then however, this could lead to undermined trust in LLMs in general, which is certainly not to be desired by their providers.
+Even then however, this could lead to undermined trust in LLMs in general, which is certainly not an desirable outcome.
 In adverse cases, users could face delays or safety-relevant situations if they were to follow incorrect navigation instructions provided by LLMs.
 
 Beyond navigation, our approach could be used in similar scenarios involving graph-like structures.
@@ -172,8 +175,7 @@ Lastly, as we have mentioned, there is other geographic information beyond pure 
 In this study, we demonstrated one possible way to improve LLM navigation performance.
 Although the results were promising, this doesn't mean that other methods could not achieve similar or even better results than ours.
 We encourage researchers to explore the development of other alternative methods.
-
 This study should thus be interpreted as a proof of concept:
 LLM navigation performance can be improved by providing qualitative geographic context.
-This does not suggest however that LLMs are ready to replace traditional navigation solutions yet, but that does not mean that the idea of LLM-based navigation can be fully dismissed either.
+This does not suggest however that LLMs are ready to replace traditional navigation solutions yet, but that does not mean that the idea of LLM-based navigation can be dismissed either.
 
