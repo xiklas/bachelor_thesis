@@ -120,23 +120,23 @@ In order to gain a clear picture of the current state of research in this area, 
 Within the scope of our literature review for this thesis, we did not identify prior work explicitly evaluating the impact of qualitative geographic context on LLM navigation performance.
 Without identified prior research explicitly addressing this issue, the viability of LLMs as natural language interfaces for navigation tasks remains insufficiently characterized in the existing body of research.
 While previous research has addressed the general capabilities of LLMs in reasoning tasks, it cannot automatically be assumed that these capabilities translate to strong navigation performance in real world scenarios.
-Many potential uses for LLMs in GIScience applications have been theorized, among those the possibility to act as natural language interfaces for spatial queries such as navigation.
-Several benchmarks indicate that LLMs struggle with planning- and navigation-related tasks.
+Many potential uses for LLMs in GIScience applications have been theorized, among those the possibility to act as natural language interfaces for spatial queries such as navigation \citep{van_de_weghe_opportunities_2025}.
+Several benchmarks indicate that LLMs struggle with planning- and navigation-related tasks \citep{valmeekam_large_2022, ding_mango_2024}.
 
 This research alone is however not sufficient to fully dismiss the idea of using LLMs for navigation.
 If research could identify techniques that substantially improve LLM navigation performance, the idea of their usage in this area could become practical in the future.
 Even though one study alone will not be sufficient to fully explore this area and answer all open questions, it could provide first evidence on the viability of such techniques and serve as a benchmark for future research.
 
-Context enrichment is widely used to provide task-relevant external information to LLMs.
+Context enrichment is widely used to provide task-relevant external information to LLMs \citep{lewis_retrieval-augmented_2021, gao_retrieval-augmented_2024}.
 Although this thesis does not test this explanation, one possible reason for poor navigation performance in LLMs could be such a blind spot in the training data, in this case regarding topological data suitable for navigation.
 
 Any attempts to address the issue of poor LLM navigation performance using context enrichment must however answer the initial question of how to best provide geographic context in a way that is suitable for LLMs.
-Since LLMs are primarily trained on text corpora, we hypothesize that the geographic context should be present in the form of text as well.
+Since LLMs are primarily trained on text corpora \citep{minaee_large_2025}, we hypothesize that the geographic context should be presented to LLMs in textual form as well.
 Many sources provide openly available spatial data online.
 Much of this data is however present in machine-readable formats, rather than in natural language.
 
-A solution to address this related issue could be to utilize a framework for qualitatively describing topological data such as the dipole calculus.
-The dipole calculus is a framework that has been discussed in applications such as robotics.
+A solution to address this related issue could be to utilize a framework for qualitatively describing topological data such as the dipole calculus \citep{moratz_condensed_2011}.
+The dipole calculus is a framework that has been discussed in applications such as robotics \citep{moratz_condensed_2011}.
 In the framework, purely qualitative relations are defined to describe topological relations in an elegant manner.
 These relations could be translated into natural language statements, suitable for LLM context enrichment.
 
@@ -150,7 +150,7 @@ In the end, this study will serve as a first step on the long-term path towards 
 \section{Research Hypothesis}
 
 Drawing from the current state of research, we propose that context enrichment using qualitative geographic relations may have a positive effect on LLM navigation performance.
-Context enrichment has been shown to make LLM responses less prone to hallucinations in other domains, while dipole relations provide a proven framework for qualitatively describing topological data.
+Context enrichment has been shown to make LLM responses less prone to hallucinations in other domains \citep{gao_retrieval-augmented_2024}, while dipole relations provide a proven framework for qualitatively describing topological data \citep{moratz_condensed_2011}.
 Combined, these techniques may aid the LLM in generating more accurate navigation responses.
 We thus formulate the following research hypothesis ($\mathcal{H}_1$): 
 \begin{quote} 

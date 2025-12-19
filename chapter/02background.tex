@@ -98,7 +98,8 @@ Such graphs typically represent data as nodes and edges.
 Similar to traditional RAG, the user prompt is used to query the graph structure for relevant nodes and edges.
 These relevant nodes and edges are then converted to text snippets and appended to the LLM's context window.
 In some cases, the graph structure may first have to be constructed from text, while in other cases a graph may be present in the first place \citep{edge_local_2025}.
-Recent work has applied graph-based RAG to LLM-based navigation \citep{moratz_bilateral_2025}.
+Recent work has explored graph-based RAG in combination with LLM-based navigation \citep{moratz_bilateral_2025}.
+
 
 \begin{figure}[h!]
     \centering
@@ -111,7 +112,7 @@ In Figure~\ref{fig:rag-pipeline}, we illustrate a potential RAG pipeline for nav
 In the first step, a user prompt is provided to the LLM.
 Next, based on the user prompt, a knowledge base containing street-network data is queried.
 From this knowledge base, relevant dipole relations are retrieved.
-These relations are then added to the LLM's context window.
+These relations are then added to the LLMs' context window.
 Finally, the LLM generates a response.
 The response is now not only conditioned on the training data and the user prompt, but also on the retrieved dipole relations.
 This example is simplified and leaves out many technical details, but it serves to illustrate how RAG could be applied to navigation tasks.
