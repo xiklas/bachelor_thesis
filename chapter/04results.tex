@@ -11,18 +11,19 @@ These results will then be summarized and serve as the basis for the discussion 
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{l c c}
+\begin{tabular}{l r r}
 \hline
-\textbf{City} & \textbf{\# Individual Streets} & \textbf{\ Avg. Task Distance (m)} \\
+\textbf{City} & \textbf{\# Individual Streets} & \textbf{Avg. Task Distance (m)} \\
 \hline
 Hamburg & 38 & 899 \\
-Münster    & 128 & 1272 \\
+Münster & 128 & 1272 \\
 \hline
 \end{tabular}
 \caption{Overview of test datasets.}
+\label{tab:dataset-overview}
 \end{table}
 
-Table 4.1 provides an overview of the two datasets used in our experiments.
+Table~\ref{tab:dataset-overview} provides an overview of the two datasets used in our experiments.
 We were able to successfully derive symbolic dipole relations for both tested cities.
 For the Hamburg dataset, this resulted in a total of 38 individual streets and an average start-end distance of 899 meters.
 On the other hand, the Münster dataset contained a total of 128 individual streets, and also had a higher average start-end distance of 1272 meters (both measured using Google Maps).
@@ -32,26 +33,28 @@ On the other hand, the Münster dataset contained a total of 128 individual stre
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{l c c c c}
+\begin{tabular}{l r r r r}
 \hline
 \textbf{Group} & \textbf{\# Trials} & \textbf{\# Successful} & \textbf{\# Failed} & \textbf{Success Rate (\%)} \\
 \hline
-Control Group & 120 & 0  & 120 & 0\% \\
-Test Group    & 120 & 75 & 45  & 62.5\% \\
+Control Group & 120 & 0  & 120 & 0 \\
+Test Group    & 120 & 75 & 45  & 62.5 \\
 \hline
-\textbf{Total} & \textbf{240} & \textbf{75} & \textbf{165} & \textbf{31.25\%} \\
+\textbf{Total} & \textbf{240} & \textbf{75} & \textbf{165} & \textbf{31.25} \\
 \hline
 \end{tabular}
 \caption{Overview of trial outcomes in control and test groups with success and failure counts and corresponding success rates.}
+\label{tab:trial-outcomes-overview}
 \end{table}
+
 
 % Could all data be collected successfully?
 
+Table~\ref{tab:trial-outcomes-overview} provides an overview of the trial outcomes.
 All trials could be conducted successfully by the methods described in Chapter 3. 
 This means that we got a valid LLM response for each navigation task under all test conditions.
 However, this does not imply that all responses were correct in terms of navigation success, but simply that we were able to collect all the necessary data.
 In total, 240 LLM navigation responses (trials) were collected and manually labeled as either correct or incorrect.
-Table 4.2 provides an overview of the trial outcomes.
 
 % What is the total performance gain between control and test group?
 
@@ -71,10 +74,10 @@ To summarize, the inclusion of qualitative geographic context increased the succ
     \centering
     \includegraphics[width=0.8\textwidth]{chapter/diagrams/success_rate_by_city.png} % Adjust width as needed
     \caption{Test Group success rate by City.}
-    \label{fig:graphic7}
+    \label{fig:success-rate-by-city}
 \end{figure}
 
-Figure~4.1 illustrates the success rates in the test group broken down by the two tested cities.
+Figure~\ref{fig:success-rate-by-city} illustrates the success rates in the test group broken down by the two tested cities.
 When comparing test group performances under this condition, we can make several observations.
 First, the success rate increased in both cities compared to the control group (which had a success rate of 0\% in both cities).
 In Hamburg, the success rate climbed to 86.6\%, while in Münster it reached just 38.3\%.
@@ -87,10 +90,10 @@ Out of the 75 correctly labelled navigation trials in the test group, 52 were co
     \centering
     \includegraphics[width=0.8\textwidth]{chapter/diagrams/success_rate_by_model.png} % Adjust width as needed
     \caption{Test group success rate by LLM.}
-    \label{fig:graphic8}
+    \label{fig:success-rate-by-model}
 \end{figure}
 
-Further, comparing the success rates across the three tested LLMs in the test group as depicted in Figure~4.2 yields additional insights. 
+Further, comparing the success rates across the three tested LLMs in the test group as depicted in Figure~\ref{fig:success-rate-by-model} yields additional insights. 
 While all models performed better compared to their control group success rate of 0\%, the best-performing model in the test group was Google's Gemini 2.5 Pro.
 It achieved a success rate of 70\%, with 28 out of 40 navigation trials labelled as correct.
 The next best-performing model was Claude Sonnet 4.5 with a slightly lower success rate of 65\%.
@@ -103,10 +106,10 @@ GPT-4o performed worst in the test group: with 21 out of 40 navigation trials la
     \centering
     \includegraphics[width=0.8\textwidth]{chapter/diagrams/success_rate_by_model_and_city.png} % Adjust width as needed
     \caption{Test group success rate by model and city.}
-    \label{fig:graphic9}
+    \label{fig:success-rate-by-model-and-city}
 \end{figure}
 
-Breaking down the test group success rates by both test city and LLM as shown in Figure~4.3 leads to several additional observations.
+Breaking down the test group success rates by both test city and LLM as shown in Figure~\ref{fig:success-rate-by-model-and-city} leads to several additional observations.
 First, we can see that all models performed better with the Hamburg dataset compared to the Münster dataset.
 All models using the Hamburg dataset achieved a success rate of at least 75\%, with Gemini 2.5 Pro ranking the highest at 95\%.
 Claude Sonnet 4.5 followed with a success rate of 90\%, five percentage points below Gemini 2.5 Pro.
@@ -119,25 +122,23 @@ The lowest overall success rate in the test group was thus observed with GPT-4o 
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|}
+\begin{tabular}{c c}
 \hline
 \textbf{Number of Correct LLM Responses} & \textbf{Frequency} \\
 \hline
 0 & 6 \\
-\hline
 1 & 9 \\
-\hline
 2 & 9 \\
-\hline
 3 & 16 \\
 \hline
 \end{tabular}
-\caption{\textbf{Frequency Distribution of Correct LLM Responses}}
-\label{tab:llm_frequency}
+\caption{Frequency distribution of correct LLM responses in the test group.}
+\label{tab:llm-frequency-distribution}
 \end{table}
 
+
 We may also examine the frequency distribution of correctly answered navigation tasks in the test group.
-Table~4.3 summarizes, for each navigation task, how many of the three tested models produced a response labelled as correct.
+Table~\ref{tab:llm-frequency-distribution} summarizes, for each navigation task, how many of the three tested models produced a response labelled as correct.
 Only six navigation tasks were answered incorrectly by all three models.
 Nine navigation tasks were answered correctly by just one model.
 Nine navigation tasks were answered correctly by two models.
@@ -150,23 +151,21 @@ Conversely, this means that the likelihood of all models answering correctly whe
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|}
+\begin{tabular}{l c}
 \hline
 \textbf{Model} & \textbf{Frequency} \\
 \hline
 GPT-4o & 3 \\
-\hline
 Gemini 2.5 Pro & 4 \\
-\hline
 Claude Sonnet 4.5 & 2 \\
 \hline
 \end{tabular}
-\caption{\textbf{Distribution of Correct Models in Single-Success Tasks.}}
-\label{tab:single_correct_llm}
+\caption{Distribution of correct models in single-success tasks.}
+\label{tab:single-success-llm}
 \end{table}
 
 Additionally, we analyzed which model performed best in cases where exactly one model provided a response to a navigation task that was labelled as correct.
-The results of this analysis are summarized in Table~4.4.
+The results of this analysis are summarized in Table~\ref{tab:single-success-llm}.
 Although there were only nine such cases overall and the spread between the best- and worst-performing model was small, Gemini 2.5 Pro performed best in this category.
 It was able to provide a correct answer in four cases when GPT-4o and Claude Sonnet 4.5 both failed.
 GPT-4o then followed with three such cases.
@@ -176,23 +175,22 @@ Claude Sonnet 4.5 performed worst, answering two navigation tasks correctly when
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|}
+\begin{tabular}{l c}
 \hline
 \textbf{Model Failed} & \textbf{Frequency} \\
 \hline
 GPT-4o & 7 \\
-\hline
 Gemini 2.5 Pro & 1 \\
-\hline
 Claude Sonnet 4.5 & 1 \\
 \hline
 \end{tabular}
-\caption{\textbf{Distribution of Single Failed Model in Two-Success Trials}}
-\label{tab:single_failed_llm}
+\caption{Distribution of single failed model in two-success trials.}
+\label{tab:single-failed-llm}
 \end{table}
 
+
 We also consider the complementary case: for tasks where exactly one model failed, we aim to identify which model was most likely to fail.
-The results of this analysis are summarized in Table~4.5.
+The results of this analysis are summarized in Table~\ref{tab:single-failed-llm}.
 GPT-4o accounted for seven out of nine such cases, making it the model most likely to fail when both other models succeeded.
 Gemini 2.5 Pro and Claude Sonnet 4.5 accounted for exactly one failure of this kind each, so their performance in this category was identical.
 
@@ -200,26 +198,24 @@ Gemini 2.5 Pro and Claude Sonnet 4.5 accounted for exactly one failure of this k
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{l r r}
 \hline
-\textbf{Number of Failed Models} & \textbf{Hamburg} & \textbf{Münster} \\
+\textbf{\# Failed Models} & \textbf{Hamburg} & \textbf{Münster} \\
 \hline
 1 & 4 & 5 \\
-\hline
 2 & 2 & 7 \\
-\hline
 3 & 0 & 6 \\
 \hline
 \textbf{Total} & \textbf{6} & \textbf{18} \\
 \hline
 \end{tabular}
-\caption{\textbf{Distribution of Failures by City and Number of Failed Models}}
-\label{tab:failures_by_city}
+\caption{Distribution of failures by city and number of failed models.}
+\label{tab:failures-by-city}
 \end{table}
 
-%% FIX THIS
 
 Next, we analyzed the failures by the dataset they occurred on (Hamburg or Münster).
+The results of this analysis are summarized in Table~\ref{tab:failures-by-city}.
 Cases in which only one model answered incorrectly were distributed almost evenly across both city datasets:
 using the Hamburg dataset, there were 4 occurrences where one model failed to answer a navigation task.
 Using the Münster dataset, this number was just slightly higher at 5.
@@ -239,20 +235,19 @@ Lastly, all of the six instances where all three models failed to answer a navig
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|c|c|}
+\begin{tabular}{l r r}
 \hline
-\textbf{Model Pair} & \textbf{Disagreement Frequency (Out of 18 Trials)} & \textbf{Agreement Frequency} \\
+\textbf{Model pair} & \textbf{Disagreement frequency} & \textbf{Agreement frequency} \\
 \hline
-GPT-4o vs. Gemini 2.5 Pro & 15 & 3 \\
-\hline
-GPT-4o vs. Claude Sonnet 4.5 & 13 & 5 \\
-\hline
-Gemini 2.5 Pro vs. Claude Sonnet 4.5 & 8 & 10 \\
+GPT-4o vs.\ Gemini 2.5 Pro      & 15 & 3  \\
+GPT-4o vs.\ Claude Sonnet 4.5   & 13 & 5  \\
+Gemini 2.5 Pro vs.\ Claude Sonnet 4.5 & 8  & 10 \\
 \hline
 \end{tabular}
-\caption{\textbf{Pairwise Model Disagreement and Agreement in Non-Unanimous Trials}}
-\label{tab:pairwise_disagreement}
+\caption{Pairwise model disagreement and agreement in non-unanimous trials.}
+\label{tab:pairwise-disagreement}
 \end{table}
+
 
 Finally, we analyze pairwise disagreement among the three studied models.
 To do so, we exclude all tasks which were answered unanimously, meaning that either all models answered correctly or all models answered incorrectly.
@@ -260,7 +255,7 @@ This leaves us with a total of 18 non-unanimous tasks.
 
 Within this subset of 18 tasks, we measure how often each pair of models disagreed.
 Disagreement is defined here as one model answering correctly while the other model answered incorrectly (or vice versa).
-The results of this analysis are summarized in Table~4.8.
+The results of this analysis are summarized in Table~\ref{tab:pairwise-disagreement}.
 
 Out of the 18 non-unanimous tasks, GPT-4o and Gemini 2.5 Pro disagreed in 15 cases, while agreeing on 3 cases.
 The next highest disagreement count was observed in the pairing GPT-4o and Claude Sonnet 4.5, which disagreed in 13 cases and agreed in 5 cases.

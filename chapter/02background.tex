@@ -138,10 +138,11 @@ While quantitative geographic data contains precise measurements such as distanc
         \hline
     \end{tabular}
     \caption{Example of qualitative and quantitative representations of a street.}
-    \label{tab:qual_quant_road}
+    \label{tab:qualitative-quantitative-comparison}
 \end{table}
 
-In the example given in Table 2.1, we illustrate the difference between qualitative and quantitative geographic data in the context of our research topic.
+
+In the example given in Table~\ref{tab:qualitative-quantitative-comparison}, we illustrate the difference between qualitative and quantitative geographic data in the context of our research topic.
 While the quantitative representation focuses on precise numbers such as ``Length: 300 m'', the qualitative representation describes the same road in terms of qualitative relations.
 This example does not imply that the two representations are interchangeable, contain the same information or are equally useful.
 Rather, they reflect different paradigms for representing geographic data.
@@ -156,7 +157,7 @@ The next section introduces one such framework, the dipole calculus \citep{morat
     \centering
     \includegraphics[width=0.6\textwidth]{chapter/graphics/dipole_relations.png} % Adjust width as needed
     \caption{All qualitatively different dipole relations that are necessary to describe a street network.}
-    \label{fig:graphic3}
+    \label{fig:dipole-relations}
 \end{figure}
 
 The dipole calculus is a qualitative spatial reasoning framework.
@@ -168,8 +169,8 @@ The calculus abstracts from metric information such as distances and instead foc
 This yields a framework allowing for qualitative reasoning on line-based geographic structures such as road networks \citep{moratz_condensed_2011}.
 Dipole relations have recently been used as context for LLM-based navigation \citep{moratz_bilateral_2025}.
 
-Although extended versions of the dipole calculus exist, Figure~2.1 shows the set of dipole relations used in this thesis.
-In Figure~2.1, each dipole is represented by a unidirectional arrow.
+Although extended versions of the dipole calculus exist, Figure~\ref{fig:dipole-relations} shows the set of dipole relations used in this thesis.
+In Figure~\ref{fig:dipole-relations}, each dipole is represented by a unidirectional arrow.
 Each dipole has a unique label (A-N) for identification.
 For example, dipole G branches off from dipole B.
 Similarly, dipole A continues from dipole B, and dipole E continues from dipole A.
@@ -213,7 +214,7 @@ Instead we will use a widely used commercial mapping platform called Google Maps
     \centering
     \includegraphics[width=0.8\textwidth]{chapter/graphics/google_maps_interface.png} % Adjust width as needed
     \caption{A screenshot demonstrates the Google Maps web interface, map data © Google.}
-    \label{fig:graphic4}
+    \label{fig:google-maps-interface}
 \end{figure}
 
 Google Maps is a web based mapping platform originating from the Australian company Where 2 Technologies, which was fully acquired by Google in 2004 \citep{noauthor_google_2025}.

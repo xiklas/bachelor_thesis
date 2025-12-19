@@ -6,14 +6,14 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Overview of test datasets.}}{23}{table.caption.10}%
 \contentsline {table}{\numberline {4.2}{\ignorespaces Overview of trial outcomes in control and test groups with success and failure counts and corresponding success rates.}}{23}{table.caption.11}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces \textbf {Frequency Distribution of Correct LLM Responses}}}{26}{table.caption.15}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces \textbf {Distribution of Correct Models in Single-Success Tasks.}}}{26}{table.caption.16}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces \textbf {Distribution of Single Failed Model in Two-Success Trials}}}{27}{table.caption.17}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces \textbf {Distribution of Failures by City and Number of Failed Models}}}{27}{table.caption.18}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces \textbf {Pairwise Model Disagreement and Agreement in Non-Unanimous Trials}}}{28}{table.caption.19}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Frequency distribution of correct LLM responses in the test group.}}{26}{table.caption.15}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Distribution of correct models in single-success tasks.}}{26}{table.caption.16}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Distribution of single failed model in two-success trials.}}{27}{table.caption.17}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Distribution of failures by city and number of failed models.}}{27}{table.caption.18}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Pairwise model disagreement and agreement in non-unanimous trials.}}{28}{table.caption.19}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Example navigation tasks (start and end streets).}}{45}{table.caption.20}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Example navigation tasks (start and end streets).}}{43}{table.caption.20}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

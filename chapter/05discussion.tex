@@ -10,7 +10,7 @@ The results of these experiments presented in Chapter~4 serve as the basis for t
 \section{Interpretation of Results}
 
 Our experiments suggest that the inclusion of qualitative geographic context had a positive effect on LLM navigation performance in the tested setup.
-The overall success rate increased from 0/120 (0\%) in the control group to 75/120 (62.5\%) in the test group (see Table~4.2).
+The overall success rate increased from 0/120 (0\%) in the control group to 75/120 (62.5\%) in the test group (see Table~\ref{tab:trial-outcomes-overview}).
 This is a substantial improvement in task success rate, supporting our initial research hypothesis within the scope of our experiments.
 However, since the evaluation in this thesis does not include formal statistical significance testing, these results should be interpreted as empirical evidence rather than a general claim about all possible cities, models, or navigation scenarios.
 
@@ -23,7 +23,7 @@ Further, our correctness criteria could be considered too strict by some.
 This does not align with typical navigation use cases however, where a single wrong instruction can lead to failed navigation, regardless of the system used.
 Under this evaluation framework, the 0\% success rate indicates that the tested LLMs were not reliable for navigation in the tested areas.
 
-Further, as depicted in Table~4.1, the performance increase across the two tested cities was not equal.
+Further, as depicted in Figure~\ref{fig:success-rate-by-city}, the performance increase across the two tested cities was not equal.
 In Hamburg, the success rate in the test group was 86.6\%, while in Münster it was only 38.3\%.
 Several factors could explain this discrepancy.
 One possible explanation is the size difference between the two tested datasets.
@@ -35,7 +35,7 @@ Since the control group performance was equally poor in both cities, it seems un
 However, such biases cannot be entirely ruled out without further experiments.
 In total, it may be possible that multiple factors contributed to the observed performance difference between the two cities.
 
-We may also consider the performance differences between the three tested LLMs shown in Figure~4.2 and discuss whether it made sense to test multiple models, and whether the choice of models was appropriate.
+We may also consider the performance differences between the three tested LLMs shown in Figure~\ref{fig:success-rate-by-model} and discuss whether it made sense to test multiple models, and whether the choice of models was appropriate.
 The results indicate that while all three models benefited from the provided geographic context, their performance varied in the tested setup.
 This suggests that navigation performance using our approach may depend on the specific LLM used, justifying our decision to test multiple models.
 While the exact reasons for the performance differences remain speculative, differences in model architecture, training process, or fine tuning could have played a role.

@@ -20,8 +20,8 @@ Given their widespread use, LLMs may already be used for navigational queries in
 This motivates evaluating whether LLMs are currently capable of delivering accurate and reliable responses to user navigation queries. 
 If performance can be shown to be insufficient, this motivates research exploring techniques to improve LLM navigation performance. 
 
-In the following example depicted in Figure 1.1, we prompted GPT-4o with a simple navigation task to observe whether the model could successfully provide a useful answer to a simple path finding problem.
-The prompt used to generate the response shown in Figure 1.1 was as follows:
+In the following example depicted in Figure~\ref{fig:gpt-route-response}, we prompted GPT-4o with a simple navigation task to observe whether the model could successfully provide a useful answer to a simple path finding problem.
+The prompt used to generate the response shown in Figure~\ref{fig:gpt-route-response} was as follows:
 
 \begin{quote}
     \textit{I just arrived at Münster central station and need to get to the Hafenweg. Please provide me with step-by-step walking directions to get there.}
@@ -33,7 +33,7 @@ The prompt used to generate the response shown in Figure 1.1 was as follows:
     \centering
     \includegraphics[width=0.8\textwidth]{chapter/graphics/gpt_response.png} % Adjust width as needed
     \caption{GPT-4o response to a simple route planning task.}
-    \label{fig:graphic1}
+    \label{fig:gpt-route-response}
 \end{figure}
 
 % Map with Correct Route vs. GPT-4o Response
@@ -41,22 +41,22 @@ The prompt used to generate the response shown in Figure 1.1 was as follows:
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{chapter/graphics/google_maps_route.png} % Adjust width as needed
-    \caption{One possible correct route (green) for the example navigation task compared to various segments found in the GPT-4o response (red).}
-    \label{fig:graphic2}
+    \caption{One possible correct route (green) for the example navigation task compared to various segments found in the GPT-4o response (red). Map data \copyright{} 2025 Google.}
+    \label{fig:gpt-route-comparison}
 \end{figure}
 
 % What is wrong with the LLM response?
 
-Even though the model response shown in Figure 1.1 appears structurally sound and plausible at first glance, upon closer inspection there are several mistakes that would likely prevent the user from following the proposed route.
+Even though the model response shown in Figure~\ref{fig:gpt-route-response} appears structurally sound and plausible at first glance, upon closer inspection there are several mistakes that would likely prevent the user from following the proposed route.
 To understand the mistakes, we analyze the response step by step, starting with the first instruction.
-To ensure followability, we provide Figure 1.2 showing one possible correct route as context.
+To ensure followability, we provide Figure~\ref{fig:gpt-route-comparison} showing one possible route derived using the web-based mapping tool Google Maps as comparison.
 
 \begin{quote}
     \textit{1. Exit Münster Hauptbahnhof through the main entrance onto Willy-Brandt-Allee.}
 \end{quote}
 
 Although exiting Münster Hauptbahnhof to reach the destination is certainly a sensible step, a more direct choice would be to use the secondary exit away from the city center and towards the actual destination.
-Also, the response introduces a street called ``Willy-Brandt-Allee'' which does not align with the map context shown in Figure 1.2.
+Also, the response introduces a street called ``Willy-Brandt-Allee'' which does not align with the map context shown in Figure~\ref{fig:gpt-route-comparison}.
 The second instruction is as follows:
 
 \begin{quote}
@@ -72,7 +72,7 @@ The next instruction reads:
 \end{quote}
  
 Next, the LLM response introduces the street ``Albersloher Weg''.
-However, the map shown in Figure 1.2 suggests no visible connection between ``Willy-Brandt-Allee'' and ``Albersloher Weg''.
+However, the map shown in Figure~\ref{fig:gpt-route-comparison} suggests no visible connection between ``Willy-Brandt-Allee'' and ``Albersloher Weg''.
 Continuing with the next instruction:
 
 \begin{quote}
@@ -81,8 +81,8 @@ Continuing with the next instruction:
 
 This instruction raises many questions. 
 For once, the destination does not lie one kilometer away from the Central Station, therefore the stated distance appears inconsistent with the approximate start-destination distance in this example.
-Further, the response introduces the ``Aasee park area'', which is inconsistent with the route context shown in Figure 1.2
-Additionally, the map shown in Figure 1.2 shows no visible connection between the two segments.
+Further, the response introduces the ``Aasee park area'', which is inconsistent with the route context shown in Figure~\ref{fig:gpt-route-comparison}.
+Additionally, the map shown in Figure~\ref{fig:gpt-route-comparison} shows no visible connection between the two segments.
 With the next instruction, the mistakes made by GPT-4o continue:
 
 \begin{quote}
@@ -90,7 +90,7 @@ With the next instruction, the mistakes made by GPT-4o continue:
 \end{quote}
 
 The response then refers to ``Hammer Straße''.
-Again, this instruction does not appear viable in the example situation, as Figure 1.2 does not show a visible connection between the two required streets. 
+Again, this instruction does not appear viable in the example situation, as Figure~\ref{fig:gpt-route-comparison} does not show a visible connection between the two required streets. 
 Thus, it doesn't appear that this instruction could be followed in practice.
 Finally, the last two instructions read:
 
@@ -99,9 +99,9 @@ Finally, the last two instructions read:
     \textit{7. Look for Hafenweg on your left. Turn left onto Hafenweg.}
 \end{quote}
 
-Again, these instructions do not appear viable, as the map context shown in Figure 1.2 does not show a visible connection between the two streets.
+Again, these instructions do not appear viable, as the map context shown in Figure~\ref{fig:gpt-route-comparison} does not show a visible connection between the two streets.
 Whether there are ``residential and commercial buildings'' along the Hammer Straße is irrelevant, although it may as well be true.
-In total, GPT-4o suggested several steps that may be difficult to follow in practice when compared against the map context shown in Figure 1.2.
+In total, GPT-4o suggested several steps that may be difficult to follow in practice when compared against the map context shown in Figure~\ref{fig:gpt-route-comparison}.
 
 Preliminary, informal tests discussed during thesis supervision suggested similar shortcomings in contemporary LLM navigation in urban environments.
 In line with these preliminary observations, the routing task shown above illustrates that such issues may occur in recent LLMs such as GPT-4o.

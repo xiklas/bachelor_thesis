@@ -27,7 +27,7 @@ The most common way of encountering street network data is in the form of graphm
     \centering
     \includegraphics[width=0.5\textwidth]{chapter/graphics/hamburg_network.png} % Reduced to 60% of text width
     \caption{Graph representation of area of interest in Hamburg, Germany as used in this study.}
-    \label{fig:graphic6}
+    \label{fig:hamburg-graph}
 \end{figure}
 
 % Which data was downloaded and how was it processed to generate the dipole relations.
@@ -40,8 +40,8 @@ In essence, the algorithm works by iterating over all nodes and creating dipole 
 While the full algorithm is provided in the appendix, a conceptual description of the algorithm in pseudocode is given here:
 
 \begin{algorithm}
-\caption{Generate Street Descriptions from OSM}
-\label{alg:street_desc}
+\caption{Generate Street Descriptions from OSM.}
+\label{alg:dipole-generation}
 \begin{algorithmic}[1]
 \Require Bounding box
 \Ensure Text descriptions for streets in bounding box
