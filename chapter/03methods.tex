@@ -210,7 +210,8 @@ This results in a total of 240 trials (3 models \( \times \) 2 context condition
 
 % How were the trial responses stored?
 
-After trial execution, each model's response was saved in a database. In the case of an exceedingly verbose model response, the response was truncated to contain only the relevant navigational instructions which we intend to investigate in this study.
+After trial execution, the model responses were stored using a spreadsheet.
+In case of exceedingly verbose model responses, the text was truncated, and only the relevant instuctions for the navigation task were stored.
 
 % How was the obtained data evaluated and which statistical tools were used?
 
@@ -218,7 +219,7 @@ After trial execution, each model's response was saved in a database. In the cas
 
 % Responses were reviewed manually against Google Maps.
 
-All responses were then reviewed manually by comparing the generated instructions against Google Maps.
+All responses were then reviewed manually by comparing the generated instructions saved in the spreadsheet against Google Maps.
 When looking at any response, the objective was to determine whether the produced steps could be executed in sequence to solve the navigation task.
 If this was the case, the response was labelled as correct, otherwise it was labelled as incorrect.
 Since the responses were labelled manually by a single evaluator, they may contain some subjective judgement in a few borderline cases.
@@ -229,18 +230,16 @@ This means that just one incorrect instruction in any LLM response, control or t
 A trial was labelled as incorrect if the response contained at least one instruction that (i) referenced a non-existing street, (ii) required an impossible turn, or (iii) produced a disconnected route.
 Our validation does not take into account any further measures like distance measures or number of turns.
 While these additional measures could provide interesting insights, they are outside the scope of this study.
-The success rate is therefore defined as the proportion of navigation trials which were labelled as correct over the total number of navigation trials conducted.
+The success rate is therefore defined as the proportion of navigation trials which were labelled as correct over the total number of navigation trials conducted, as described in Equation~\ref{eq:success-rate}:
 
-\[
+\begin{equation}
+\label{eq:success-rate}
 \text{Success Rate} \;=\; \frac{N_{\text{correct}}}{N_{\text{total}}}
-\]
+\end{equation}
 
 
 % How was the success rate calculated?
 
-After labelling all model responses, we were thus able to calculate success rates for the control and test groups.
-
-% Conclusion of the Methods chapter.
-
-This concludes our description of the methods used to conduct this study.
-In the following chapter, we will present the results obtained from the experiments.
+After labelling all model responses manually, the results were aggregated and success rates were calculated.
+This concludes our description of the experimental methods used in this study.
+In the following chapter, we will present the results obtained from our experiments.

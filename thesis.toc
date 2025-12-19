@@ -21,17 +21,26 @@
 \contentsline {section}{\numberline {4.2}Experiment Results}{25}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Summary of Findings}{30}{section.4.3}%
 \contentsline {chapter}{\numberline {5}Discussion}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Interpretation of Results}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Limitations}{35}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{37}{chapter.6}%
+\contentsline {section}{\numberline {5.1}Overall Performance and Hypothesis Validation}{31}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Control Group Performance}{31}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Performane Variations by City}{32}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Model Specific Performance Variations}{32}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Implications for LLM Benchmarking}{33}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Data Quality}{33}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Practical Implications and Future Directions}{33}{section.5.7}%
+\contentsline {paragraph}{\nonumberline Example user prompts with additional geographic context:}{34}{paragraph*.23}%
+\contentsline {section}{\numberline {5.8}Validation Techniques}{35}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Limitations}{36}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Summary}{37}{section.5.10}%
+\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{39}{chapter.6}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Appendix}{39}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Hamburg Street Descriptions}{39}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Prompts}{45}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Control Group Prompt}{45}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Test Group Prompt}{45}{subsection.A.2.2}%
-\contentsline {subsection}{\numberline {A.2.3}User Prompt}{45}{subsection.A.2.3}%
-\contentsline {section}{\numberline {A.3}Example Navigation Tasks}{45}{section.A.3}%
-\contentsline {chapter}{\nonumberline List of Figures}{47}{chapter*.23}%
-\contentsline {chapter}{\nonumberline List of Tables}{49}{chapter*.24}%
+\contentsline {chapter}{\numberline {A}Appendix}{41}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Hamburg Street Descriptions}{41}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Prompts}{47}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Control Group Prompt}{47}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Test Group Prompt}{47}{subsection.A.2.2}%
+\contentsline {subsection}{\numberline {A.2.3}User Prompt}{47}{subsection.A.2.3}%
+\contentsline {section}{\numberline {A.3}Example Navigation Tasks}{47}{section.A.3}%
+\contentsline {chapter}{\nonumberline List of Figures}{49}{chapter*.25}%
+\contentsline {chapter}{\nonumberline List of Tables}{51}{chapter*.26}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

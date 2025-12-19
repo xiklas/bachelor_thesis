@@ -7,12 +7,14 @@ We hypothesized that our approach would improve the ability of LLMs to provide a
 In order to test our hypothesis, we conducted a series of experiments by means of the methods described in Chapter~3.
 The results of these experiments presented in Chapter~4 serve as the basis for the following discussion.
 
-\section{Interpretation of Results}
+\section{Overall Performance and Hypothesis Validation}
 
 Our experiments suggest that the inclusion of qualitative geographic context had a positive effect on LLM navigation performance in the tested setup.
 The overall success rate increased from 0/120 (0\%) in the control group to 75/120 (62.5\%) in the test group (see Table~\ref{tab:trial-outcomes-overview}).
 This is a substantial improvement in task success rate, supporting our initial research hypothesis within the scope of our experiments.
 However, since the evaluation in this thesis does not include formal statistical significance testing, these results should be interpreted as empirical evidence rather than a general claim about all possible cities, models, or navigation scenarios.
+
+\section{Control Group Performance}
 
 The success rate of 0\% in the control group is striking, and raises multiple questions.
 First: was the experimental setup appropriate to test LLM navigation performance in real world scenarios?
@@ -22,6 +24,8 @@ However, since a goal of this study was to evaluate LLM navigation performance i
 Further, our correctness criteria could be considered too strict by some.
 This does not align with typical navigation use cases however, where a single wrong instruction can lead to failed navigation, regardless of the system used.
 Under this evaluation framework, the 0\% success rate indicates that the tested LLMs were not reliable for navigation in the tested areas.
+
+\section{Performane Variations by City}
 
 Further, as depicted in Figure~\ref{fig:success-rate-by-city}, the performance increase across the two tested cities was not equal.
 In Hamburg, the success rate in the test group was 86.6\%, while in Münster it was only 38.3\%.
@@ -35,6 +39,8 @@ Since the control group performance was equally poor in both cities, it seems un
 However, such biases cannot be entirely ruled out without further experiments.
 In total, it may be possible that multiple factors contributed to the observed performance difference between the two cities.
 
+\section{Model Specific Performance Variations}
+
 We may also consider the performance differences between the three tested LLMs shown in Figure~\ref{fig:success-rate-by-model} and discuss whether it made sense to test multiple models, and whether the choice of models was appropriate.
 The results indicate that while all three models benefited from the provided geographic context, their performance varied in the tested setup.
 This suggests that navigation performance using our approach may depend on the specific LLM used, justifying our decision to test multiple models.
@@ -45,11 +51,15 @@ However, the substantial increase in success rates across all three models indic
 The development of new models is also rapid and ongoing: areas of poor performance today may be addressed by a new model tomorrow.
 This rapid model progress may reduce the marginal benefit of context enrichment as presented in this study over time, motivating repeated evaluation as new models are released.
 
+\section{Implications for LLM Benchmarking}
+
 In Chapter~2 we discussed several LLM related benchmarks.
 This raises the question whether our framework could be integrated or expand on existing benchmarks.
 As we have seen, all models in the control group had a success rate of 0\%.
 Therefore, it seems unlikely that our framework would provide interesting insights when purely testing LLM performance without any additional techniques to boost navigation performance. 
 For any techniques aiming to improve LLM navigation however, our framework could serve as a navigation-specific task suite to compare performance improvements.
+
+\section{Data Quality}
 
 We also discussed the suitability of OpenStreetMap data for our approach in Chapter~2.
 In this thesis, OSM data was used to extract street networks for Hamburg and Münster.
@@ -62,6 +72,12 @@ In this study, these relations were used to represent geographic context in a qu
 The results indicate that this representation was effective:
 While the previously discussed variations in performance across cities and models cannot be ignored, the overall improvements show that dipole relations can be a useful tool for LLM navigation tasks.
 Whether alternative frameworks for spatial representation could yield comparable or even better results remains an open question for future research.
+
+Further, the Algorithm~\ref{alg:dipole-generation} presented in Chapter~3 was used to generate the dipole relations from OSM data.
+While it appears that this algorithm was effective in generating useful context, there may be room for improvement.
+Future work could explore alternative algorithms capable of generating context for LLM navigation tasks.
+
+\section{Practical Implications and Future Directions}
 
 Our results indicate that poor LLM navigation performance is not necessarily inevitable in the tested setup.
 By providing qualitative geographic context, navigation performance improved substantially in our experiments.
@@ -79,8 +95,21 @@ In practice, there are countless other types of geographic information that coul
 Future work could explore the inclusion of additional types of geographic context:
 accessibility information, data on points of interest or data on real-time dynamic conditions could potentially be valuable avenues for future implementations aiming to differentiate themselves from traditional navigation solutions and making use of the unique capabilities of LLMs.
 These additional data types were however not a part of this study, and their potential benefits remain unclear from the results presented here.
+To give an idea of how these additional data types could be used in practice, we may consider some examples:
 
-Our results can also be interpreted in another way: If it takes additional, non-trivial work to achieve better navigation performance with LLMs, maybe they are currently not the best tool for the job after all.
+\paragraph{Example user prompts with additional geographic context:}
+\begin{itemize}
+    \item ``I just arrived at Amsterdam central station and want to visit the Rijksmuseum. Can you provide me with walking directions through less crowded streets?''
+    \item ``I am in Paris and meeting a friend who cannot take stairs due to a recent injury. Can you give us a beautiful route through the city that avoids stairs?''
+    \item ``Considering there is a footrace happening in Berlin today, can you help me find a route from my apartment to my office that avoids the current road closures?''
+\end{itemize}
+
+In the above examples, we see how additional geographic context could be used to enhance the use case of LLM-based navigation compared to traditional navigation solutions.
+In the first example, real-time data could be used to avoid crowded streets in a major city.
+In the second example, accessibility information could help users with specific needs to find adequate routes without complex queries.
+In the last example, information on dynamic conditions could help users navigate in case of temporaray changes in the street network.
+
+However, our results could also be interpreted in another way: If it takes additional, non-trivial work to achieve better navigation performance with LLMs, maybe they are currently not the best tool for the job after all.
 With our context enrichment setup, we were able to achieve higher trial success rates in our test group compared to the low success rate of the control group.
 At present, implementing a comparable pipeline in user navigation applications could prove to be non-trivial however.
 It is difficult to imagine users, especially those without a technical background, recreating our setup on mobile devices such as smartphones or smartwatches for example, which are so commonly used for navigation in this era of mobile computing.
@@ -94,33 +123,57 @@ In the best case, users would quickly realize the mistakes before following them
 Even then however, this could lead to undermined trust in LLMs in general, which is certainly not to be desired by their providers.
 In adverse cases, users could face delays or safety-relevant situations if they were to follow incorrect navigation instructions provided by LLMs.
 
+Beyond navigation, our approach could be used in similar scenarios involving graph-like structures.
+One interesting avenue for additional research could thus be to study whether knowledge graphs could be represented using qualitative relations as well, and whether this could allow LLMs to reason about knowledge graphs in a similar way as we have shown for geographic networks.
+
+\section{Validation Techniques}
+
 Research on LLM-based navigation could also benefit from improvements in validation techniques.
 Manual validation as done in this study does not scale well and is not suitable for larger datasets or the coverage of many models.
 Eventually, manual validation may become unrealistic as it becomes too time-consuming and labor-intensive.
 Automated validation methods could help address this issue, and also help the reproducibility of results.
 
+\section{Limitations}
+
+While our study has provided valuable insight into LLM navigation performance, several limitations must be acknowledged.
+
+First, we tested only two cities in Europe.
+This does not guarantee that our results generalize to other cities or regions around the world.
+Claiming generalizability across regions would require further experiments in a wider variety of cities.
+
+Further, we evaluated only three LLMs in this study.
+There are many other LLMs available today, and while testing a large fraction of them was not realistic for this study, it does limit the claims we can make based on our results.
+As mentioned earlier, testing additional models could also benefit from automated validation techniques to reduce the manual effort required.
+
+Also, our framework was limited to a set of 40 unique navigation tasks in total.
+While this number was enough to gain initial insights into improved LLM navigation performance, a larger sample size of navigation tasks would strengthen the possible conclusions that can be drawn from the results.
+Similarly, a larger sample size would allow for additional statistical analyses to be conducted, which could provide detailed insights into the significance of the observed results.
+
+In addition, we only evaluated each specific model configuration once per navigation task.
+This limitation means that we cannot account for variations in model responses in repeated trials for the same input.
+This problem could also be addressed in future reseearch, potentially with automated validation techniques.
+
+Also, validation in this study was done manually by a single evaluator.
+This could have introduced subjective bias in some cases, although we tried to minimize this by using clear correctness criteria.
+Thus, this is another issue that could be addressed by improved validation techniques in future work, or by involving multiple evaluators to enable cross-validation of results.
+
+Next, the context we provided was derived from OpenStreeetMap data only.
+As discussed previously, there is potential for variance in data quality.
+This coulld have influenced our results, and motivates the exploration of alternative data sources in future research.
+
+Our evaluation framework also focused solely on a binary success criterion.
+While this is adequate for navigation use cases, additional insights could be gained by analyzing model outputs for navigation tasks in more detail.
+For example, the number of mistakes made per trial, the total distance of the generated route, or the number of turns required could be analyzed to improve LLM navigation techniques further.
+
+Lastly, as we have mentioned, there is other geographic information beyond pure topological information that could be benefitial for LLM navigation, which we have not explored in this study.
+
+\section{Summary}
+
 In this study, we demonstrated one possible way to improve LLM navigation performance.
 Although the results were promising, this doesn't mean that other methods could not achieve similar or even better results than ours.
 We encourage researchers to explore the development of other alternative methods.
-The testing framework described in Chapter~3 was designed to be easily reproducible and could serve as a basis for future research. 
-
-Beyond navigation, our approach could be used in similar scenarios involving graph-like structures.
-One interesting avenue for additional research could thus be to study whether knowledge graphs could be represented using qualitative relations as well, and whether this could allow LLMs to reason about knowledge graphs in a similar way as we have shown for geographic networks.
 
 This study should thus be interpreted as a proof of concept:
 LLM navigation performance can be improved by providing qualitative geographic context.
 This does not suggest however that LLMs are ready to replace traditional navigation solutions yet, but that does not mean that the idea of LLM-based navigation can be fully dismissed either.
 
-\section{Limitations}
-
-While our methods have shown promising results, there are limitations.
-First, our study considered only two distinct areas of interest within just two European cities.
-Although we observed improvements in both cities, it is possible that other cities may perform worse using our approach.
-Data quality can also differ when considering different regions.
-While OpenStreetMap coverage was sufficient for our selected cities, this may not be the case in other cities or regions.
-Thus, generalization to other cities or regions remains an open question.
-
-Second, we only evaluated three LLMs in this study.
-Today, many different LLMs are available, and it is likely that many more will be released in the future.
-While we were able to observe improvements across all three tested models, this does not guarantee that performance improvements will occur with any LLM.
-Results may also vary with future architectures, augmentation techniques, or model versions.
