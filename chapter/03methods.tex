@@ -21,12 +21,12 @@ To evaluate the results, we define a strict correctness criterion and determine 
 
 The first step in our experimental setup is the generation of dipole relations describing topological relationships in street networks which can then be used as qualitative geographic context for our LLMs.
 While high quality geographic datasets on street networks are available at no additional cost from various sources such as OpenStreetMap, these datasets typically do not include qualitative geographic descriptions.
-The most common way of encountering street network data is in the form of graphml files which describe the street network as a graph of nodes and edges:
+The most common way of encountering street network data is in the form of GraphML files which describe the street network as a graph of nodes and edges.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{chapter/graphics/hamburg_network.png} % Reduced to 60% of text width
-    \caption{Graph representation of area of interest in Hamburg, Germany as used in this study.}
+    \caption{Area of interest in Hamburg. Data \copyright{} OpenStreetMap contributors.}
     \label{fig:hamburg-graph}
 \end{figure}
 
@@ -36,10 +36,9 @@ As a basis for our experiments, we downloaded two of these graphs from the OpenS
 In order to ensure a reasonable degree of geographic variation, we selected two different cities as sites for our datasets: Hamburg and Münster.
 This way, we end up with one dataset per city, each containing a varying number of nodes and edges.
 To extract qualitative descriptions from these datasets, an algorithm capable of generating dipole relations in natural language describing the topology of a given graph was used.
-In essence, the algorithm works by iterating over all nodes and creating dipole relations for each intersection.
-While the full algorithm is provided in the appendix, a conceptual description of the algorithm in pseudocode is given here:
+A conceptual overview of this algorithm is provided in Algorithm~\ref{alg:dipole-generation}:
 
-\begin{algorithm}
+\begin{algorithm}[H]
 \caption{Generate Street Descriptions from OSM.}
 \label{alg:dipole-generation}
 \begin{algorithmic}[1]
@@ -50,11 +49,10 @@ While the full algorithm is provided in the appendix, a conceptual description o
 \For{each street name in network}
     \State Collect all road segments with this name
     \State Keep largest connected component
-    \State Find main end-to-end path
-    \State Orient path consistently (S$\to$N or W$\to$E)
+    \State Orient path consistently
     \For{each junction along path}
         \State Inspect connected streets
-        \State Use bearings to classify as left/right/crossing
+        \State Use street orientations to classify as left/right/crossing
         \State Generate natural-language statement
     \EndFor
 \EndFor
@@ -62,23 +60,41 @@ While the full algorithm is provided in the appendix, a conceptual description o
 \end{algorithmic}
 \end{algorithm}
 
+Algorithm~\ref{alg:dipole-generation} describes the core logic of our dipole generation process.
+After downloading the street network for a given bounding box, the algorithm first removes motorways and isolated nodes from the dataset.
+Then, for each street in the network, all road segments with the same name are collected.
+The largest connected component is kept to avoid disconnected segments.
+This component is then oriented and for each junction along the path the connected streets are inspected.
+Using the street orientations, the connected streets are classified as branching left, branching right or crossing.
+Finally, a natural-language statement is generated for each junction.
+The natural-language statements are then exported to a text file for later use.
+In the above description of the algorithm, we have omitted various implementation details to ensure clarity.
+The term ``require'' is used to denote the input to the algorithm (in our case a bounding box), while the term ``ensure'' denotes the output of the algorithm (in our case text descriptions for streets).
+The Python software used to generate the qualitative dipole relations was primarily implemented by James Ondieki, and the code is available upon request.
+In Figure~\ref{fig:hamburg-graph} we see the network-graph used for this study as extracted from OpenStreetMap via OSMnx after some preprocessing as described in Algorithm~\ref{alg:dipole-generation}.
+
 % How was the data stored and how can the data be described.
 
 Following this method, we were able to generate a set of dipole relations for each of our initial street network datasets.
 These relations were stored in the form of simple .txt files, with one relation per line.
 An example of these relations is given in the appendix. 
-To demonstrate the relations here, a small excerpt may be helpful:
+To demonstrate the relations here, we show an excerpt regarding the Street Halbmondsweg in Hamburg:
 
 \begin{tcolorbox}[title={Excerpt of qualitative relations (Hamburg)}, colback=white]
 \small
 \begin{verbatim}
-Borchlingweg begins at the intersection with Ansorgestraße, Halbmondsweg.
-Stindeweg then branches off to the right.
-Langmaackweg then branches off to the right.
+Halbmondsweg
+
+Halbmondsweg begins at the intersection with Bernadottestraße.
+Bernadottestraße then branches off to the left.
+Ansorgestraße then branches off to the left.
+Borchlingweg then branches off to the right.
+Agathe-Lasch-Weg then branches off to the right.
+Klein Flottbeker Weg then branches off to the left.
+Reventlowstraße then branches off to the right.
 \end{verbatim}
 \end{tcolorbox}
 
-The python software used to generate the qualitative dipole relations was primarily implemented  by James Odienki, and the code is available upon request.
 After discussing the data acquisition process, we now focus on a detailed description of the configuration of the LLMs used in this study.
 
 % Which LLMs were selected and how were they configured.
