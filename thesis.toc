@@ -15,7 +15,7 @@
 \contentsline {section}{\numberline {3.1}Data Acquisition and Preparation}{17}{section.3.1}%
 \contentsline {section}{\numberline {3.2}LLM Configuration}{19}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Experimental Design and Procedure}{21}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Evaluation Metrics}{22}{section.3.4}%
+\contentsline {section}{\numberline {3.4}Evaluation Metrics}{23}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Results}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Dataset Overview}{25}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Experiment Results}{25}{section.4.2}%
@@ -28,7 +28,7 @@
 \contentsline {section}{\numberline {5.5}Implications for LLM Benchmarking}{33}{section.5.5}%
 \contentsline {section}{\numberline {5.6}Data Quality}{33}{section.5.6}%
 \contentsline {section}{\numberline {5.7}Practical Implications and Future Directions}{33}{section.5.7}%
-\contentsline {paragraph}{\nonumberline Example user prompts with additional geographic context:}{34}{paragraph*.23}%
+\contentsline {paragraph}{\nonumberline Example user prompts with additional geographic context:}{34}{paragraph*.25}%
 \contentsline {section}{\numberline {5.8}Validation Techniques}{35}{section.5.8}%
 \contentsline {section}{\numberline {5.9}Limitations}{36}{section.5.9}%
 \contentsline {section}{\numberline {5.10}Summary}{37}{section.5.10}%
@@ -41,6 +41,6 @@
 \contentsline {subsection}{\numberline {A.2.2}Test Group Prompt}{47}{subsection.A.2.2}%
 \contentsline {subsection}{\numberline {A.2.3}User Prompt}{47}{subsection.A.2.3}%
 \contentsline {section}{\numberline {A.3}Example Navigation Tasks}{47}{section.A.3}%
-\contentsline {chapter}{\nonumberline List of Figures}{49}{chapter*.25}%
-\contentsline {chapter}{\nonumberline List of Tables}{51}{chapter*.26}%
+\contentsline {chapter}{\nonumberline List of Figures}{49}{chapter*.27}%
+\contentsline {chapter}{\nonumberline List of Tables}{51}{chapter*.28}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

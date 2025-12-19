@@ -188,10 +188,19 @@ This should make the experiments easy to replicate for future researchers.
 
 % Traditional A/B testing approach with Test and Control Group.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{chapter/graphics/experimental_design_diagram.png} % Reduced to 60% of text width
+    \caption{Overview of the experimental design used in this study.}
+    \label{fig:experimental-design}
+\end{figure}
+
 Our experimental design follows a traditional A/B testing approach, where we compare the performance of a Control Group against the performance of a Test Group.
 In our case, the Control Group consists of LLMs performing navigation tasks on their own, without any additional context.
 Respectively, the Test Group consists of LLMs performing the same navigation tasks, but with access to our dipole relations.
-While the Test Group performs the exact same tasks as the Control Group, it was ensured that no memories of previous trials were available to the models in the Test Group sessions by starting each individual trial of both groups in a fresh session, disconnected from any previously conducted trials.
+While the Test Group performs the exact same tasks as the Control Group, it was ensured that no memories of previous trials were available to the models in the Test Group.
+This was achieved by starting each individual trial in a new session, disconnected from any previously conducted trials.
+An overview of the experimental design is given in Figure~\ref{fig:experimental-design}.
 
 % How were the navigation tasks designed and executed?
 

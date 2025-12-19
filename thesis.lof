@@ -3,15 +3,17 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces GPT-4o response to a simple route planning task.}}{2}{figure.caption.4}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces One possible correct route (green) for the example navigation task compared to various segments found in the GPT-4o response (red). Map data \copyright {} 2025 Google.}}{2}{figure.caption.5}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces All qualitatively different dipole relations that are necessary to describe a street network.}}{11}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces A screenshot demonstrates the Google Maps web interface, map data © Google.}}{13}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces An example RAG-Pipeline for navigation tasks.}}{10}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces All qualitatively different dipole relations that are necessary to describe a street network.}}{11}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces A screenshot demonstrates the Google Maps web interface, map data © Google.}}{13}{figure.caption.9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Area of interest in Hamburg. Data \copyright {} OpenStreetMap contributors.}}{18}{figure.caption.9}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Demonstration of OpenRouter usage.}}{20}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Area of interest in Hamburg. Data \copyright {} OpenStreetMap contributors.}}{18}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Demonstration of OpenRouter usage.}}{20}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Overview of the experimental design used in this study.}}{22}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Test Group success rate by City.}}{26}{figure.caption.14}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Test group success rate by LLM.}}{27}{figure.caption.15}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Test group success rate by model and city.}}{28}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Test Group success rate by City.}}{26}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Test group success rate by LLM.}}{27}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Test group success rate by model and city.}}{28}{figure.caption.18}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }
